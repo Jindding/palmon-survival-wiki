@@ -83,4 +83,4 @@ export const dict = {
   },
 } as const;
 
-export type Dict = (typeof dict)["ko"];
+export type Dict = (typeof dict)[Lang];
