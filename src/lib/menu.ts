@@ -12,59 +12,56 @@ import {
   Castle,
   Snowflake,
 } from "lucide-react";
-import type { Dict } from "./i18n/dict";
-
-type NavKey = keyof Dict["nav"];
 
 export interface MenuItem {
   href: string;
-  labelKey: NavKey;
+  label: string;
   icon: LucideIcon;
   soon?: boolean;
 }
 
 export interface MenuSection {
-  sectionKey: NavKey;
+  section: string;
   items: MenuItem[];
 }
 
 export const menu: MenuSection[] = [
   {
-    sectionKey: "home",
-    items: [{ href: "/", labelKey: "main", icon: Home }],
+    section: "홈",
+    items: [{ href: "/", label: "메인", icon: Home }],
   },
   {
-    sectionKey: "beginner",
+    section: "초보자 가이드",
     items: [
-      { href: "/economy", labelKey: "economy", icon: Coins },
-      { href: "/equipment", labelKey: "equipment", icon: Sword },
+      { href: "/economy", label: "재화 · 과금", icon: Coins },
+      { href: "/equipment", label: "장비 업그레이드", icon: Sword },
+      { href: "/buildings", label: "캠프 업그레이드", icon: Building2 },
     ],
   },
   {
-    sectionKey: "growth",
+    section: "팰몬 육성",
     items: [
-      { href: "/traits", labelKey: "traits", icon: Sparkles },
-      { href: "/achievements", labelKey: "achievements", icon: Trophy },
+      { href: "/traits", label: "특성 가이드", icon: Sparkles },
+      { href: "/achievements", label: "업적 가이드", icon: Trophy },
     ],
   },
   {
-    sectionKey: "battle",
-    items: [{ href: "/team-comps", labelKey: "teamComps", icon: Swords }],
+    section: "실전 조합",
+    items: [{ href: "/team-comps", label: "속성별 조합", icon: Swords }],
   },
   {
-    sectionKey: "guild",
-    items: [{ href: "/gvg", labelKey: "gvg", icon: Castle }],
+    section: "길드전",
+    items: [{ href: "/gvg", label: "GvG 주간 미션", icon: Castle }],
   },
   {
-    sectionKey: "season",
-    items: [{ href: "/season1", labelKey: "season1", icon: Snowflake }],
+    section: "시즌 가이드",
+    items: [{ href: "/season1", label: "시즌 1 · 얼음 시대", icon: Snowflake }],
   },
   {
-    sectionKey: "soon",
+    section: "확장 예정",
     items: [
-      { href: "/events", labelKey: "events", icon: Calendar, soon: true },
-      { href: "/buildings", labelKey: "buildings", icon: Building2, soon: true },
-      { href: "/community", labelKey: "community", icon: Users, soon: true },
+      { href: "/events", label: "이벤트 일정", icon: Calendar, soon: true },
+      { href: "/community", label: "커뮤니티", icon: Users, soon: true },
     ],
   },
 ];

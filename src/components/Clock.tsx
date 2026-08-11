@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useT } from "@/lib/i18n/LanguageProvider";
 
 const SERVER_TZ = "Etc/GMT+2"; // POSIX 관례: GMT+2 = UTC-2 (게임 서버)
 const KST_TZ = "Asia/Seoul";
@@ -15,7 +14,6 @@ function format(date: Date, tz: string) {
 
 export function Clock() {
   const [now, setNow] = useState<Date | null>(null);
-  const t = useT();
 
   useEffect(() => {
     setNow(new Date());
@@ -29,11 +27,11 @@ export function Clock() {
   return (
     <div
       className="flex items-center gap-2 md:gap-3 px-2 md:px-3 py-1 rounded-lg bg-muted border border-app"
-      aria-label="Clock"
+      aria-label="현재 시간"
     >
-      <TimeCell label={t.header.server} tone="secondary" value={server} />
+      <TimeCell label="서버" tone="secondary" value={server} />
       <div className="w-px h-6 bg-app" />
-      <TimeCell label={t.header.kst} tone="primary" value={kst} />
+      <TimeCell label="KST" tone="primary" value={kst} />
     </div>
   );
 }

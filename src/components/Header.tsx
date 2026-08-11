@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { LanguageToggle } from "./LanguageToggle";
-import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 import { Clock } from "./Clock";
 
@@ -26,10 +24,7 @@ export function Header() {
           </div>
           <div className="ml-auto flex items-center gap-2 md:gap-3">
             <Clock />
-            <div className="flex items-center gap-0.5">
-              <LanguageToggle />
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>

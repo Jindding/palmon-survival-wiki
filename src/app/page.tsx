@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Coins, Sword, Sparkles, Trophy, Swords, Castle, Snowflake } from "lucide-react";
+import { Coins, Sword, Sparkles, Trophy, Swords, Castle, Snowflake, Building2 } from "lucide-react";
 
 const cards = [
   {
@@ -43,6 +43,12 @@ const cards = [
     icon: Snowflake,
     title: "시즌 1 가이드",
     desc: "얼음 시대의 시작 · 시스템/이벤트 전략",
+  },
+  {
+    href: "/buildings",
+    icon: Building2,
+    title: "캠프 업그레이드",
+    desc: "Lv.2~30 자격 · 자원 · 시간",
   },
 ];
 

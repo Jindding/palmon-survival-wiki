@@ -3,12 +3,10 @@
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useT } from "@/lib/i18n/LanguageProvider";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const t = useT();
 
   useEffect(() => setMounted(true), []);
 
@@ -22,7 +20,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={isDark ? t.header.toLight : t.header.toDark}
+      aria-label={isDark ? "라이트 모드로" : "다크 모드로"}
       className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-muted transition-colors"
     >
       {isDark ? <Sun size={18} /> : <Moon size={18} />}

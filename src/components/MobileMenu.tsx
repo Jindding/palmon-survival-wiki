@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
 import { menu } from "@/lib/menu";
-import { useT } from "@/lib/i18n/LanguageProvider";
 import { Logo } from "./Logo";
 
 export function MobileMenu({
@@ -15,7 +14,6 @@ export function MobileMenu({
   onClose: () => void;
 }) {
   const pathname = usePathname();
-  const t = useT();
 
   return (
     <>
@@ -35,7 +33,7 @@ export function MobileMenu({
           <Logo onClick={onClose} />
           <button
             onClick={onClose}
-            aria-label={t.header.closeMenu}
+            aria-label="메뉴 닫기"
             className="p-2 rounded-lg hover:bg-muted"
           >
             <X size={20} />
@@ -43,9 +41,9 @@ export function MobileMenu({
         </div>
         <nav className="p-4 space-y-6 overflow-y-auto max-h-[calc(100vh-73px)]">
           {menu.map((sec) => (
-            <div key={sec.sectionKey}>
+            <div key={sec.section}>
               <div className="text-xs uppercase tracking-wider text-fg-subtle mb-2 px-3">
-                {t.nav[sec.sectionKey]}
+                {sec.section}
               </div>
               <ul className="space-y-1">
                 {sec.items.map((item) => {
@@ -55,10 +53,10 @@ export function MobileMenu({
                   const content = (
                     <>
                       <Icon size={18} />
-                      <span className="flex-1">{t.nav[item.labelKey]}</span>
+                      <span className="flex-1">{item.label}</span>
                       {item.soon && (
                         <span className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-fg-subtle">
-                          {t.nav.soonBadge}
+                          준비중
                         </span>
                       )}
                     </>

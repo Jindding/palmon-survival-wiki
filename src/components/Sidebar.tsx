@@ -3,12 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { menu } from "@/lib/menu";
-import { useT } from "@/lib/i18n/LanguageProvider";
 import { Logo } from "./Logo";
 
 export function Sidebar() {
   const pathname = usePathname();
-  const t = useT();
 
   return (
     <aside className="hidden md:flex md:w-64 flex-col border-r border-app bg-card sticky top-0 h-screen">
@@ -17,9 +15,9 @@ export function Sidebar() {
       </div>
       <nav className="flex-1 overflow-y-auto p-4 space-y-6">
         {menu.map((sec) => (
-          <div key={sec.sectionKey}>
+          <div key={sec.section}>
             <div className="text-xs uppercase tracking-wider text-fg-subtle mb-2 px-3">
-              {t.nav[sec.sectionKey]}
+              {sec.section}
             </div>
             <ul className="space-y-1">
               {sec.items.map((item) => {
@@ -29,10 +27,10 @@ export function Sidebar() {
                 const content = (
                   <>
                     <Icon size={18} />
-                    <span className="flex-1">{t.nav[item.labelKey]}</span>
+                    <span className="flex-1">{item.label}</span>
                     {item.soon && (
                       <span className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-fg-subtle">
-                        {t.nav.soonBadge}
+                        준비중
                       </span>
                     )}
                   </>
@@ -63,7 +61,7 @@ export function Sidebar() {
         ))}
       </nav>
       <div className="p-4 border-t border-app text-[10px] text-fg-subtle">
-        {t.site.footer}
+        비공식 팬 위키 · Lilith Games
       </div>
     </aside>
   );

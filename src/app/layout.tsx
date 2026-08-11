@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 
@@ -28,15 +27,13 @@ export default function RootLayout({
     <html lang="ko" suppressHydrationWarning>
       <body>
         <ThemeProvider>
-          <LanguageProvider>
-            <div className="flex min-h-screen">
-              <Sidebar />
-              <div className="flex-1 flex flex-col min-w-0">
-                <Header />
-                <main className="flex-1 p-4 md:p-8">{children}</main>
-              </div>
+          <div className="flex min-h-screen">
+            <Sidebar />
+            <div className="flex-1 flex flex-col min-w-0">
+              <Header />
+              <main className="flex-1 p-4 md:p-8">{children}</main>
             </div>
-          </LanguageProvider>
+          </div>
         </ThemeProvider>
       </body>
     </html>
