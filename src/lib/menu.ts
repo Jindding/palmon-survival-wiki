@@ -11,6 +11,11 @@ import {
   Building2,
   Castle,
   Snowflake,
+  BookOpen,
+  Wind,
+  ShieldAlert,
+  Gem,
+  Flame,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -41,6 +46,7 @@ export const menu: MenuSection[] = [
   {
     section: "팰몬 육성",
     items: [
+      { href: "/palmon", label: "팰몬 도감", icon: BookOpen },
       { href: "/traits", label: "특성 가이드", icon: Sparkles },
       { href: "/achievements", label: "업적 가이드", icon: Trophy },
     ],
@@ -56,6 +62,15 @@ export const menu: MenuSection[] = [
   {
     section: "시즌 가이드",
     items: [{ href: "/season1", label: "시즌 1 · 얼음 시대", icon: Snowflake }],
+  },
+  {
+    section: "정기 이벤트",
+    items: [
+      { href: "/events/sandstorm", label: "모래폭풍 전장 (주간)", icon: Wind },
+      { href: "/events/hoofrit-rampage", label: "후피릿 폭주 (격주)", icon: ShieldAlert },
+      { href: "/events/treasure-pot", label: "보물 항아리 (월간)", icon: Gem },
+      { href: "/events/ember-wars", label: "불씨 쟁탈전 (시즌)", icon: Flame },
+    ],
   },
   {
     section: "확장 예정",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Coins, Sword, Sparkles, Trophy, Swords, Castle, Snowflake, Building2 } from "lucide-react";
+import { Coins, Sword, Sparkles, Trophy, Swords, Castle, Snowflake, Building2, BookOpen } from "lucide-react";
 
 const cards = [
   {
@@ -49,6 +49,12 @@ const cards = [
     icon: Building2,
     title: "캠프 업그레이드",
     desc: "Lv.2~30 자격 · 자원 · 시간",
+  },
+  {
+    href: "/palmon",
+    icon: BookOpen,
+    title: "팰몬 도감",
+    desc: "전체 팰몬 스킬 · 특성",
   },
 ];
 

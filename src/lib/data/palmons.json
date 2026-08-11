@@ -1,0 +1,1329 @@
+[
+  {
+    "objectId": "CH_AD_21176_18",
+    "name": "그래키티",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfOTYg/MDAxNzY3Njk1MDE5ODI4.5sOGm9E6EgPFnXwwA105YWLvEwV4smn9_ktMAsx0ueMg.A9_fh6zoNh1ZvbT3OYpG2M4cEk0L1Ib7jUpZ4PD9eDMg.PNG/0160_pal_UI_View.png",
+    "mobileBgColor": "#2396D2",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_102",
+        "name": "페인트볼",
+        "type": "그래키티 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNjMg/MDAxNzcyNjA4NTcyNzM2.95xFrn6wJbqmeEpJ5jaBbnckdqasamAt2BTPfksUCzgg.wqqFYfpPPmW3C3fLSyItbmPc__i5gAgvVJRLo3axHecg.PNG/HeroSkill_203201_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_103",
+        "name": "흩뿌리기",
+        "type": "그래키티 스킬",
+        "description": "원거리 단일 적에게 2068.3%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfODMg/MDAxNzcyNjA4NzA1ODAy.Wm3DRgVJd9NbuZNelwbig9S3zMwTdrtbnnwXci68lFog.DZGgVHr5mxnR3OAl5HA0SalEHXg2fzvayzKJcI0LWpQg.PNG/HeroSkill_203201_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_104",
+        "name": "럭키 클로",
+        "type": "그래키티 스킬",
+        "description": "채광 작업 시 광석 생산량 +35%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 3% 추가 증가<BR/>2성: 생산량 6% 추가 증가<BR/>3성: 생산량 9% 추가 증가<BR/>4성: 생산량 12% 추가 증가<BR/>5성: 생산량 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMzAg/MDAxNzcyNjA4ODQ4Nzkw.pvreOWskVGWWdr8PQv9CCVrsV1-hEG6aTMsYWdMdaxAg.xeCEw_z2fMXWiGroUYipQKMvaEuJ7BrlWpu31kbs5bcg.PNG/HeroSkill_203201_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ]
+  },
+  {
+    "objectId": "CH_AD_21176_40",
+    "name": "길런트",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfNzAg/MDAxNzY3NzgxMjQyMDAw.BejVSakA3L6ok1yApFahMpYg9kJAPyAcLJOPZZFiYlEg.00tV-3hex1uPpvOGLWrJ21ojwCrRcghIOTOWiIg7uKgg.PNG/0300_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_10",
+    "name": "닌점프",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjgw/MDAxNzY3Njk0MTgyNzk1.fGQA-k5KO1Cpnye2V5N9XSIK321mlaBecuVDJq2p3Usg.NMG0bP5XpXZZ1ZjgDM2PqWJQInT_qF-FIeOvlbbDHj8g.PNG/0100_pal_UI_View.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_42",
+    "name": "돌피렌드",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMTQ1/MDAxNzY3NzgxNDIxNzAy.jiQspLb6DHdMmDCBhPO7ro-qb9ZPvJyauTJbOL-o2t4g.qYuNp2pCtvOYqnpGzhosLUnAaXOqJ_cuWVgVse_c6UAg.PNG/0310_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_188",
+        "name": "대충돌",
+        "type": "돌피렌드 스킬",
+        "description": "단일 적에게 강타를 날려 347.8%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTcy/MDAxNzcyNjc4Nzc1NTA3.g7ZOtWi5chgSgEW1JvjQ7nGobbRKBhHq6v5WJcEI_Lgg.9VLwm-nO_QO7U0TNLSE4y9B4nXnl26UbTg-RVCNXsDYg.PNG/HeroSkill_205006_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_189",
+        "name": "러쉬 웨이브",
+        "type": "돌피렌드 스킬",
+        "description": "단일 적을 힘껏 내리쳐 4488.1%(최대)의 높은 대미지를 주며, 70%(최대)의 확률로 상대를 3초(최대) 동안 스턴시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfOTcg/MDAxNzcyNjc4OTAwNTA1.LtaobHjRsZZXD3fPa8_Edee0HYRcBSTW7fyhJl8NYN0g.-vrbylsKvz_ocXiOTOOUZJePKoVeTdcly6kAV3oVUwkg.PNG/HeroSkill_205006_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_190",
+        "name": "조류 보호",
+        "type": "돌피렌드 스킬",
+        "description": "전투 시 자신의 HP가 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: HP 2% 추가 증가<BR/>2성: HP 4% 추가 증가<BR/>3성: HP 6% 추가 증가<BR/>4성: HP 8% 추가 증가<BR/>5성: HP 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjc0/MDAxNzcyNjc4OTc5MDc2.Ym_0GtjEpMnTrIU3CczwkAX1xnp6wGrUQROTlxdYmckg.xTCtqa3xhK4g7D6IeOZnA5QUKQAFqqrPff4I-r7zadkg.PNG/HeroSkill_205006_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_68",
+    "name": "레갈리온",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMTg0/MDAxNzY3ODY1ODI2OTE1.UlN9e14335j42AvQ3YmG6LzF5WAfYyufH7bPVdkmsqYg.lTbtn6lwGaugz_MLMjYtNyA0JNtiFyBw7Dndzjw1fIIg.PNG/0430_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_72",
+    "name": "레본투렛",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMjc5/MDAxNzY3ODY2MDQ5MDMy.OU5K_3BpeYbl9XQYFG6btmTDJtVEvVIuBDCsEu8zKc8g.Mht7ooEDxD7gHzYvr1W1cx0o60N7gUlY9I9sFAIoyH0g.PNG/0450_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_79",
+    "name": "로토로터",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMTU4/MDAxNzY3ODY2NTEyMDE2.c6Naz93bF8NYKkxRTfxhxDDIUNxCwzcXRS-zS8Uta1Ag.XC-nuTweeQNBOtCZmVVvoFKw_Kc7XPYlemTijn0tIksg.PNG/0490_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_153",
+        "name": "차지 스트라이크",
+        "type": "로토로터 스킬",
+        "description": "번개를 시전하여 단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTEy/MDAxNzcyNjE4NjI4NjUz.PfUbEnNrsdpch4OghGQmhi6qWSBXDV76du2IznL1uzUg.czECPQhJRN32T8DkfUkW90nWkSHvCATadYYG5pmaAy4g.PNG/HeroSkill_204011_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_154",
+        "name": "썬더스톰",
+        "type": "로토로터 스킬",
+        "description": "천둥 폭풍을 소환하여 랜덤 적 2명에게 2027.6%(최대)의 번개 대미지를 주며, 20%의 확률로 2초(최대) 동안 마비시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjEz/MDAxNzcyNjE4Njg0ODI3.XmMTEcYpbUVGCNCXSz8gHuHTirPMntmnLUfN_S0aiBUg.3eUW2NcA_vMGALDxpIus1ygSP8Uspc6Tz6V_FdeYBW4g.PNG/HeroSkill_204011_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_155",
+        "name": "부귀영화",
+        "type": "로토로터 스킬",
+        "description": "상점으로 파견 시 상점 골드 생산량 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 5% 추가 증가<BR/>2성: 생산량 10% 추가 증가<BR/>3성: 생산량 15% 추가 증가<BR/>4성: 생산량 20% 추가 증가<BR/>5성: 생산량 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTg1/MDAxNzcyNjE4NzYyMzQx.zxk0EWIYaI_2XwFUj_gUstZJE3CQOpzit_9Olq0tx0Ag.cVQgyg1LvdAquX_IBfTwIUTeVetZk0ed385jYIyT0aYg.PNG/HeroSkill_204011_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_32",
+    "name": "루시디아",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMiAg/MDAxNzY3Nzc0ODYyODI1.6rmrnoptHWIkhfivBZwMObN0wOxwkCMaXeCU7j9Cjagg.abhAW8fN_T0c1lcHnqf84BNN68icBPknwdGUffMq_vsg.PNG/0270_pal_UI_ViewB.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_179",
+        "name": "환영",
+        "type": "루시디아 스킬",
+        "description": "꿈의 힘이 담긴 구체를 발사해 단일 적에게 518%(최댕)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjAy/MDAxNzcyNjc3NDU4NDg4.XDwIQIAoGS3j2wZJzXiGOpwG-y199QUNJ9S2QbY6qQgg.7NxB-udyZfeHjaBIEvl5tqBwBAXujd6rJK1-dgIB7wIg.PNG/HeroSkill_205003_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_180",
+        "name": "꿈의 손길",
+        "type": "루시디아 스킬",
+        "description": "단일 적을 3초(최대) 동안 꿈속으로 끌어당기고, 꿈에서 깰 때 7612.2%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTM1/MDAxNzcyNjc3NjY3NDk4.T4CR-eDvDJDhEqJyWuR_-E47HHA2i0BCoKyQJuwJ8z8g.v6IEfS5nPheAVVdac88bMXGJyqpwjRleBYmbuyYtVjMg.PNG/HeroSkill_205003_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_181",
+        "name": "드림 섀도우",
+        "type": "루시디아 스킬",
+        "description": "전투 시 치명타 확률이 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 치명타 2% 추가 증가<BR/>2성: 치명타 4% 추가 증가<BR/>3성: 치명타 6% 추가 증가<BR/>4성: 치명타 8% 추가 증가<BR/>5성: 치명타 10% 추가 증가<BR/>",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjMx/MDAxNzcyNjc4MTc2NTIx.tlnmmLK44-kBVuKhUlVorC_zo5PLBk1UTyIUvzKIP5gg.S0zkSFXY-oukyo9ojIt5Md-iqyZ_ah9JKAGRJMCqtOYg.PNG/HeroSkill_205003_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_66",
+    "name": "리뮤드로이드",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMjYw/MDAxNzY3ODY1NjA0MTk0.g61tunIEw93DGYPhRNWoxtBtLY889rUgJWRdV-7vBygg.I0c3DnV7dbLLZCDF8RGlXWJO06tB2qSmcZcGfMFko8wg.PNG/0420_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_215",
+        "name": "에너지볼",
+        "type": "리뮤드로이드 스킬",
+        "description": "에너지볼을 던져 단일 적에게 414.4%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjIx/MDAxNzcyNjgyMTU5NTI2.mqsvOP2Jr3mzUIr7mMCOQgpPHiyKid4DZfDnd9hd1OYg.VRr0OAmFntIF9c12fO-13xl-prphG47aHER2B66iF34g.PNG/HeroSkill_205018_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_216",
+        "name": "이온화 방사선",
+        "type": "리뮤드로이드 스킬",
+        "description": "눈에서 세 개의 레이저가 발사되어 전체 적에게 1912.9%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTYg/MDAxNzcyNjgyMjEyMjg4.9k0gMxEpghXWkWnHJ9yzJypxId2dXBkKDsgKeWspnlEg.o-w27kWEvGexYx-w1_y5xRU8Ew_1dEgn4JvHxjNBjrEg.PNG/HeroSkill_205018_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_217",
+        "name": "신동",
+        "type": "리뮤드로이드 스킬",
+        "description": "강력한 학습 능력을 보유한 리뮤드로이드가 기술 연구 속도를 30%(최대) 증가시킵니다.<BR/>기술 연구 시 최종 연구 시간 119분(최대) 감소<BR/><BR/>스킬 승급 효과<BR/>1성: 소모 시간 5분 추가 감소<BR/>2성: 소모 시간 10분 추가 감소<BR/>3성: 소모 시간 15분 추가 감소<BR/>4성: 소모 시간 30분 추가 감소<BR/>5성: 소모 시간 60분 추가 감소",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjc3/MDAxNzcyNjgyMjY4NTE0.dwpn1H13AKJl4bzuy7Zco3cJFT5xS3n6HW8BxS5qCXsg.lg56gEmVigXmMiwSvveg8AcIBtYU7MuUUArAinEZ-5Mg.PNG/HeroSkill_205018_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_13",
+    "name": "린다니어",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMTE1/MDAxNzY3Njk0NTEwNTcy.FCO4yhlX5ZpYaGqiwwZ43R_XmhF81inFPse7B4GJbYYg.m1OnqAPs34qjP_thYx0lUb-Z50tz9s4318sM0Ymseh4g.PNG/0110_pal_UI_View.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_150",
+        "name": "하트 플래시",
+        "type": "린다니어 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTM5/MDAxNzcyNjE4NDA0MzIz.KTnKbs66e--KpvhFtGwjL3f4SVgSoGy3PiwkQlLg6Y0g.80uBm---xK5wnjGsTb5XYaeLCFsSQ6G3t7Uw7G49ljcg.PNG/HeroSkill_204010_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_151",
+        "name": "리저렉션",
+        "type": "린다니어 스킬",
+        "description": "랜덤의 아군 1명에게 보너스를 부여하여 받는 대미지를 20%(최대) 감소시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 받는 대미지 1.5% 추가 감소<BR/>2성: 받는 대미지 3% 추가 감소<BR/>3성: 받는 대미지 4.5% 추가 감소<BR/>4성: 받는 대미지 6% 추가 감소<BR/>5성: 받는 대미지 7.5% 추가 감소",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfOTIg/MDAxNzcyNjE4NDgwMTg3.FuvsGnayVLvT5q1WSi3sShN96Tqs83YCfbsTUlfmX04g.Hs-TL8RpN73q1oPkP4FBUhTi1qV6X1zsmbwDuSzCuXkg.PNG/HeroSkill_204010_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_152",
+        "name": "달콤한 손길",
+        "type": "린다니어 스킬",
+        "description": "착한 린다니어는 신비로운 치유의 힘을 지니고 있어 병원으로 파견 시 치료 속도가 27%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 아미고 치료 속도 2% 추가 가속<BR/>2성: 아미고 치료 속도 4% 추가 가속<BR/>3성: 아미고 치료 속도 5% 추가 가속<BR/>4성: 아미고 치료 속도 8% 추가 가속<BR/>5성: 아미고 치료 속도 12% 추가 가속",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTYy/MDAxNzcyNjE4NTI5MjA5._kR2guyZik5d7LykXG9hVIo4g8M08ezZ3Et8fipjQKkg.41ALiSFs3-XhdLnSmojrUs2J2397Bw-_0L1pm7Qb-zcg.PNG/HeroSkill_204010_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_60",
+    "name": "마그몰린",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMjEw/MDAxNzY3ODY0OTQ5ODI3.bCcP1FDsATOJd1-Pryxy4m1H4HfVlU5QmCDzRgwXGcYg.lEKpx51ZRWiALqi5iYcdoA1d8dgJW_AZAwhmA2UaqP4g.PNG/0390_pal_UI_View.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_203",
+        "name": "발톱 공격",
+        "type": "마그몰린 스킬",
+        "description": "단일 적에게 347.8%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTUg/MDAxNzcyNjgxMjgyMzEz.XKkkrM3BlWguIfb62fRybDxrvoT-yIpADqr4QrgVx4Yg.olsWIKO4zdHr6OKLUe_QcL8JC6423Kso0ukfpWA_PpQg.PNG/HeroSkill_205011_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_204",
+        "name": "용암 진동",
+        "type": "마그몰린 스킬",
+        "description": "바닥을 내리쳐 화산 암석 돌기를 소환해 3명의 랜덤 적에게 화상 효과가 포함된 1468.9%(최대)의 대미지를 주며, 10초(최대) 동안 모든 대상에게 총 1800%(최대)의 추가 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfNjMg/MDAxNzcyNjgxMzM1NDA0.DUrgBCgSWLZJfJvGLPJD8iKyxCPUZXkCmuXlN32Xe-8g.Xkf0W2wjTOI3bJ90k99-z6L2ATvtGpmp--3GDNpVdmAg.PNG/HeroSkill_205011_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_205",
+        "name": "담금질",
+        "type": "마그몰린 스킬",
+        "description": "캠프 내 모든 용광로의 강철 생산량이 100%(최대) 증가합니다.<BR/>전투 시 아군 모든 불속성 팰몬이 받는 대미지가 20%(최대) 감소합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 불속성 팰몬이 받는 대미지 -1.5%<BR/>2성: 불속성 팰몬이 받는 대미지 -3%<BR/>3성: 불속성 팰몬이 받는 대미지 -4.5%<BR/>4성: 불속성 팰몬이 받는 대미지 -6%<BR/>5성: 불속성 팰몬이 받는 대미지 -7.5%",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIx/MDAxNzcyNjgxNDE2Mzc4.-mKYDF7FlLw0n_lYDAXz1115lg1JiPwtp28atk9c8asg.Eu24-_e6dntQMT2lJVL8Nx0V24bExnNymkYJVeDbEsog.PNG/HeroSkill_205011_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_23",
+    "name": "맥시미토",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjU2/MDAxNzY3Njk1MjQ0MDg0.QkNAO6HaOx0RE9W0bvmAjvx-AgZTIg6iBy6vCS5c654g.J-ITW972AlcLPWHLkHMs8INJ--RZicp1QKXgDlfzaJ8g.PNG/0200_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_144",
+        "name": "코치기",
+        "type": "맥시미토 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTg5/MDAxNzcyNjE3NjIzNDIw.ffMwOEzTjjQ5VGkliA_AZBcVTB1u_EhSpO11iF0moj4g.0plaZhUZBX7qDUoL8pUynid__KFFXY5jvdyB4rl_a68g.PNG/HeroSkill_204008_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_145",
+        "name": "코끼리의 축복",
+        "type": "맥시미토 스킬",
+        "description": "현재 HP가 가장 낮은 아군이 받는 대미지가 5초(최대) 동안 20%(최대) 감소합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 받는 대미지 1.5% 추가 감소<BR/>2성: 받는 대미지 3% 추가 감소<BR/>3성: 받는 대미지 4.5% 추가 감소<BR/>4성: 받는 대미지 6% 추가 감소<BR/>5성: 받는 대미지 7.5% 추가 감소<BR/><BR/>",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNzEg/MDAxNzcyNjE3NjczMzM0.zsXkICqm4hoPMm8Uq_SMqdiAG4YsbIeO0XrMhestrmYg.xboCC3o0bDYBuQ4ZzTexvej_jqkmaPqd135OAXKvEiwg.PNG/HeroSkill_204008_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_146",
+        "name": "빌드 루키",
+        "type": "맥시미토 스킬",
+        "description": "건물 건설 시 최종 건설 시간 64(최대)분 감소<BR/><BR/>스킬 승급 효과<BR/>1성: 소모 시간 5분 추가 감소<BR/>2성: 소모 시간 10분 추가 감소<BR/>3성: 소모 시간 15분 추가 감소<BR/>4성: 소모 시간 20분 추가 감소<BR/>5성: 소모 시간 30분 추가 감소<BR/>",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTIy/MDAxNzcyNjE3ODY5Mzk1.J1m8wGWdd7Kw4emGQC77ZDmqh740t5SjyiIan4qSZpcg.dWjaRwvX1dLs6geWJJbJxcu-3kxCFJgod74BotB0Y4wg.PNG/HeroSkill_204008_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_45",
+    "name": "맨틀레이",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfOTIg/MDAxNzY3NzgxNjkxOTc0.r0C5uX06Lm5Tc7LbbgUQa0INwIMbgZwx7m0uxplCjWIg.s1agCtBHJ2Ei1q6DODgsIOng6GIlcYXkpKFK9ID8XTkg.PNG/0320_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_185",
+        "name": "사이오닉 라이트",
+        "type": "맨틀레이 스킬",
+        "description": "원거리에서 광구를 발사해 뒷열 랜덤 적 1명에게 584.6%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjU2/MDAxNzcyNjc4NTQ4MTQ3.SJaAWZhe53dRHOJop1FykWvJgWeSN7jM-4YIW9O4wJgg.phEciGoZU3Ywydsf3M-iG9AKvR0c9EdGMNXFv8O4HoYg.PNG/HeroSkill_205004_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_186",
+        "name": "전기 폭발",
+        "type": "맨틀레이 스킬",
+        "description": "랜덤으로 적에게 전기 폭탄 3개를 발사해 각 폭탄마다 2797.2%(최대)의 대미지를 줍니다.(동일 대상 중복 공격 가능)<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjY4/MDAxNzcyNjc4NjE2MDc1.jsA88O7bpNmoaYXo2ZMm4_FB2UvyT-h2xJqjLiknDqog.Xgsl5dozEffSPc2NB8ELWa3RWaFRKGlZRKjmRLs09eog.PNG/HeroSkill_205004_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_187",
+        "name": "마력 뇌명",
+        "type": "맨틀레이 스킬",
+        "description": "전투 시 치명타 확률이 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 치명타 2% 추가 증가<BR/>2성: 치명타 4% 추가 증가<BR/>3성: 치명타 6% 추가 증가<BR/>4성: 치명타 8% 추가 증가<BR/>5성: 치명타 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjc0/MDAxNzcyNjc4NzIwOTY4.Lhk4UKe5-P2mwaYQgHttkELS2kqhQ0kEp1FV7BleBc0g.dVfaex1Mxtgec83Q_M-OQi20-9T3XOh12QAiEFF91KMg.PNG/HeroSkill_205004_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_20",
+    "name": "미야모아젤",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjIw/MDAxNzY3Njk1MTEwNzc1.zK9CKKb1dHqgWt1Q6p7kGMC8NroPV1ajTc0mc-2TtJcg.PIp1zwydtoWgaNvpMGmu2qHMCccA_kHzn-840Uf3biYg.PNG/0170_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_126",
+        "name": "드림 오브",
+        "type": "미야모아젤 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTg5/MDAxNzcyNjEwNTQzMDcx.5Jxw7A4Sz4yTjHge57JIgta6jm3jwuaZ4v96X-UKRGIg.vloEa2SmJECuB70RyOKeySxaIzkjr5lQAERmQRs9hiwg.PNG/HeroSkill_204002_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_127",
+        "name": "별빛의 가호",
+        "type": "미야모아젤 스킬",
+        "description": "랜덤으로 아군 1명에게 보너스를 부여하여 5초(최대) 동안 주는 대미지가 20%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 2% 추가 증가<BR/>2성: 대미지 4% 추가 증가<BR/>3성: 대미지 6% 추가 증가<BR/>4성: 대미지 8% 추가 증가<BR/>5성: 대미지 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNTIg/MDAxNzcyNjEwNTkyMDY0._c-qaJ2Cy25cH8HFCojckphXhNIOLqGuV4-jexJWjy4g.y0OPyR5zb93ZUAu8sn8I_rzGvOYdHIiWTbF5ioLvvW8g.PNG/HeroSkill_204002_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_128",
+        "name": "미라클 메이커",
+        "type": "미야모아젤 스킬",
+        "description": "기적을 가져다주는 미야모아젤은 파티가 데빌 팰몬, 데빌 보스 처치 후 획득하는 골드, 목판, 강철 수량을 75%(최대) 증가시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 자원 보너스 5% 추가 증가<BR/>2성: 자원 보너스 10% 추가 증가<BR/>3성: 자원 보너스 15% 추가 증가<BR/>4성: 자원 보너스 20% 추가 증가<BR/>5성: 자원 보너스 25% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfODAg/MDAxNzcyNjEwNzA0MTUy.SxH75v2SMYYk8heK8QXMdB1ccnDbEuNYmMIga9ydBowg.0hZL4g37LvIwxluz1B3g7_HgoF8j8jg9Sr5-aapAdxQg.PNG/HeroSkill_204002_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_56",
+    "name": "바붐",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfNzIg/MDAxNzY3ODY0Njc3ODU4.yEpVcI2RtnsxiKL-O7nC6Ji-KwJfkWYf7VmZTReQ5N4g.oloyehz2CHeqBUZfXC3Pv1a7ncJAd8yk4tN6ePKRQy8g.PNG/0370_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_200",
+        "name": "억제",
+        "type": "바붐 스킬",
+        "description": "나무 몽둥이를 휘둘러 단일 적에게 347.8%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTY1/MDAxNzcyNjgwOTg3NjMx.2y6CGB9NGJ9kozq-ebIZIq9c4-JuWooQKQv4ImZe4kQg.GQBrsr-fZwi_JjjrIDOmlxJdhgyhxO3g45o6FF3SHbgg.PNG/HeroSkill_205010_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_201",
+        "name": "파워 스트라이크",
+        "type": "바붐 스킬",
+        "description": "나무 몽둥이를 손에 쥐고 연속으로 힘껏 공격하여 근거리 단일 적에게 3626%(최대)의 대미지를 주며, 100%(최대)의 확률로 상대를 2초(최대) 동안 스턴시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIw/MDAxNzcyNjgxMDMyOTM0.X4oeQLjfqr7HgvZYtw89In43ElW_z3QS9FTMPCiDjRkg.w8AJG6zTJ1ZfpmiRspWKErRuLZkpy913FQ3QTWiVkZ0g.PNG/HeroSkill_205010_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_202",
+        "name": "폭풍 생산",
+        "type": "바붐 스킬",
+        "description": "캠프 내 모든 테이블쏘의 목판 생산량이 100%(최대) 증가합니다.<BR/>분노 획득 효율이 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 분노 획득 효율 증가: 2%<BR/>2성: 분노 획득 효율 증가: 4%<BR/>3성: 분노 획득 효율 증가: 6%<BR/>4성: 분노 획득 효율 증가: 8%<BR/>5성: 분노 획득 효율 증가: 10%",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjk1/MDAxNzcyNjgxMTY3Nzk5.OwmFO60dCalZD8Dl0tD4SZVJv_74xvYoHuXqiNrFR1og.-24sYnnIKt4jYeHzMdrv4tNl5Dx3uZa7kOwzKuA9P7Yg.PNG/HeroSkill_205010_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_34",
+    "name": "바크플러그",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMjc2/MDAxNzY3Nzc2NTEwMzA5.42fko4FhQ3mpoCMBewJnMByzSz2n-vCTHJvcdW9Tz7Ig.7snzA3fUzcgDXRoaQd1j8lF5n5EUlxmUgPBYudyepZAg.PNG/0280_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_182",
+        "name": "썬더볼트",
+        "type": "바크플러그 스킬",
+        "description": "번개 사슬을 시전하여 최대 5명의 적을 공격해 각 대상에게 140.6%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTQx/MDAxNzcyNjc4Mjc4MTMw.fU679tnigs7M123kUP6-LFqETrwt6RQAOFWijMiVftUg.D0gNvHxPS9KhxhYJLBGN9NKb-1yFxDkJ2Mb-M0vkqE4g.PNG/HeroSkill_205001_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_183",
+        "name": "일렉 푸어링",
+        "type": "바크플러그 스킬",
+        "description": "공중으로 뛰어올라 단일 적에게 전류를 방출해 6541.6%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjYz/MDAxNzcyNjc4Mzk3MjM0.gEVdUdenB2ZFrzRcto7Vyt8VcTVKrURd5F49KfJkkkMg.JFrXhj8mdBD2RgKAls0C1GRs6ljWz5Heed853yHY7W4g.PNG/HeroSkill_205001_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_184",
+        "name": "강화 급증",
+        "type": "바크플러그 스킬",
+        "description": "전투 시 자신의 HP가 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: HP 2% 추가 증가<BR/>2성: HP 4% 추가 증가<BR/>3성: HP 6% 추가 증가<BR/>4성: HP 8% 추가 증가<BR/>5성: HP 10% 추가 증가<BR/>",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjIy/MDAxNzcyNjc4NDUwOTU0.EJTZ5xC1pMiYEgddAlnFZSYF-boC1PbPhsW1dPLd-NYg.etRKmQS5xytqCDbeboA1D26VKQEfOKo_CzVlA_8Nd2Eg.PNG/HeroSkill_205001_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_74",
+    "name": "배터레이나",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMTAx/MDAxNzY3ODY2MTcyNTQx.P8LX8u_3V767KEYq8PFQgiJUQZv9U5T-yNBGH-KYUMUg.OVZHZaTZ--rDGmnXo_cRmiTQvAPi6Fzjv2c8W4yVLHQg.PNG/0460_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_84",
+    "name": "불릿볼트",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMjBfMTg3/MDAxNzY4ODgxNjk3NzY1.t8U2VneahusChysTIiT7RigMfXeCJKN3Vr03cS4Mhw8g.YfUXWDA6zcx186rWFATLMnaLi7QyZCc1XPvtFCHAs5gg.PNG/0500_pal_UI_ViewA.png",
+    "basicInfos": [
+      {
+        "name": "300 레벨 전투력",
+        "description": "2529404"
+      },
+      {
+        "name": "300 레벨 공격력",
+        "description": "43279"
+      },
+      {
+        "name": "300 레벨 방어력",
+        "description": "10596"
+      },
+      {
+        "name": "300 레벨 HP",
+        "description": "8501382"
+      }
+    ],
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_86",
+        "name": "퀵 킥",
+        "type": "불릿볼트 스킬",
+        "description": "빠르게 발차기 하여 단일 적에게 260%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가<BR/><BR/><BR/>",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjM1/MDAxNzcyNjA1OTk2NDMy.7vViXO7eDEREcrdTT7Qdtf2_HR7o1aKIdoScEZckSeAg.aWJ73qfK_zvOOrYOubXySG9prK0DjitHEUN_oSHljggg.PNG/HeroSkill_204015_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_165",
+        "name": "폭풍 다이브",
+        "type": "불릿볼트 스킬",
+        "description": "빠르게 공중으로 날아간 후 급강하하여 몸에 천둥의 힘을 누적해 범위 내 대상에게 936.1%(최대)의 대미지를 주며, 20%의 확률로 1.5초(최대) 동안 스턴시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTky/MDAxNzcyNjE5MzA3Mzk0.OyaVYclUxxUKzXcsmjAJfNavCC68TRXUZq2F_gjkCWcg.zyLvVYqNmYi8iq9wholKSAHX5UxXRs-1Yu4mmmFF-uAg.PNG/HeroSkill_204015_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_166",
+        "name": "지능성 생존",
+        "type": "불릿볼트 스킬",
+        "description": "기술 연구 시 최종 연구 시간 64분(최대) 감소<BR/><BR/>스킬 승급 효과<BR/>1성: 소모 시간 5분 추가 감소<BR/>2성: 소모 시간 10분 추가 감소<BR/>3성: 소모 시간 15분 추가 감소<BR/>4성: 소모 시간 20분 추가 감소<BR/>5성: 소모 시간 30분 추가 감소",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjU3/MDAxNzcyNjE5Mzk4NTA3.6x9GvEzzdgiP9v8v_A4MEQegaAC9QsGljKhGOaWoWvkg.MYhHo4s-m609lcGJZvGCM1a3E6CbhCWlS_5vjmINX4sg.PNG/HeroSkill_204015_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_27",
+    "name": "불카니드",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjYw/MDAxNzY3Njk3MDU1MzE5._96aMzK4LzdZy8DAWPcrX3jEzGXe9wyA_1jq3sZWX04g.lqsHRsPNkPykL3jvA0T4vUlkFnHW9FuT6dGWIyEMS-gg.PNG/0230_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_159",
+        "name": "블레이징 바이트",
+        "type": "불카니드 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfODQg/MDAxNzcyNjE5MDA4NTM4.hv0pdokcIMN5C6unt_Oo2FLTEa9FYb2g2vXHioUkhWgg.rzVQ2pubUWP5UcqDCd35u1OgaNBy7y8DO7it4-y4FVUg.PNG/HeroSkill_204013_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_160",
+        "name": "불의 세례",
+        "type": "불카니드 스킬",
+        "description": "단일 적에게 2756.5%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTMz/MDAxNzcyNjE5MDU0Njg3.uUOfC5P6w2bTu_nfzLUPOAmSE_arysR5MKwM5Fy6aIsg.Q4L6RPfOIpJSNYa7ZH7WJid1Tr6vOon487N7IAyKhAEg.PNG/HeroSkill_204013_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_161",
+        "name": "히트독",
+        "type": "불카니드 스킬",
+        "description": "불 피우기 작업 시 강철 생산량 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 5% 추가 증가<BR/>2성: 생산량 10% 추가 증가<BR/>3성: 생산량 15% 추가 증가<BR/>4성: 생산량 20% 추가 증가<BR/>5성: 생산량 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjYx/MDAxNzcyNjE5MDk5ODg1.DFTn79EsZFxqdKKfUqpZV9sYj_xOtcL7Q5U986ue9qAg.YxbXyoYLvYYvQp1TV70wYCj18st75ygT7CUjg3cm_Cgg.PNG/HeroSkill_204013_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_17",
+    "name": "브루즈베리",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjQx/MDAxNzY3Njk0OTY0MDUz.7PQI6k9RPc3OBAKK4KsgX1HGQFKTxgpPm-AxP5fdus4g.mw8izk5dnQC7h3VZlUKZ4QCvqGCDgK7A53AqjumZdK4g.PNG/0150_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_147",
+        "name": "베리 배쉬",
+        "type": "브루즈베리 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjY4/MDAxNzcyNjE4MTE4OTkz.6IvwSmoA7I1yfCeZCUA7LlKianpaf1n-rlor0ImvCxwg.ypSak5H7p7gTnu0q5uQI0ua849lVcJi2lzzDuN9szY8g.PNG/HeroSkill_204009_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_148",
+        "name": "후르츠 펀치",
+        "type": "브루즈베리 스킬",
+        "description": "가까운 단일 적에게 2756.5%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjM4/MDAxNzcyNjE4MjcyOTQ2.fpi_4-eQA8WPiPM2-QagMhC7MdlJbe-1I6RiA8KrcOAg.AYNDGQqflYgqEqR9Ymg_3V0IG31dUxW6EkK1v69EFPQg.PNG/HeroSkill_204009_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_149",
+        "name": "열혈지도",
+        "type": "브루즈베리 스킬",
+        "description": "아미고 기지로 파견 시 훈련 속도 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 아미고 훈련 속도 5% 추가 가속<BR/>2성: 아미고 훈련 속도 10% 추가 가속<BR/>3성: 아미고 훈련 속도 15% 추가 가속<BR/>4성: 아미고 훈련 속도 20% 추가 가속<BR/>5성: 아미고 훈련 속도 30% 추가 가속",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNzEg/MDAxNzcyNjE4MzIyMjY5.CpFjCWzbueMwHz_s2DOLLHXuYBM0dXT0SI85vv_jeuog.wdIYKYAQTK6QUiUmOXAxAnmC3FedPwhrbmeB4JSn90Qg.PNG/HeroSkill_204009_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_50",
+    "name": "블레질",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMjk1/MDAxNzY3NzgyNTE4NjE4.0Ym4FV5-arhxpmd5ZQee-b9NoWnroIeaoRWKRrVOmUcg.h66luaWlDpzAFbXfXxxXJWidQgqIFlM8Jx0ubYLOsCUg.PNG/0340_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_197",
+        "name": "충격",
+        "type": "블레질 스킬",
+        "description": "단일 적에게 518%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfOTYg/MDAxNzcyNjc5NDg1MjI4.YU7qoGVEn3zsyJr2RuMoH81JNHCkMwcKtvHbCEHe-WEg.LGkt0i6989pWGKSvc9dB2d_fOfbkoddgCenyfI8RQ24g.PNG/HeroSkill_205009_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_198",
+        "name": "용암 폭발",
+        "type": "블레질 스킬",
+        "description": "차징 후 전방을 향해 파이어볼 웨이브를 시전하여 경로상의 적에게 1391.2%(최대)의 대미지를 주며, 이미 화상 상태인 적에게는 기본 대미지의 1.5배(최대)에 상응하는 추가 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTEx/MDAxNzcyNjc5NTI3Mjkz.uGOrp_plwPzSgFN1b1SmqnU77ygLl-Vk42eDUr1SUckg.npgZlIt1YRkeOWAFddu1LS58nXy6INjxeyn3OlYzy-4g.PNG/HeroSkill_205009_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_199",
+        "name": "담금질",
+        "type": "블레질 스킬",
+        "description": "전투 시 자신의 공격력이 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 공격력 2% 추가 증가<BR/>2성: 공격력 4% 추가 증가<BR/>3성: 공격력 6% 추가 증가<BR/>4성: 공격력 8% 추가 증가<BR/>5성: 공격력 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjkw/MDAxNzcyNjgwOTM0NjIy.oeP1eSFIAjWQSat6E68NsXkiWgiarpT3HXOBArkmP6Yg.CkxYK16RJwJXwgeCZnnL3n-PsxDW3SGbMBEt2Z9vfacg.PNG/HeroSkill_205009_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_64",
+    "name": "살라맨티스",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMjgg/MDAxNzY3ODY1NDUxNjQ2.6c61pnAklY9wlL7IL-ivdwpP7FMNtOIrKv15bUUnfqQg.5Q2l9Kw8DzImJD1kIQpQttADa2HmeVkN8H8sJ3ZQIpQg.PNG/0410_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_22",
+    "name": "서버던트",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjEg/MDAxNzY3Njk1MTk3NzMx.FK9q6xfuk3nTLkyIGvADr1qaCZNMJXN3hNyokdf_7vQg.fSRkaiSePulgncJ4_0Z_GVME_engBimaCu8flEG9pSUg.PNG/0190_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_156",
+        "name": "자연의 힘",
+        "type": "서버던트 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTI0/MDAxNzcyNjE4ODEzMTc5.bFFfrytgkNKB9jHvNSQjBdK_OW0ONP1ANTRuSdxHCQwg.aK3saU6_mPfn33WVrrDeHkvFq9_EBm2cz0yeQuyLsXcg.PNG/HeroSkill_204012_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_157",
+        "name": "땅의 은혜",
+        "type": "서버던트 스킬",
+        "description": "아군 바위속성 팰몬의 공격력이 5초(최대) 동안 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 바위속성 팰몬 최종 대미지 +2%<BR/>2성: 바위속성 팰몬 최종 대미지 +4%<BR/>3성: 바위속성 팰몬 최종 대미지 +6%<BR/>4성: 바위속성 팰몬 최종 대미지 +8%<BR/>5성: 바위속성 팰몬 최종 대미지 +10%",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjAx/MDAxNzcyNjE4ODQyODcx.S5hq1RS-gbQrnFCiGLMyoUFO3Wxl5ZnEA8tcRmxJIbsg.GsR-zWZezhVsD_WKdP4dVixB8fEhGKHNSulsxd2v48sg.PNG/HeroSkill_204012_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_158",
+        "name": "숲의 풍요",
+        "type": "서버던트 스킬",
+        "description": "벌목 작업 시 목재 생산량 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 5% 추가 증가<BR/>2성: 생산량 10% 추가 증가<BR/>3성: 생산량 15% 추가 증가<BR/>4성: 생산량 20% 추가 증가<BR/>5성: 생산량 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjY2/MDAxNzcyNjE4OTYxOTI2.DALHfW2LURG2MsBpUQsNB4BiuKmoEvJdpq1v-h6-448g.rHK37-hehiOmdQh1WpjPKdaF6vnZR_gUgvYjGj76oFog.PNG/HeroSkill_204012_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_52",
+    "name": "서베일링크스",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMjQw/MDAxNzY3NzgyNjUzNjE1.2z4oSy-waIgzhnUzXc88ZxsRcJ2rl3VuvRZ4vcVCp5Eg.qQTV9ldemSPCMXdVZqSXbsZ4KRXmdZvUb6smF7SV8-Qg.PNG/0350_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_206",
+        "name": "속사",
+        "type": "서베일링크스 스킬",
+        "description": "원거리 사격으로 단일 적에게 273.8%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTI5/MDAxNzcyNjgxNTI5NjMw.6gLlNyjju7hz9Nra22OO8yNO5v2W0zHBgs1Gc0XoSMgg.22QZ7XFptjAD-XpqHrk-5H3Y8bmYeDIcKdIKYmg09wUg.PNG/HeroSkill_205012_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_207",
+        "name": "그림자 난사",
+        "type": "서베일링크스 스킬",
+        "description": "자신 주변의 작은 범위 내에서 빠르게 3회 순간이동하여 전방 부채꼴 범위 내 적에게 각 2197.8%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjQy/MDAxNzcyNjgxNTgxMDA2.UYt4y4lSsBpn2B3EXn5fuG4KjG-ghwlHtCpj-opwdZsg.a1DCQ6k9kH9TZF-AkWJUJ5JT4jLN8ozhAu3zx9trkdcg.PNG/HeroSkill_205012_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_208",
+        "name": "전술 훈련",
+        "type": "서베일링크스 스킬",
+        "description": "하루에 최대 1000(최대)마리의 아미고를 빠르게 훈련할 수 있습니다.<BR/>캠프 방어 전투 중, 모든 아미고의 공격력 +20%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 아미고 공격력 2% 추가 증가<BR/>2성: 아미고 공격력 4% 추가 증가<BR/>3성: 아미고 공격력 6% 추가 증가<BR/>4성: 아미고 공격력 8% 추가 증가<BR/>5성: 아미고 공격력 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTQ5/MDAxNzcyNjgxNjM4MTA5.BpzCAdwAVAwp3LoTDVDRhsiARYtmK4Y2-qzBPNpGKNMg.UUHMRMj-4R8mfImZBJPkngKfUInG0yh2xIOy8UX_2F4g.PNG/HeroSkill_205012_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_8",
+    "name": "스노우카미",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjA1/MDAxNzY3Njk0MDQ4OTky.rAhcgp5JgU47t8O1pzpPArfkNELK_qY_S-bfmQG2xBAg.dEhrbq_A_uV6CfcHlz0zpxVzKXGh1rHFV4Uao4nRDJEg.PNG/0080_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_132",
+        "name": "프로스트 클로",
+        "type": "스노우카미 스킬",
+        "description": "단일 적을 여러 번 물어뜯어 총 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjI3/MDAxNzcyNjE2MTQ2NzEy.Q90NHrgZb4zwb7YhQScMmOjYch08zPklyx51Ca9_o2cg.MG0_oETKKoOO7XMG8o31-PaZ-MAlutI8JjjoQcGZnYYg.PNG/HeroSkill_204004_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_133",
+        "name": "스노우 하울",
+        "type": "스노우카미 스킬",
+        "description": "단일 적에게 2756.5%(최대)의 얼음 폭발 대미지를 주며, 70%(최대)의 확률로 2.5초(최대) 동안 빙결 효과를 부여합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjc2/MDAxNzcyNjE2NTEzNjYw.rWjlcU4NfCkwtLREttWHvmu6sCoUOgkh4o0pNoI5IOsg.SdjCFmVhwGAuB3nDR7nnL2jafCbCIoanEYTC647wwLcg.PNG/HeroSkill_204004_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_134",
+        "name": "늑대의 투지",
+        "type": "스노우카미 스킬",
+        "description": "전투 시 자신의 공격력이 20%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 공격력 1.5% 추가 증가<BR/>2성: 공격력 3% 추가 증가<BR/>3성: 공격력 4.5% 추가 증가<BR/>4성: 공격력 6% 추가 증가<BR/>5성: 공격력 7.5% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjQ4/MDAxNzcyNjE2NzAwNDU1.BaItqIJAsQdLqgu_VcCZnhgEwhA11_U0WYcM5TpgowYg.YPFibGKvrlPZLgEfIkSiP4UVupvP4DT5oWSWoGnfu6og.PNG/HeroSkill_204004_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_21",
+    "name": "스퀴즐",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjc4/MDAxNzY3Njk1MTYwODgx.SbUHWa8XDOuYAkwl9ryOn70U_kzv9sHnAUezelLjqMsg.rAmB1YmbXVfMCxkuihyj-guA8L0EVI0vYsn_gnCvd6sg.PNG/0180_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_162",
+        "name": "물보라 팡팡",
+        "type": "스퀴줄 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjUx/MDAxNzcyNjE5MTY3OTIz.sB1WpwEP1RbtUgBJN8vWfx4oNyrpg_jTUjgZDu2DXyog.Yd9LQS1Rs_5V8unUDjQqV6NLTMcvGdy1GucJWSvsanYg.PNG/HeroSkill_204014_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_163",
+        "name": "아쿠아 캐논",
+        "type": "스퀴줄 스킬",
+        "description": "단일 적을 연속 3회 공격하여 총 2756.5%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjQ0/MDAxNzcyNjE5MjA2ODAz.FOu8i_fw6gwpmxR95x0qIZv5-iBiWL938UXCcxn4FiAg.qPg4BcoXyrVlzpfBaMyIV_ie79w09R7h2ehSmnmgWzAg.PNG/HeroSkill_204014_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_164",
+        "name": "소용돌이 폭발",
+        "type": "스퀴즐 스킬",
+        "description": "아쿠아 캐논 효과 버프: 대미지 +75%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTU3/MDAxNzcyNjE5MjU4OTA3.HAFHLjUthi_Ulj5KOpChMfN0pQdxmgkqVSyFsvuVnAIg.aT70TE4rKa5QqLjdmFFxDI4pygL-sPfB-lLXYqs0xqIg.PNG/HeroSkill_204014_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_48",
+    "name": "스태츄",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMTgz/MDAxNzY3NzgyNDAyNDY5.zIgRtHDHLTd_APzwuegQq2aLpkTH9L4f15XYvz8H1BMg.Fsb8iU9u0lSwdLeJv3FejaKlHepWgRtu7KcNXZiMSnQg.PNG/0330_pal_UI_ViewB.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_194",
+        "name": "물어뜯기",
+        "type": "스태츄 스킬",
+        "description": "근거리에 있는 적을 물어뜯어 518%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTg1/MDAxNzcyNjc5MjMzMDc5.75vgHIdMy4bczIi4s89c6jilK8_lpn-XU2ydlVzztw0g.wNPtd-1TnZSP6lVwNgIz-kpxL-oGEX_CPz1MtPxjDk0g.PNG/HeroSkill_205008_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_195",
+        "name": "경비의 포효",
+        "type": "스태츄 스킬",
+        "description": "포효를 질러 전체 적에게 1239.5%(최대)의 대미지를 주고, 5초 동안 적의 대미지를 30%(최대) 감소시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTQ0/MDAxNzcyNjc5MjgzNTc0.Q3a0XGNCU7cWvTBvkFrpUHH3sPiHPHCRmtcCt2yvWQMg.7rAy1GlJFY4SDSgbweqNFAJ8fQkKodycb1wQbwBQPGMg.PNG/HeroSkill_205008_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_196",
+        "name": "든든한 수호자",
+        "type": "스태츄 스킬",
+        "description": "전투 시 아군 초기 앞열 팰몬이 받는 대미지가 20%(최대) 감소합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 받는 대미지 1.5% 추가 감소<BR/>2성: 받는 대미지 3% 추가 감소<BR/>3성: 받는 대미지 4.5% 추가 감소<BR/>4성: 받는 대미지 6% 추가 감소<BR/>5성: 받는 대미지 7.5% 추가 감소",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjE4/MDAxNzcyNjc5MzY2NjQ2.NYirDOONOm0Gfg6ULpu0cTKn-kG7m420AcAT9rorX4Mg.zAOD0yhXSdH9PZsFd5aUsn6MoPpfu2nH0y6nuOqt9gog.PNG/HeroSkill_205008_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_15",
+    "name": "스핀칠라",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjUy/MDAxNzY3Njk0NTg2NTYy.wgaMtvWj2IL7DMaqEwATJjdpw-vYT9E_UBib0SCRG4gg.ipB1qZUwAAaKV9d1ICivPDthZIKs87wPGUSrJmwbn-0g.PNG/0130_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_111",
+        "name": "나뭇잎 베기",
+        "type": "스핀칠라 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNSAg/MDAxNzcyNjA5NDc0NTQ3.6xE9BJtSx_qJV1ytF3BBHEmfywxgzwWSQkPYJF2n9fQg.Pc0pR4mcxERDumuepdgDddiy-tnsgdVfQBDEPyOEQiAg.PNG/HeroSkill_203204_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_112",
+        "name": "회전 잎사귀",
+        "type": "스핀칠라 스킬",
+        "description": "단일 적에게 2068.3%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTk3/MDAxNzcyNjA5NTUxODQ2.PzTd7dgVRg-hVpUnZ6Mt3aIe1PRSa9ebhgbXkp_5X94g.wTefZk6B7mn1KRPv1CDvY7NMY9djcdlu7YWvMkKr1PMg.PNG/HeroSkill_203204_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_113",
+        "name": "럭키 스타",
+        "type": "스핀칠라 스킬",
+        "description": "채광 작업 시 광석 생산량 +35%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 3% 추가 증가<BR/>2성: 생산량 6% 추가 증가<BR/>3성: 생산량 9% 추가 증가<BR/>4성: 생산량 12% 추가 증가<BR/>5성: 생산량 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjEz/MDAxNzcyNjA5NjEzMDEw.r8sjPspv5jg7UuppuadAUgOZV73qzQrPC8dp-SnjygAg.GPt9VWijmG_uwXDoZShhmhAP9AD_NdyapiGe5I513-Qg.PNG/HeroSkill_203204_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_16",
+    "name": "썬더클로",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMTA5/MDAxNzY3Njk0NjQ1MzQ5.6iU_neVLlmGbHUzQ_aCJ-vO531knPlwfGcl94tOvBQgg.frc8D7L6-4yPJSckjjN_WYuJLAq4bj3VE9PslM_etNgg.PNG/0140_pal_UI_View.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_135",
+        "name": "낙뢰",
+        "type": "썬더클로 스킬",
+        "description": "거리가 가장 가까운 대상의 원형 범위 내에 있는 모든 적에게 151.25%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMzkg/MDAxNzcyNjE2Nzk5NTYw.UQXa4V6ee90QyF7-K8mmKZLbig6RlZKSWG0t7La1FSAg.qRiC4FBb_gd0dnL57Femx7FxV0Zd3J2piNkCT9w-O0sg.PNG/HeroSkill_204005_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_136",
+        "name": "다크 클라우드",
+        "type": "썬더클로 스킬",
+        "description": "공중으로 올라가 랜덤 적 4명에게 썬더스톰을 시전하여 1387.5%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjQ4/MDAxNzcyNjE2ODY3MjAw.MnCEkMWRmhU3E5REFHZmfVnwhbriKhsTPYkbacLAiogg.H4tCQ63kteMkrxPoa7dTU5lDPhk98yy-tzalME6zpcgg.PNG/HeroSkill_204005_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_137",
+        "name": "이온화",
+        "type": "썬더클로 스킬",
+        "description": "에너치 충전 작업 시 전력 생산량 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 5% 추가 증가<BR/>2성: 생산량 10% 추가 증가<BR/>3성: 생산량 15% 추가 증가<BR/>4성: 생산량 20% 추가 증가<BR/>5성: 생산량 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTcy/MDAxNzcyNjE2OTI4ODg2.MOp97k6Ym27qADguRQUnrVkavew_pAP2qGV3g9ts_0Mg.6PGhpJ54tucyYgyIllOGsw64JNceRyEhMS48fViktzUg.PNG/HeroSkill_204005_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_25",
+    "name": "아버즈니안",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjI2/MDAxNzY3Njk1MzMxNDg0.VSgGJrJVzRXUEZKtbK1J_DFajSK_b75is_vFR9iVO64g._lwlXcTPE2Vq21cGBrKVHjMeUudO3P8f2NgXuFDYA9wg.PNG/0220_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_4",
+    "name": "아우타이크",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMTc5/MDAxNzY3NjkzNjgyODky.GZIcjkEJZDzXLzKXYaLWat_FbMR24YfolXt9TLsOeFEg.utAgbPw4MYretO-lWfM4223aLqCorwciUt3-yaIloZsg.PNG/0030_pal_UI_View.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_117",
+        "name": "부리 쪼기",
+        "type": "아우타이크 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA0/MDAxNzcyNjA5OTAzNTg1.Nrt2q5rQasPD2QW7Rgz6Sc7qirs3INYn83oBu50aFAAg.fJ7BiMkn5Gwfbamj9nSky29a0gakB0wuFc358HNm8pAg.PNG/HeroSkill_203206_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_118",
+        "name": "물기둥",
+        "type": "아우타이크 스킬",
+        "description": "단일 적에게 1032.3%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE1/MDAxNzcyNjA5OTUwMDY3.JZMxBvdJ6XX5k4SRP9_fP56In9K_Oe_Sdqhc6FtuvWgg.1qOaI4H-QgJyTZZ1pRHzBEcsVTpbrYQgqm3izyCbbxEg.PNG/HeroSkill_203206_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_119",
+        "name": "추위 면역",
+        "type": "아우타이크 스킬",
+        "description": "전투 시 자신의 HP가 15%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: HP 1% 추가 증가<BR/>2성: HP 2% 추가 증가<BR/>3성: HP 3% 추가 증가<BR/>4성: HP 4% 추가 증가<BR/>5성: HP 5% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjIy/MDAxNzcyNjA5OTk3MTM5.1UK3tDViNL3TLN_OGGG97dQZOSXpez3mIE_S9vtbjOAg.2UyRTUZhPKiNKMJdf0I5NlW0ujaD25kxkNCbIVCAu9Ag.PNG/HeroSkill_203206_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_85",
+    "name": "악솔리움",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMjBfMjA4/MDAxNzY4ODgxNzY2ODk5.v_cHKHI4UB3HH0zxjQCc2K_O53o9RJ8_kWgbytPrb7sg.raEgq4Q7-mbcYwysLVNZN_ALK9e-LG4hO5q1lGFIbkgg.PNG/0520_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_167",
+        "name": "플라이 리프",
+        "type": "악솔리움 스킬",
+        "description": "플라이 리프를 날려 단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTM4/MDAxNzcyNjE5NDcwMTU5.7RHbZfq0UIJmjdUFwa5z98YOORpq6pJRzsAGhOGpTY4g.tkpoFpCVQodmHk8fTKXzFYyEaABilbZaPOGpWHxRTqog.PNG/HeroSkill_204016_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_168",
+        "name": "샬롯 슬램",
+        "type": "악솔리움 스킬",
+        "description": "꼬리로 빠르게 지면을 강타하여 땅의 균열을 일으켜 지나가는 대상에게 1202.5%(최대)의 대미지를 주며, 3초(최대) 동안 명중률을 20% 감소시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfODQg/MDAxNzcyNjE5NTEyODE0.2QaWLf9NFXxil1QQgfKmiOAXuKMgVMMNyupGUVyRji4g.uqvAjKp9bhGYPrWMRXQ52aS0m97u4dbQcDabfBuBY8kg.PNG/HeroSkill_204016_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_169",
+        "name": "드림 러시",
+        "type": "악솔리움 스킬",
+        "description": "수정 선별기로 파견 시 수정 생산 속도 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 단조 수정I 생산 속도 5% 추가 증가<BR/>2성: 단조 수정I 생산 속도 10% 추가 증가<BR/>3성: 단조 수정I 생산 속도 15% 추가 증가<BR/>4성: 단조 수정I 생산 속도 20% 추가 증가<BR/>5성: 단조 수정I 생산 속도 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNTEg/MDAxNzcyNjE5NTk3MzM4.Jgf9xaXeiNa5V1OPGSsLEEZtsb-E9aTx_3UFQ2xHfSAg.Qg4RMnTQKaFpodSNOEplnTIB9iVtxgY7pr8vaYZFK44g.PNG/HeroSkill_204016_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_77",
+    "name": "에스카피에",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfNjgg/MDAxNzY3ODY2MzgyOTIy.LBta5z9NLjvUgnJ5Sv94a7yK1-xgSg2ShO8ijpdytTMg.ZaW75QxnQtvzaw5OrDEAgoC8_BcHmhcQUdIX1z6J5Zkg.PNG/0480_pal_UI_ViewA.png",
+    "skills": [],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_24",
+    "name": "엠보아",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMTUz/MDAxNzY3Njk1Mjc0NDE3.qu6jW1DQ7rx2WLMyZsjGjoYxWOLDeofwe2Fvfcb8n3Ug.MmS0cAwlE0yH4dGi3YN611NqM0CVNyPGAtVZurnUpxMg.PNG/0210_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_114",
+        "name": "스프링 어택",
+        "type": "엠보아 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfOTQg/MDAxNzcyNjA5NjcwMjAx.DNwLB23HAsBFMlLozPSSL4ZStmlZSRyzlIY0nfPGSyAg.I7VLGKPROrhwO0zbbtDDqkn74ZMs-YFJz0cJVvSOoRsg.PNG/HeroSkill_203205_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_115",
+        "name": "열기 반응",
+        "type": "엠보아 스킬",
+        "description": "9초(최대) 동안 자신의 공격력이 60%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 5% 추가 증가<BR/>2성: 지속 시간 +1초<BR/>3성: 대미지 10% 추가 증가<BR/>4성: 지속 시간 +1초<BR/>5성: 대미지 20% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNDAg/MDAxNzcyNjA5NzMwMDQx.S4nzqdIU3BTJgcMSod9J0sfTNciRiznsnoIBAtTZvaQg.M3X2hCjhuKVqsD42Iwai2YCghG3765IfCHXkiExQOrIg.PNG/HeroSkill_203205_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_116",
+        "name": "히트 리사이클",
+        "type": "엠보아 스킬",
+        "description": "불 피우기 작업 시 강철 생산량 +35%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 3% 추가 증가<BR/>2성: 생산량 6% 추가 증가<BR/>3성: 생산량 9% 추가 증가<BR/>4성: 생산량 12% 추가 증가<BR/>5성: 생산량 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTAg/MDAxNzcyNjA5ODQzOTc3.n9NR1370jDxigFrh4TPcHMhd4TN-3K0GLEtRl5q4g2Eg.JRzQVP2nm68g2NTW1NyChTK4no9LBky6ezGQALjND1Ig.PNG/HeroSkill_203205_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_5",
+    "name": "와이버노",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMTc1/MDAxNzY3NjkzOTMxMjEy.TM2FLydsPpIjYlN1kYhBLAlIwyn05TVyOM4XW5cGI5kg.t4gimfrlLoKxedetLeNxHmRklB_u9e0wszEJhLTx5QYg.PNG/0050_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_123",
+        "name": "파이어볼",
+        "type": "와이버노 스킬",
+        "description": "단일 적에게 파이어볼을 발사하여 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTIw/MDAxNzcyNjEwMjU4MjQw.BBTMzG81Y3m00T4rDfVxLNIu6-45gBTm8bdHsckJrQMg.--IO2cBGD9OKuhe-CzbVL3i8KXo6IaSuykHLbCqVg34g.PNG/HeroSkill_204001_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_124",
+        "name": "파이어 스윕",
+        "type": "와이버노 스킬",
+        "description": "전방 부채꼴 범위 내의 모든 적에게 868%(최대)의 화상 효과가 추가된 대미지를 주어, 7초(최대) 동안 초당 40%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 화상 대미지 100% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 화상 지속 시간 7초로 증가<BR/>5성: 대미지 100% 추가 증가<BR/>",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTI1/MDAxNzcyNjEwMzM3NDA1.ZqFd1h0OLYTH-qaInU0g_xJQiAq1OQyKKTSXZyVw-ZIg.MXb_1YGXZ6jW8pi1idt071qZrwit7F-x923_xkiy-jgg.PNG/HeroSkill_204001_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_125",
+        "name": "번뜩이는 영감",
+        "type": "와이버노 스킬",
+        "description": "연금술 공방으로 파견 시 강화 결정의 생산 속도 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 강화 결정 생산 속도 5% 추가 증가<BR/>2성: 강화 결정 생산 속도 10% 추가 증가<BR/>3성: 강화 결정 생산 속도 15% 추가 증가<BR/>4성: 강화 결정 생산 속도 20% 추가 증가<BR/>5성: 강화 결정 생산 속도 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNSAg/MDAxNzcyNjEwNDU3MzA5.o0ODMIY4eG3O7lboJFvZRC47m6OIqr6XlhRf3LVbjiQg.yw1WptwF09tlBveAZRssTG4MCefbsHfCCJhBzyofzxcg.PNG/HeroSkill_204001_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_30",
+    "name": "인시너랩터",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMTc2/MDAxNzY3Nzc0NzQxMDI0.oIsyFEVY3mW2gYYLSTj7rNuB_iscJEC_uZwLvoxDZU0g.5wc7b1Yne-U6KXqI7lawt888GSkr5Ku8wlr3QvaS2Rog.PNG/0250_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_141",
+        "name": "히트 웨이브",
+        "type": "인시너랩터 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTQ5/MDAxNzcyNjE3MjQ4ODYz.FVy2ZOunIyPXQ42DNWdDEtMJ-hFYOgF-QfqzDXPH1w8g.6mR_fSI-HzSqTq9ysy9cOogH9PAjlMPIRAH8wsQ0WGog.PNG/HeroSkill_204007_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_142",
+        "name": "플레임 다이브",
+        "type": "인시너랩터 스킬",
+        "description": "자신을 기점으로 전방 경로상의 모든 적에게 936.1%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNjEg/MDAxNzcyNjE3Mjk1MDIy.VR3ebdqPkgj-R-lnyjvb7MS7Cxdi5hTajEsC1epmvwcg.IB0VSNAqEXxlO9AeqWit4HZZwC4Ax2IyPVAF1eiQemEg.PNG/HeroSkill_204007_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_143",
+        "name": "이글 아이",
+        "type": "인시너랩터 스킬",
+        "description": "인시너랩터는 언제나 보물이 숨겨진 곳을 찾아낼 수 있습니다. 첩고 퀘스트를 완료할 때마다 추가 보물을 매일 최대 42(최대)개를 획득할 수 있습니다.<BR/>인시너랩터가 '인시너랩터 깃털'을 10개 불태우면 첩보에서 3개의 고레벨 첩보를 발견할 수 있으며, 깃털은 67(최대)분마다 1개씩 획득합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 깃털 생산 시간 10분 단축<BR/>2성: 이글 아이 보물상자 수량 5개 증가<BR/>3성: 깃털 생산 시간 20분 단축<BR/>4성: 이글 아이 보물상자 수량 10개 증가<BR/>5성: 깃털 생산 시간 30분 단축",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfNzcg/MDAxNzcyNjE3MzUyNTYw.XExKXWQoKuz3sPSQyksd46x5eE1SVQHGPTuU1ZKOI7sg.B_ma4Gum_7X9ph_43L2960yI56A2YDaKopcYTH_paKMg.PNG/HeroSkill_204007_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_31",
+    "name": "킬로홉",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMjcy/MDAxNzY3Nzc0ODE0NzI0.dd7E6oK8RGxLBYy9boeusFVsH9mhpP9UIKcnL2cjX1sg.DaBNFgV9F_uhjlb430KBqgAQ-h5l_p7ITW75IrsproQg.PNG/0260_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_120",
+        "name": "플러피 스태틱",
+        "type": "킬로홉 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTk0/MDAxNzcyNjEwMDc5OTM2.JVdO2VFawlT_COMocNr2ubdDn_4TR68h9PCNhmBkYmsg.tt0lCnzfhXKGmVhbOUXPAMEVdrOgFXVMz7wi8td0h40g.PNG/HeroSkill_203207_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_121",
+        "name": "오버로드",
+        "type": "킬로홉 스킬",
+        "description": "자신의 원형 주변의 모든 적에게 1032.3%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTA3/MDAxNzcyNjEwMTI5Mzc5.ES6u1Hdc_pVuUFc87wpK0mUTuLOcsSbeQnAHc1FGQoMg.4Mjl_LQ4zkGq9ISCRAfapLDTrDpDGo_WQLc5Q8GWV28g.PNG/HeroSkill_203207_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_122",
+        "name": "솜털 에너지",
+        "type": "킬로홉 스킬",
+        "description": "에너지 충전 작업 시 전력 생산량 +35%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 3% 추가 증가<BR/>2성: 생산량 6% 추가 증가<BR/>3성: 생산량 9% 추가 증가<BR/>4성: 생산량 12% 추가 증가<BR/>5성: 생산량 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfODUg/MDAxNzcyNjEwMjAxMDEy.C1dJNcItuKRUXHhyjgVkemAFIkur3X5eCN1XxnrV320g.Vg3GLbQdVz8Nhkag2bmR62KFaPLF45k858oCpXh-xCQg.PNG/HeroSkill_203207_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_14",
+    "name": "테라스투도",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMjA1/MDAxNzY3Njk0NTUzOTk5.OxzUlpa5ytV1jdHkzdGtf2Y3btlOU-BJZr16ye38Mwcg.TPMNvkhrqFXZJ0rcNc2j-z9JrZcUqViMy3tNRBc6ZoEg.PNG/0120_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_138",
+        "name": "박치기",
+        "type": "테라스투도 스킬",
+        "description": "단일 적에게 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjg5/MDAxNzcyNjE3MDAzNjI1.1-j4vXthYDjYYwJkaqLF31GcjLPM7ubAjwnK9Yyzgbsg.mvvGmXBIZ6xgCqrrB8Vg5plVblLIZrpokEAI3xlR1Bgg.PNG/HeroSkill_204006_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_139",
+        "name": "자이언트 스핀",
+        "type": "테라스투도 스킬",
+        "description": "회전하여 자신의 원형 범위 내 모든 적에게 936.1%(최대)의 충돌 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTcx/MDAxNzcyNjE3MDUwMDg1.RQaByWTiryEw96h3VFRebBYmZqQnQD-z4ISfQBYsm-og.BHr1tn_hoDs7rbRvcLQH5OjrJiM_qOZP2bu4J12t5vgg.PNG/HeroSkill_204006_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_140",
+        "name": "드릴 다운",
+        "type": "테라스투도 스킬",
+        "description": "채광 작업 시 광석 생산량 +60%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 5% 추가 증가<BR/>2성: 생산량 10% 추가 증가<BR/>3성: 생산량 15% 추가 증가<BR/>4성: 생산량 20% 추가 증가<BR/>5성: 생산량 30% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjIg/MDAxNzcyNjE3MTAyODQ1.TFC1g15nXgUYJzIgNlUUpi_OJ-ZjBjuEuFf2ewP6dpMg.FVJ-Aem4Wa8NBEj1c4J2AS-6F_pCnYzTAgMe_0kFfX0g.PNG/HeroSkill_204006_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_172",
+        "name": "견고",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +10%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjA3/MDAxNzcyNjE5NzgwNjU1.XJLk3E2NY1ZTyWZNjSMJkuzAD1f33e2Gl4HsaZN4rJIg.-QcQF4aJTktM-Egr5VXN5lkesTucMB-Hdq5B6ubjcMQg.PNG/HeroSkill_common_2.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_7",
+    "name": "플래티푸츠",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfMTUw/MDAxNzY3NjkzOTkxNzAw.3YmuYyhCdqs2GOyPPkZj8rcXECr18D_djIaKqrU0aLEg.j-dSJ95WAYk975kn2KR7m8myAoIk4Oo727vOo0rH8tgg.PNG/0070_pal_UI_View.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_129",
+        "name": "마구 파내기",
+        "type": "플래티푸츠 스킬",
+        "description": "플래티푸츠가 주머니에서 수집한 '보물'을 꺼내 적을 내리쳐 325%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 20% 추가 증가<BR/>2성: 대미지 45% 추가 증가<BR/>3성: 대미지 70% 추가 증가<BR/>4성: 대미지 100% 추가 증가<BR/>5성: 대미지 150% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfOTQg/MDAxNzcyNjE1NzA0NjM1.nQNN7_RhCuVIQ0TvL1R93ybmKlEHBLspEjufGjPosBog.8gYDM7qrNdi5_jS-iovV18ENVbXpWcpZoSdp08EYMMAg.PNG/HeroSkill_204003_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_130",
+        "name": "버블 실드",
+        "type": "플래티푸츠 스킬",
+        "description": "HP가 가장 낮은 아군에게 6초(최대) 동안 자신 최대 HP 30%(최대)에 해당하는 실드를 부여합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 실드 효과 5% 추가 증가<BR/>2성: 지속 시간 5초로 증가<BR/>3성: 실드 효과 10% 추가 증가<BR/>4성: 지속 시간 6초로 증가<BR/>5성: 실드 효과 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjYz/MDAxNzcyNjE1NzkyMTkx.hzGLgK9tPXhqNVPvfkJyAyK-kc2K4VBzN3xzFqdc3fcg.OQQ094CCg_pHVDfBUEhy0pfMLwyWBnsSgqbU1d23GDIg.PNG/HeroSkill_204003_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_131",
+        "name": "둔감",
+        "type": "플래티푸츠 스킬",
+        "description": "플래티푸츠가 받는 대미지가 20%(최대) 감소합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 받는 대미지 1.5% 추가 감소<BR/>2성: 받는 대미지 3% 추가 감소<BR/>3성: 받는 대미지 4.5% 추가 감소<BR/>4성: 받는 대미지 6% 추가 감소<BR/>5성: 받는 대미지 7.5% 추가 감소",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTcz/MDAxNzcyNjE2MDM2MTE0.i7nW-79xp5NKMQHWyW6Q3IH70hN8JFM0i6I4nEK4szQg.9YPH6CfoDiRs_3_H85Kgkl6k3kjRbGRkHjvYn3ELN_cg.PNG/%E5%A5%87%E8%A2%8B%E5%98%B4%C2%B7%E9%92%9D%E6%84%9F.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_9",
+    "name": "플루팡",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDZfNTUg/MDAxNzY3Njk0MTE5NTMx.1E6X9cOQa4-vACzQIrDnjRC77spsfnWMacQAhL-dM_Qg.tGH9wWXFIgIWwoXKpsDBQF8LMcmW575N14U5r7Z9tv4g.PNG/0090_pal_UI_View.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_108",
+        "name": "얽매기",
+        "type": "플루팡 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjk1/MDAxNzcyNjA5MjY2MjAw._DfEytFk4ocO6C9kJnz5jqhKDbgRHEbJX5xdI6EoR7Mg.Y3Q8ahL5gu3vxB95N8n1myoDv83N2iXZCfL6P0dyjn8g.PNG/HeroSkill_203203_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_109",
+        "name": "가시 소환",
+        "type": "플루팡 스킬",
+        "description": "단일 적에게 2068.3%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTg5/MDAxNzcyNjA5MzIzNDkx.uvKuQ4W56I8Q_XJLsS06Y09ldgf1cS5km0QuVqlvPKUg._7X7Bzd7EISUMNf4o3in-NduOHzga6oQQn1OfqZK76Yg.PNG/HeroSkill_203203_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_110",
+        "name": "자연의 정령",
+        "type": "플루팡 스킬",
+        "description": "씨 뿌리기 작업 시 농작물 생산량 +35%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 3% 추가 증가<BR/>2성: 생산량 6% 추가 증가<BR/>3성: 생산량 9% 추가 증가<BR/>4성: 생산량 12% 추가 증가<BR/>5성: 생산량 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjQz/MDAxNzcyNjA5MzY4Njky.raNGOwGDWLd01sT22OPohk2VgkM5aDSeL_4GUaJRzeAg.KIFMsHeeLSabUy8xOAhLQkJrrevisVQkyhAltjZKmkwg.PNG/HeroSkill_203203_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_38",
+    "name": "핀제뉴",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMTcg/MDAxNzY3Nzc5Mzg3NTk4.jKk5zuE-I1ZoVz7YSwR6NJ6tX16fhjG6W-ctME0KxGgg.Gzlmli02yqEXHKfDZUl-l6hxO-e-ueVimjo1aQSoFJEg.PNG/0290_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_209",
+        "name": "하이드로샷",
+        "type": "핀제뉴 스킬",
+        "description": "물폭탄을 발사하여 단일 적에게 414.4%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjky/MDAxNzcyNjgxNzc4MzI5.30OLjYg0myVR_9ENxdcZxyE2mllcWxPsPSjexr54JIUg.IzDS3edLDIm0BgLPJOhBJHzvGl6v8p8pJR3NM2RZWX8g.PNG/HeroSkill_205013_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_210",
+        "name": "용오름",
+        "type": "핀제뉴 스킬",
+        "description": "원형 물기둥을 소환하여 단일 적에게 8422.68%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTYw/MDAxNzcyNjgxODI2Njc3.cmOStrWEje7mnxceEiZixy1G68CyE_fDtvcaoUdEhWsg.rpCdOkgBQoHYvr8gwP05P_UEr6UOUuM90W2I1EXplhUg.PNG/HeroSkill_205013_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_211",
+        "name": "바다의 총아",
+        "type": "핀제뉴 스킬",
+        "description": "전투 중 자신이 주는 최종 대미지가 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 최종 대미지 2% 추가 증가<BR/>2성: 최종 대미지 4% 추가 증가<BR/>3성: 최종 대미지 6% 추가 증가<BR/>4성: 최종 대미지 8% 추가 증가<BR/>5성: 최종 대미지 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjUy/MDAxNzcyNjgxODY5MDQ5.0UxM6IQjgJI3ZnUJ4ilZqHEZQsQff3atVYRUqMxKFh4g.z-ApNsCMXkGQYfBIvBbPNp2S0B3rLBnNwvg-b7-sX18g.PNG/HeroSkill_205013_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_29",
+    "name": "헤라클리프",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDdfMTU4/MDAxNzY3Nzc0NjAzODgx._TNBDd3gZRBqHCxBW0vkGyk4eICMqnFY0JQm7UtG070g.e5Apgy40fIFINqMJ2mbP04tFf1aMjHGlZTH_a0JhktQg.PNG/0240_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_105",
+        "name": "파워 어택",
+        "type": "헤라클리프 스킬",
+        "description": "단일 적에게 208%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfODcg/MDAxNzcyNjA4OTcyNjU1.KF7O4ztd8H-Eg8R64wLUahplJ0jEbqN6c3Bfcl0Y2akg._W1EP-MJunp-xmQaBM9I-gSmUT9CrccWTfXhTLEFezsg.PNG/HeroSkill_203202_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_106",
+        "name": "파워 점프",
+        "type": "헤라클리프 스킬",
+        "description": "근거리 단일 강타로 2068.3%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 15% 추가 증가<BR/>2성: 대미지 35% 추가 증가<BR/>3성: 대미지 50% 추가 증가<BR/>4성: 대미지 75% 추가 증가<BR/>5성: 대미지 100% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjQ3/MDAxNzcyNjA5MDk0Mjk1.9DDf37RNpdcBUViR0WJoLC7QhPdFi7mfQTgxFLb7Y_Ig.imcNYqUUBR1Ppcu6YE30N-z1zM1VZ3m4gpjfyVFM8Iog.PNG/HeroSkill_203202_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_107",
+        "name": "괴력",
+        "type": "헤라클리프 스킬",
+        "description": "목판 가공 작업 시 목판 생산량 +35%(최대)<BR/><BR/>스킬 승급 효과<BR/>1성: 생산량 3% 추가 증가<BR/>2성: 생산량 6% 추가 증가<BR/>3성: 생산량 9% 추가 증가<BR/>4성: 생산량 12% 추가 증가<BR/>5성: 생산량 15% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMTA1/MDAxNzcyNjA5MTgzNTA1.3uH6_7wA9bZBcMJF03sQzs9x9D8lrIczrx4C0_xIAhog.BJ-O0D3kzFRRlAlmKyj5gcz3wmfOjq8I7C2Z_j4ViJEg.PNG/HeroSkill_203202_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_174",
+        "name": "기묘한 생물",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +5%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDRfMjE4/MDAxNzcyNjIxMTE4ODg5.MiUf68GqPin9vQSZ95i6DeziC4UMfd9tiWIKgk5Lk1Ug.vP9q6RuDlfC7tYwHXJpU_5ptdmnkXOGiM1XjwMwSx2Ug.PNG/%E9%80%9A%E7%94%A8%C2%B7%E5%A5%87%E5%A6%99%E7%94%9F%E7%89%A9_.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  },
+  {
+    "objectId": "CH_AD_21176_62",
+    "name": "후피릿",
+    "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAxMDhfMTM1/MDAxNzY3ODY1MjQ0Mjc3.j1aGRinSkJHKMOMD-n3PjSUWF-CDpH3VTWAgF_ROx54g.eiK9cnPRai7f3LSbzaueJzNloWrUpnKur_Zragel914g.PNG/0400_pal_UI_ViewA.png",
+    "skills": [
+      {
+        "objectId": "SK_AD_21176_212",
+        "name": "불꽃 충돌",
+        "type": "후피릿 스킬",
+        "description": "양의 뿔로 단일 적을 들이받아 791.8%(최대)의 대미지를 줍니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMjU5/MDAxNzcyNjgxOTY3Nzk3.KzXMJl_Msg6z2ICbVuQOS-oPdYj9jrfPycow8BSZ6_Qg.0G0rQ6ZpTp68xc75Gd0cZjv6oUHjanAjjgwam7quPZkg.PNG/HeroSkill_205017_1.png"
+      },
+      {
+        "objectId": "SK_AD_21176_213",
+        "name": "불꽃 습격",
+        "type": "후피릿 스킬",
+        "description": "뒷열의 모든 적에게 2886%(최대)의 대미지를 주며, 화상 상태인 대상을 2초(최대) 동안 스턴시킵니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 대미지 30% 추가 증가<BR/>2성: 대미지 70% 추가 증가<BR/>3성: 대미지 120% 추가 증가<BR/>4성: 대미지 185% 추가 증가<BR/>5성: 대미지 270% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTA4/MDAxNzcyNjgyMDQ3NzQy.3QKYeNZ4kQ6vdSDdIvSavQ0GLY-RLfQ0aUAqMFaoguog.67B5y0EGcpeW6fmK8stxJP4Ksu5K9ucN6XUU6DyfW68g.PNG/HeroSkill_205017_2.png"
+      },
+      {
+        "objectId": "SK_AD_21176_214",
+        "name": "크레센도",
+        "type": "후피릿 스킬",
+        "description": "전투 시 치명타 확률이 30%(최대) 증가합니다.<BR/><BR/>스킬 승급 효과<BR/>1성: 치명타 2% 추가 증가<BR/>2성: 치명타 4% 추가 증가<BR/>3성: 치명타 6% 추가 증가<BR/>4성: 치명타 8% 추가 증가<BR/>5성: 치명타 10% 추가 증가",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfOTUg/MDAxNzcyNjgyMTA0MTIy.b3ynTttUUKjZaOnkDTDVsQfsWQoAVTfZUVOPLsECufsg.D5KyoTy6zjUTusoKi_5N4FkiFiF_X9U7hhTqKA6HTW0g.PNG/HeroSkill_205017_3.png"
+      },
+      {
+        "objectId": "SK_AD_21176_178",
+        "name": "전도유망",
+        "type": "통용 스킬",
+        "description": "최종 공격력, 방어력, HP +20%(최대)",
+        "imageUrl": "https://nng-phinf.pstatic.net/MjAyNjAzMDVfMTIy/MDAxNzcyNjc3Mzk4MTk2.sJ7jE-Ay5qzqci0ZJF9sN7LJceInxDaGWTzIUYRdNl0g.tUE74dbVEfHNV5nXshJFFjBScodLm7l8VDq6YpMNAt8g.PNG/HeroSkill_common_3.png"
+      }
+    ],
+    "mobileBgColor": "#2396D2"
+  }
+]
