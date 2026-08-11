@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 253 249 244;
+    --fg: 45 32 70;
+    --card: 255 255 255;
+    --border: 235 220 245;
+    --muted: 245 240 250;
+    --primary: 123 78 232;
+    --secondary: 246 196 83;
+    --accent: 255 123 172;
+  }
+
+  .dark {
+    --bg: 22 18 40;
+    --fg: 235 230 250;
+    --card: 32 26 55;
+    --border: 55 45 90;
+    --muted: 42 35 70;
+    --primary: 155 118 255;
+    --secondary: 255 210 100;
+    --accent: 255 145 190;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+    font-family: "Jua", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-app {
+    background-color: rgb(var(--bg));
+  }
+  .bg-card {
+    background-color: rgb(var(--card));
+  }
+  .bg-muted {
+    background-color: rgb(var(--muted));
+  }
+  .border-app {
+    border-color: rgb(var(--border));
+  }
+  .text-fg {
+    color: rgb(var(--fg));
+  }
+  .text-fg-muted {
+    color: rgb(var(--fg) / 0.65);
+  }
+  .text-fg-subtle {
+    color: rgb(var(--fg) / 0.45);
+  }
+}
