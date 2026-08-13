@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import {
   Home,
+  Info,
   Sparkles,
   Coins,
   Sword,
@@ -16,6 +17,7 @@ import {
   ShieldAlert,
   Gem,
   Flame,
+  Medal,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -33,7 +35,10 @@ export interface MenuSection {
 export const menu: MenuSection[] = [
   {
     section: "홈",
-    items: [{ href: "/", label: "메인", icon: Home }],
+    items: [
+      { href: "/", label: "메인", icon: Home },
+      { href: "/overview", label: "게임 소개", icon: Info },
+    ],
   },
   {
     section: "초보자 가이드",
@@ -56,8 +61,11 @@ export const menu: MenuSection[] = [
     items: [{ href: "/team-comps", label: "속성별 조합", icon: Swords }],
   },
   {
-    section: "길드전",
-    items: [{ href: "/gvg", label: "GvG 주간 미션", icon: Castle }],
+    section: "길드전 · 경쟁",
+    items: [
+      { href: "/gvg", label: "GvG 주간 미션", icon: Castle },
+      { href: "/mvm", label: "모험가 대회 (일일)", icon: Medal },
+    ],
   },
   {
     section: "시즌 가이드",

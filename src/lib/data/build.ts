@@ -39,19 +39,6 @@ export const buildRequirements: BuildRequirement[] = [
   { level: 30, prereqs: ["원정 파티 Lv.29", "연구대 Lv.29"], gold: 1_500_000_000, wood: 1_300_000_000, steel: 1_300_000_000, seconds: 8_802_000 },
 ];
 
-export interface BuildStage {
-  key: string;
-  label: string;
-  emoji: string;
-  range: [number, number];
-}
-
-export const buildStages: BuildStage[] = [
-  { key: "early", label: "초반 (Lv.2~10)", emoji: "🌱", range: [2, 10] },
-  { key: "mid", label: "중반 (Lv.11~20)", emoji: "🔨", range: [11, 20] },
-  { key: "late", label: "후반 (Lv.21~30)", emoji: "🔥", range: [21, 30] },
-];
-
 export const buildMeta = {
   updatedAt: "2026-08-11",
   note: "'—' 표시는 원본 데이터에 명시되지 않은 항목입니다. 골드가 표시되지 않은 저레벨 구간은 골드 소모가 없는 경우입니다.",

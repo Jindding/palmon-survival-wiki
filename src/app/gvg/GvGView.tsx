@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { gvgSchedule, type GvGDay, type Mission, type MissionGroup } from "@/lib/data/gvg";
+import { getGoldenSlots, MVM_CATEGORIES } from "@/lib/data/mvm";
 
 const num = new Intl.NumberFormat("ko-KR");
 
@@ -77,6 +79,8 @@ export function GvGView() {
 }
 
 function DayPanel({ day, isToday }: { day: GvGDay; isToday: boolean }) {
+  const goldenSlots = getGoldenSlots(day.key, day.dayIndex);
+
   return (
     <>
       <div className="bg-card rounded-2xl p-5 md:p-6 border border-app shadow-soft">
@@ -102,6 +106,8 @@ function DayPanel({ day, isToday }: { day: GvGDay; isToday: boolean }) {
         <MissionTable missions={day.missions} />
       </div>
 
+      <GoldenTimeCard day={day} goldenSlots={goldenSlots} />
+
       {day.groups?.map((group) => (
         <div
           key={group.title}
@@ -117,6 +123,93 @@ function DayPanel({ day, isToday }: { day: GvGDay; isToday: boolean }) {
         </div>
       ))}
     </>
+  );
+}
+
+function GoldenTimeCard({
+  day,
+  goldenSlots,
+}: {
+  day: GvGDay;
+  goldenSlots: ReturnType<typeof getGoldenSlots>;
+}) {
+  if (goldenSlots.length === 0) {
+    return (
+      <div className="rounded-2xl border border-app bg-muted/40 p-4 md:p-5">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-xl">✨</span>
+          <h3 className="text-base">모험가 대회와 겹치는 시간</h3>
+        </div>
+        <p className="text-xs text-fg-muted leading-relaxed">
+          {day.day} <b>{day.theme}</b> 테마와 직접 겹치는 모험가 대회 카테고리가 없습니다.
+          다만 하루 6개 시간대별로 카테고리가 순환하므로{" "}
+          <Link
+            href="/mvm"
+            className="text-palmon-primary underline underline-offset-2 hover:text-palmon-secondary"
+          >
+            모험가 대회 페이지
+          </Link>
+          에서 오늘 스케줄을 확인해 활동을 조율하세요.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-500/10 via-yellow-500/5 to-orange-500/10 dark:from-amber-500/15 dark:via-yellow-500/10 dark:to-orange-500/15 shadow-soft p-5 md:p-6">
+      <div className="flex items-start gap-3 mb-3">
+        <span className="text-2xl">✨</span>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg">모험가 대회와 겹치는 시간</h3>
+          <p className="text-xs text-fg-muted mt-0.5 leading-relaxed">
+            이 시간대에는 <b>{day.theme}</b> 미션 활동이 그대로 모험가 대회 점수로도 잡히기
+            때문에 <b>두 이벤트 점수를 동시에 획득</b>할 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        {goldenSlots.map((s) => {
+          const cat = MVM_CATEGORIES[s.category];
+          return (
+            <div
+              key={s.slot.key}
+              className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 bg-card rounded-xl p-3 border border-app"
+            >
+              <div className="flex items-center gap-3 sm:w-64 shrink-0">
+                <div
+                  className={`w-10 h-10 rounded-lg bg-gradient-to-br ${cat.color} flex items-center justify-center text-xl shadow-soft`}
+                >
+                  {cat.emoji}
+                </div>
+                <div className="min-w-0">
+                  <div className="text-sm font-bold tabular-nums">
+                    {s.slot.timeRangeKst}{" "}
+                    <span className="text-[10px] text-fg-subtle font-normal">KST</span>
+                  </div>
+                  <div className="text-[11px] text-fg-subtle">{s.slot.label}</div>
+                </div>
+              </div>
+              <div className="flex-1 min-w-0 text-xs text-fg-muted">
+                <div className="text-sm font-bold text-fg mb-0.5">{cat.label}</div>
+                <div>{cat.actions.join(" · ")}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-3 text-[11px] text-fg-subtle">
+        전체 시간대는{" "}
+        <Link
+          href="/mvm"
+          className="text-palmon-primary underline underline-offset-2 hover:text-palmon-secondary"
+        >
+          모험가 대회 페이지
+        </Link>
+        에서 확인하세요.
+      </div>
+    </div>
   );
 }
 
