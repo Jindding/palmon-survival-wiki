@@ -46,5 +46,5 @@ export const equipmentGuide: EquipmentSection[] = [
 
 export const equipmentMeta = {
   updatedAt: "2026-06-22",
-  updatedBy: "TechBoy",
+  updatedBy: "TechBoy (69서버)",
 };

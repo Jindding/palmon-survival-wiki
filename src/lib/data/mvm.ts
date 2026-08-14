@@ -193,7 +193,7 @@ export const GVG_TO_MVM: Record<string, MvMCategoryKey[]> = {
   tue: ["building"], // 캠프 건설: 건설가속 · 건설 전투력
   wed: ["research"], // 기술 연구: 기술가속 · 기술 전투력
   thu: ["palmon"], // 팰몬 육성: 부화 · 팰몬 경험치 · 증표 · 스킬열매
-  fri: ["amigo"], // 전투 준비: 아미고 훈련 (레벨별 대량 점수)
+  fri: ["amigo", "building", "research"], // 전투 준비: 아미고 훈련(레벨별 대량 점수) · 건설가속·건설 전투력 · 기술가속·기술 전투력
   sat: [], // 적군 처치: MvM 카테고리와 직접 매칭되는 항목이 없음
 };
 

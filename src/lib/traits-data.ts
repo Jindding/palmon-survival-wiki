@@ -61,5 +61,5 @@ export const traitCategories: TraitCategory[] = [
 
 export const traitGuideMeta = {
   updatedAt: "2026-06-22",
-  updatedBy: "TechBoy",
+  updatedBy: "TechBoy (69서버)",
 };

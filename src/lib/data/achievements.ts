@@ -39,5 +39,5 @@ export const specialNotes: SpecialNote[] = [
 
 export const achievementsMeta = {
   updatedAt: "2026-06-11",
-  updatedBy: "TechBoy",
+  updatedBy: "TechBoy (69서버)",
 };
