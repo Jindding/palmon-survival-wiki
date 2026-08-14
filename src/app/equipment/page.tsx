@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { SourceBadge } from "@/components/SourceBadge";
 import { Section } from "@/components/Section";
 import { equipmentGuide, equipmentMeta } from "@/lib/data/equipment";
 
@@ -17,7 +18,7 @@ export default function EquipmentPage() {
         description="한정된 자원으로 조합력을 극대화하려면 강화와 승급의 우선순위를 정확히 지켜야 합니다."
         meta={
           <>
-            최종 업데이트: {equipmentMeta.updatedAt} · by {equipmentMeta.updatedBy}
+            최종 업데이트: {equipmentMeta.updatedAt} · <SourceBadge name={equipmentMeta.updatedBy} />
           </>
         }
       />

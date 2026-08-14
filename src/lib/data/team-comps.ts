@@ -149,6 +149,6 @@ export const elementGroups: ElementGroup[] = [
 
 export const teamCompsMeta = {
   updatedAt: "2026-06-12",
-  updatedBy: "TechBoy (69서버)",
+  updatedBy: "TechBoy #69",
   season: "시즌2",
 };

@@ -193,5 +193,6 @@ export const gvgSchedule: GvGDay[] = [
 
 export const gvgMeta = {
   updatedAt: "2026-08-11",
+  updatedBy: "코라 #201",
   note: "GvG는 주 6일(월~토) 요일별 테마로 진행됩니다. 일요일은 GvG 미션이 없습니다.",
 };

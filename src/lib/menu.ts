@@ -18,6 +18,7 @@ import {
   Gem,
   Flame,
   Medal,
+  Lightbulb,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -38,6 +39,7 @@ export const menu: MenuSection[] = [
     items: [
       { href: "/", label: "메인", icon: Home },
       { href: "/overview", label: "게임 소개", icon: Info },
+      { href: "/tips", label: "한줄팁 모음", icon: Lightbulb },
     ],
   },
   {

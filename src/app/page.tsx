@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Coins, Sword, Sparkles, Trophy, Swords, Castle, Snowflake, Building2, BookOpen } from "lucide-react";
+import { Coins, Sword, Sparkles, Trophy, Swords, Castle, Snowflake, Building2, BookOpen, Lightbulb, ArrowRight } from "lucide-react";
+import { SourceBadge } from "@/components/SourceBadge";
+import { tips } from "@/lib/data/tips";
 
 const cards = [
   {
@@ -59,6 +61,8 @@ const cards = [
 ];
 
 export default function HomePage() {
+  const featuredTips = tips.slice(0, 3);
+
   return (
     <div className="max-w-5xl mx-auto">
       <section className="text-center py-10 md:py-16">
@@ -70,6 +74,51 @@ export default function HomePage() {
           팰몬 서바이벌을 즐기는 모두를 위한 비공식 가이드 · 위키
         </p>
       </section>
+
+      {featuredTips.length > 0 && (
+        <section className="mb-8">
+          <div className="flex items-center justify-between mb-3 px-1">
+            <h2 className="text-lg md:text-xl flex items-center gap-2">
+              <Lightbulb size={20} className="text-palmon-secondary" />
+              최근 유저 팁
+            </h2>
+            <Link
+              href="/tips"
+              className="text-xs md:text-sm text-fg-muted hover:text-palmon-primary inline-flex items-center gap-1"
+            >
+              전체 보기 <ArrowRight size={14} />
+            </Link>
+          </div>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {featuredTips.map((tip, i) => (
+              <li
+                key={i}
+                className="rounded-2xl p-4 border shadow-soft"
+                style={{
+                  backgroundColor: "rgb(var(--secondary) / 0.10)",
+                  borderColor: "rgb(var(--secondary) / 0.35)",
+                }}
+              >
+                <div className="flex items-start gap-2">
+                  <span className="text-lg leading-tight" aria-hidden>
+                    💡
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm md:text-base leading-relaxed">
+                      {tip.content}
+                    </p>
+                    {tip.by && (
+                      <div className="mt-2">
+                        <SourceBadge name={tip.by} />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((c) => {

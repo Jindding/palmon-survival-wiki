@@ -235,6 +235,7 @@ function getSlotIndexFromKstHour(hour: number): number {
 
 export const mvmMeta = {
   updatedAt: "2026-08-13",
+  updatedBy: "코라 #201",
   note: "매일 6개 시간대에 5개 카테고리가 순환하며, 요일마다 시작 카테고리가 한 칸씩 밀립니다.",
 };
 

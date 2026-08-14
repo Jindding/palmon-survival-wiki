@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { SourceBadge } from "@/components/SourceBadge";
 import { Section } from "@/components/Section";
 import {
   currencyRates,
@@ -27,7 +28,7 @@ export default function EconomyPage() {
         description="초보자 필독. 재화의 실제 가치와 효율적인 과금 순서를 정리했어요."
         meta={
           <>
-            최종 업데이트: {economyMeta.updatedAt} · by {economyMeta.updatedBy} · {economyMeta.source}
+            최종 업데이트: {economyMeta.updatedAt} · <SourceBadge name={economyMeta.updatedBy} /> · {economyMeta.source}
           </>
         }
       />

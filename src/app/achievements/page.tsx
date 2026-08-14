@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { SourceBadge } from "@/components/SourceBadge";
 import { Section } from "@/components/Section";
 import {
   achievementsWhy,
@@ -23,7 +24,7 @@ export default function AchievementsPage() {
         description="업적은 전투력의 핵심. 우선순위와 요령을 정리했어요."
         meta={
           <>
-            최종 업데이트: {achievementsMeta.updatedAt} · by {achievementsMeta.updatedBy}
+            최종 업데이트: {achievementsMeta.updatedAt} · <SourceBadge name={achievementsMeta.updatedBy} />
           </>
         }
       />

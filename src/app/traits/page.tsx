@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { SourceBadge } from "@/components/SourceBadge";
 import { traitCategories, traitGuideMeta, type TraitTier } from "@/lib/traits-data";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function TraitsPage() {
         description="팰몬 유형별로 추천되는 특성 조합을 정리했어요. 아래는 실제 운용 기준 우선순위입니다."
         meta={
           <>
-            최종 업데이트: {traitGuideMeta.updatedAt} · by {traitGuideMeta.updatedBy}
+            최종 업데이트: {traitGuideMeta.updatedAt} · <SourceBadge name={traitGuideMeta.updatedBy} />
           </>
         }
       />

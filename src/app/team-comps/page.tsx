@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { SourceBadge } from "@/components/SourceBadge";
 import {
   elementGroups,
   teamCompsIntro,
@@ -20,7 +21,7 @@ export default function TeamCompsPage() {
         description={teamCompsIntro}
         meta={
           <>
-            {teamCompsMeta.season} · 최종 업데이트: {teamCompsMeta.updatedAt} · by {teamCompsMeta.updatedBy}
+            {teamCompsMeta.season} · 최종 업데이트: {teamCompsMeta.updatedAt} · <SourceBadge name={teamCompsMeta.updatedBy} />
           </>
         }
       />

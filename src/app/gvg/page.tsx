@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { SourceBadge } from "@/components/SourceBadge";
 import { gvgMeta } from "@/lib/data/gvg";
 import { GvGView } from "./GvGView";
 
@@ -17,7 +18,7 @@ export default function GvGPage() {
         description="일주일간 진행되는 길드 대결. 요일별 테마 미션을 수행해 점수를 획득합니다."
         meta={
           <>
-            {gvgMeta.note} · 최종 업데이트: {gvgMeta.updatedAt}
+            {gvgMeta.note} · 최종 업데이트: {gvgMeta.updatedAt} · <SourceBadge name={gvgMeta.updatedBy} />
           </>
         }
       />

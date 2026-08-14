@@ -91,6 +91,6 @@ export const eventEfficiency: EventEfficiencyTip[] = [
 
 export const economyMeta = {
   updatedAt: "2026-06-22",
-  updatedBy: "TechBoy (69서버)",
+  updatedBy: "TechBoy #69",
   source: "환율표: 코드님 (타이탄인장 · 블룸스톤 추가)",
 };
