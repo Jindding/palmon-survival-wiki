@@ -137,22 +137,30 @@ export const MVM_SLOTS: MvMSlot[] = [
   },
 ];
 
-// 요일(0=일 ~ 6=토)의 첫 슬롯 카테고리 인덱스. MvM.txt의 관측 데이터 기반.
-// 토(6) → 펠몬(0), 일(0) → 건물(1), 월(1) → 아미고(2), 화(2) → 기술(3), 수(3) → AP(4), 목(4) → 펠몬(0), 금(5) → 건물(1).
-const START_CATEGORY_INDEX: Record<number, number> = {
-  6: 0,
-  0: 1,
-  1: 2,
-  2: 3,
-  3: 4,
-  4: 0,
-  5: 1,
-};
+// MvM 순환 앵커.
+// 관측(길드대결.모험가대회.xlsx): 2026-08-10(월) MvM day가 '아미고훈련'(index 2)로 시작.
+// 5개 카테고리가 매일 하나씩 뒤로 밀리므로, 일주일이 지나면 시작 카테고리가 (7 mod 5 =) 2칸씩 이동.
+// 따라서 요일 기준 고정 매핑은 불가 — 앵커 날짜 기준 경과 일수로 계산해야 한다.
+const ANCHOR_UTC_MS = Date.UTC(2026, 7, 10, 2, 0, 0); // 2026-08-10 KST 11:00 (MvM day 시작)
+const ANCHOR_START_INDEX = 2; // 아미고
 
-export function getSlotCategory(dayIndex: number, slotIndex: number): MvMCategoryKey {
-  const start = START_CATEGORY_INDEX[dayIndex] ?? 0;
-  const idx = (start + slotIndex) % MVM_CATEGORY_ORDER.length;
-  return MVM_CATEGORY_ORDER[idx];
+// 주어진 시각이 앵커 기준 몇 번째 MvM day인지 반환 (음수 가능).
+// MvM day의 경계는 KST 11:00 = UTC 02:00.
+function mvmDayNumber(now: Date): number {
+  return Math.floor((now.getTime() - ANCHOR_UTC_MS) / (24 * 60 * 60 * 1000));
+}
+
+// 특정 시각의 MvM day 시작 카테고리 인덱스.
+export function getStartCategoryIndexAt(now: Date): number {
+  const day = mvmDayNumber(now);
+  const mod = MVM_CATEGORY_ORDER.length;
+  return ((ANCHOR_START_INDEX + day) % mod + mod) % mod;
+}
+
+// 특정 시각의 특정 슬롯 카테고리.
+export function getSlotCategoryAt(now: Date, slotIndex: number): MvMCategoryKey {
+  const start = getStartCategoryIndexAt(now);
+  return MVM_CATEGORY_ORDER[(start + slotIndex) % MVM_CATEGORY_ORDER.length];
 }
 
 export interface MvMDaySlot {
@@ -178,32 +186,69 @@ const DAY_META: Array<{ key: string; dayIndex: number; day: string; short: strin
   { key: "sat", dayIndex: 6, day: "토요일", short: "토" },
 ];
 
-export const mvmSchedule: MvMDay[] = DAY_META.map((d) => ({
-  ...d,
-  slots: MVM_SLOTS.map((slot, i) => ({
-    slot,
-    category: getSlotCategory(d.dayIndex, i),
-  })),
-}));
+// 주어진 시각(now)이 속한 MvM 주(일~토)의 7일 스케줄을 계산.
+// 각 요일 카드는 이번 주 해당 요일의 실제 순환 카테고리를 반영한다.
+export function buildWeeklySchedule(now: Date = new Date()): MvMDay[] {
+  // now가 속한 MvM day의 KST 기준 요일(dow)을 구한다.
+  const kst = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Seoul" }));
+  const kstHour = kst.getHours();
+  const mvmDayDate = new Date(kst);
+  if (kstHour < 11) {
+    mvmDayDate.setDate(mvmDayDate.getDate() - 1);
+  }
+  const currentDow = mvmDayDate.getDay(); // 0=일 ~ 6=토
+  const currentDayNumber = mvmDayNumber(now);
+  const mod = MVM_CATEGORY_ORDER.length;
+
+  return DAY_META.map((meta) => {
+    // 이번 주에서 이 요일이 현재 요일과 몇 일 차이나는지 (음수 가능)
+    const offset = meta.dayIndex - currentDow;
+    const dayNum = currentDayNumber + offset;
+    const start = ((ANCHOR_START_INDEX + dayNum) % mod + mod) % mod;
+    return {
+      ...meta,
+      slots: MVM_SLOTS.map((slot, i) => ({
+        slot,
+        category: MVM_CATEGORY_ORDER[(start + i) % mod],
+      })),
+    };
+  });
+}
+
+// 정적 export (SSR 초기 렌더용). 클라이언트에서는 buildWeeklySchedule로 갱신 권장.
+export const mvmSchedule: MvMDay[] = buildWeeklySchedule();
 
 // GvG 요일 테마 ↔ MvM 카테고리 매칭.
 // 두 이벤트 점수를 동시에 올릴 수 있는 "겹치는 시간"을 계산하는 데 사용된다.
+// 참고: 팰몬 경험치 소모 = MvM '펠몬강화(palmon)' 카테고리와 동일.
 export const GVG_TO_MVM: Record<string, MvMCategoryKey[]> = {
-  mon: ["ap"], // 첩보 특훈: 1 AP 소모 · 첩보퀘스트 · 탈것 식량 소모
-  tue: ["building"], // 캠프 건설: 건설가속 · 건설 전투력
-  wed: ["research"], // 기술 연구: 기술가속 · 기술 전투력
-  thu: ["palmon"], // 팰몬 육성: 부화 · 팰몬 경험치 · 증표 · 스킬열매
-  fri: ["amigo", "building", "research"], // 전투 준비: 아미고 훈련(레벨별 대량 점수) · 건설가속·건설 전투력 · 기술가속·기술 전투력
-  sat: [], // 적군 처치: MvM 카테고리와 직접 매칭되는 항목이 없음
+  // 첩보 특훈: AP소모·첩보퀘스트·탈것식량 → ap / 팰몬 경험치 500 소모 → palmon
+  mon: ["ap", "palmon"],
+  // 캠프 건설: 건설가속 · 건설 전투력
+  tue: ["building"],
+  // 기술 연구: 기술가속·기술 전투력 → research / 첩보 퀘스트 1개 완료 → ap
+  wed: ["research", "ap"],
+  // 팰몬 육성: 부화 · 팰몬 경험치 · 증표 · 스킬열매
+  thu: ["palmon"],
+  // 전투 준비: 훈련가속·아미고훈련 → amigo / 건설 → building / 기술 → research / 첩보퀘스트 → ap
+  fri: ["amigo", "building", "research", "ap"],
+  // 적군 처치: 건설·기술·훈련 가속 존재 (아미고 처치는 amigo 훈련과 별개지만 훈련 가속은 매칭)
+  sat: ["building", "research", "amigo"],
 };
 
-export function getGoldenSlots(gvgKey: string, dayIndex: number): MvMDaySlot[] {
+// 이번 주 특정 요일의 GvG 겹치는 슬롯을 반환.
+// dayIndex는 KST 요일(0=일 ~ 6=토), now는 현재 시각(기본값 new Date()).
+export function getGoldenSlots(
+  gvgKey: string,
+  dayIndex: number,
+  now: Date = new Date(),
+): MvMDaySlot[] {
   const cats = GVG_TO_MVM[gvgKey] ?? [];
   if (cats.length === 0) return [];
-  return MVM_SLOTS.map((slot, i) => ({
-    slot,
-    category: getSlotCategory(dayIndex, i),
-  })).filter((s) => cats.includes(s.category));
+  const week = buildWeeklySchedule(now);
+  const day = week.find((d) => d.dayIndex === dayIndex);
+  if (!day) return [];
+  return day.slots.filter((s) => cats.includes(s.category));
 }
 
 // 현재 KST 시각의 요일 인덱스(0=일, 6=토)와, 그 요일 스케줄상 지금이 몇 번째 슬롯인지 계산.
@@ -234,9 +279,9 @@ function getSlotIndexFromKstHour(hour: number): number {
 }
 
 export const mvmMeta = {
-  updatedAt: "2026-08-13",
+  updatedAt: "2026-08-17",
   updatedBy: "코라 #201",
-  note: "매일 6개 시간대에 5개 카테고리가 순환하며, 요일마다 시작 카테고리가 한 칸씩 밀립니다.",
+  note: "매일 6개 시간대에 5개 카테고리가 순환. 요일 고정이 아니라 매일 시작 카테고리가 1칸씩 밀리는 5일 주기입니다.",
 };
 
 export const mvmRewardsSummary = [

@@ -3,7 +3,8 @@
 import { ChevronRight } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
-  mvmSchedule,
+  mvmSchedule as staticSchedule,
+  buildWeeklySchedule,
   MVM_CATEGORIES,
   GVG_TO_MVM,
   resolveCurrentKstContext,
@@ -30,9 +31,12 @@ function ko(word: string, withoutBatchim: string, withBatchim: string): string {
   return (last - 0xac00) % 28 === 0 ? withoutBatchim : withBatchim;
 }
 
-function findGvgMatchForDay(dayIndex: number): string | null {
+function findGvgMatchForDay(
+  schedule: MvMDay[],
+  dayIndex: number,
+): string | null {
   // MvM 요일과 GvG 요일은 dayIndex(0=일 ~ 6=토)로 동일하게 정렬된다.
-  const entry = mvmSchedule.find((d) => d.dayIndex === dayIndex);
+  const entry = schedule.find((d) => d.dayIndex === dayIndex);
   if (!entry) return null;
   const gvgKey = entry.key;
   const matched = GVG_TO_MVM[gvgKey];
@@ -43,21 +47,28 @@ export function MvMView() {
   const [context, setContext] = useState<{ dayIndex: number; slotIndex: number } | null>(
     null,
   );
-  const [selected, setSelected] = useState<string>(mvmSchedule[0].key);
+  const [schedule, setSchedule] = useState<MvMDay[]>(staticSchedule);
+  const [selected, setSelected] = useState<string>(staticSchedule[0].key);
 
   useEffect(() => {
+    // 클라이언트 시각 기준으로 이번 주 실제 스케줄을 계산.
+    const fresh = buildWeeklySchedule();
+    setSchedule(fresh);
     const ctx = resolveCurrentKstContext();
     setContext(ctx);
-    const found = mvmSchedule.find((d) => d.dayIndex === ctx.dayIndex);
-    setSelected(found ? found.key : mvmSchedule[0].key);
-    // 매 분 갱신하여 현재 슬롯 표시가 정확하도록.
-    const timer = setInterval(() => setContext(resolveCurrentKstContext()), 60_000);
+    const found = fresh.find((d) => d.dayIndex === ctx.dayIndex);
+    setSelected(found ? found.key : fresh[0].key);
+    // 매 분 갱신: 슬롯 인디케이터 + 자정 지나면 스케줄도 다시 계산.
+    const timer = setInterval(() => {
+      setContext(resolveCurrentKstContext());
+      setSchedule(buildWeeklySchedule());
+    }, 60_000);
     return () => clearInterval(timer);
   }, []);
 
   const selectedDay = useMemo(
-    () => mvmSchedule.find((d) => d.key === selected) ?? mvmSchedule[0],
-    [selected],
+    () => schedule.find((d) => d.key === selected) ?? schedule[0],
+    [schedule, selected],
   );
 
   return (
@@ -65,7 +76,7 @@ export function MvMView() {
       {/* 요일 탭 */}
       <div className="sticky top-16 -mx-4 md:-mx-8 px-4 md:px-8 py-3 backdrop-blur bg-app/80 border-b border-app z-20 mb-6">
         <div className="flex gap-2 overflow-x-auto scrollbar-none">
-          {mvmSchedule.map((d) => {
+          {schedule.map((d) => {
             const isToday = context?.dayIndex === d.dayIndex;
             const isSelected = selected === d.key;
             return (
@@ -102,6 +113,7 @@ export function MvMView() {
       <div className="space-y-4">
         <DayPanel
           day={selectedDay}
+          schedule={schedule}
           currentSlotIndex={
             context?.dayIndex === selectedDay.dayIndex ? context.slotIndex : null
           }
@@ -119,12 +131,14 @@ export function MvMView() {
 
 function DayPanel({
   day,
+  schedule,
   currentSlotIndex,
 }: {
   day: MvMDay;
+  schedule: MvMDay[];
   currentSlotIndex: number | null;
 }) {
-  const gvgKey = findGvgMatchForDay(day.dayIndex);
+  const gvgKey = findGvgMatchForDay(schedule, day.dayIndex);
   const goldenCategories = gvgKey ? GVG_TO_MVM[gvgKey] ?? [] : [];
   const gvgTheme = gvgKey ? GVG_THEME[gvgKey] : null;
 

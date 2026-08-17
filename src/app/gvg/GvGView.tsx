@@ -79,7 +79,7 @@ export function GvGView() {
 }
 
 function DayPanel({ day, isToday }: { day: GvGDay; isToday: boolean }) {
-  const goldenSlots = getGoldenSlots(day.key, day.dayIndex);
+  const goldenSlots = getGoldenSlots(day.key, day.dayIndex, new Date());
 
   return (
     <>

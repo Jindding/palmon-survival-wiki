@@ -19,6 +19,7 @@ import {
   Flame,
   Medal,
   Lightbulb,
+  Library,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -39,6 +40,7 @@ export const menu: MenuSection[] = [
     items: [
       { href: "/", label: "메인", icon: Home },
       { href: "/overview", label: "게임 소개", icon: Info },
+      { href: "/board", label: "자유게시판", icon: Users },
       { href: "/tips", label: "한줄팁 모음", icon: Lightbulb },
     ],
   },
@@ -55,6 +57,7 @@ export const menu: MenuSection[] = [
     items: [
       { href: "/palmon", label: "팰몬 도감", icon: BookOpen },
       { href: "/traits", label: "특성 가이드", icon: Sparkles },
+      { href: "/traits-codex", label: "특성 도감", icon: Library },
       { href: "/achievements", label: "업적 가이드", icon: Trophy },
     ],
   },
@@ -84,9 +87,6 @@ export const menu: MenuSection[] = [
   },
   {
     section: "확장 예정",
-    items: [
-      { href: "/events", label: "이벤트 일정", icon: Calendar, soon: true },
-      { href: "/community", label: "커뮤니티", icon: Users, soon: true },
-    ],
+    items: [{ href: "/events", label: "이벤트 일정", icon: Calendar, soon: true }],
   },
 ];
