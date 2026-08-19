@@ -20,6 +20,7 @@ import {
   Medal,
   Lightbulb,
   Library,
+  Mail,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -42,6 +43,7 @@ export const menu: MenuSection[] = [
       { href: "/overview", label: "게임 소개", icon: Info },
       { href: "/board", label: "자유게시판", icon: Users },
       { href: "/tips", label: "한줄팁 모음", icon: Lightbulb },
+      { href: "/contact", label: "문의하기", icon: Mail },
     ],
   },
   {
