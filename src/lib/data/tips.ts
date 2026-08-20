@@ -49,7 +49,8 @@ function loadTips(): Tip[] {
   }
 }
 
-export const tips: Tip[] = loadTips();
+// 파일 뒤쪽(최근 추가)이 위로 오도록 뒤집어서 노출
+export const tips: Tip[] = loadTips().reverse();
 
 export const tipsMeta = {
   updatedAt: "2026-08-14",

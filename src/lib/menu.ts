@@ -21,6 +21,7 @@ import {
   Lightbulb,
   Library,
   Mail,
+  Megaphone,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -40,6 +41,7 @@ export const menu: MenuSection[] = [
     section: "홈",
     items: [
       { href: "/", label: "메인", icon: Home },
+      { href: "/updates", label: "업데이트 소식", icon: Megaphone },
       { href: "/overview", label: "게임 소개", icon: Info },
       { href: "/board", label: "자유게시판", icon: Users },
       { href: "/tips", label: "한줄팁 모음", icon: Lightbulb },
