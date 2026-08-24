@@ -61,7 +61,7 @@ const BUILDINGS_CONTENT: BuildingInfo[] = [
   { emoji: "🏥", name: "병원 (Hospitals)", desc: "부상 Amigos를 치료해 재사용." },
   { emoji: "🎯", name: "팔루시움 (Palucium)", desc: "타 플레이어를 공격해 순위를 올리고 보석·코인을 획득. 명예 상점 재화로 사용." },
   { emoji: "📦", name: "스쿼드 건물", desc: "레벨을 올릴수록 스쿼드에 배치 가능한 Amigos 수 증가." },
-  { emoji: "💞", name: "육아실 (Nursery)", desc: "두 팰몬을 교배해 자손 획득. 자손은 부모 특성을 물려받음." },
+  { emoji: "💞", name: "육아실 (Nursery)", desc: "두 팰몬을 번식시켜 자손 획득. 자손은 부모 특성을 물려받음." },
   { emoji: "🐾", name: "버디 (Buddies)", desc: "길들여 먹이 제공 → 친밀도·레벨 상승. 24시간마다 보상 요청 가능." },
 ];
 

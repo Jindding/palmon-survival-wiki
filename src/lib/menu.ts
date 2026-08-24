@@ -22,6 +22,8 @@ import {
   Library,
   Mail,
   Megaphone,
+  Egg,
+  Rabbit,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -54,6 +56,7 @@ export const menu: MenuSection[] = [
       { href: "/economy", label: "재화 · 과금", icon: Coins },
       { href: "/equipment", label: "장비 업그레이드", icon: Sword },
       { href: "/buildings", label: "캠프 업그레이드", icon: Building2 },
+      { href: "/mounts", label: "탈것 시스템", icon: Rabbit },
     ],
   },
   {
@@ -62,6 +65,7 @@ export const menu: MenuSection[] = [
       { href: "/palmon", label: "팰몬 도감", icon: BookOpen },
       { href: "/traits", label: "특성 가이드", icon: Sparkles },
       { href: "/traits-codex", label: "특성 도감", icon: Library },
+      { href: "/breeding", label: "번식 시스템", icon: Egg },
       { href: "/achievements", label: "업적 가이드", icon: Trophy },
     ],
   },
@@ -78,7 +82,10 @@ export const menu: MenuSection[] = [
   },
   {
     section: "시즌 가이드",
-    items: [{ href: "/season1", label: "시즌 1 · 얼음 시대", icon: Snowflake }],
+    items: [
+      { href: "/season1", label: "시즌 1 · 얼음 시대", icon: Snowflake },
+      { href: "/season2", label: "시즌 2 · 정복의 시대", icon: Flame },
+    ],
   },
   {
     section: "정기 이벤트",

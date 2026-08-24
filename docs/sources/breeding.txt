@@ -1,0 +1,109 @@
+
+Palmon Survival에서 OP Palmon을 얻는 핵심 비결은 무엇인가요? 원하는 Palmon의 특성을 부모 Palmon에게 물려주는 교배 시스템을 활용하는 것이며, 이를 통해 전투 및 생산 효율을 극대화할 수 있습니다.
+
+
+
+
+
+1. Palmon Survival 교배 시스템 활용법
+
+Palmon Survival에서 원하는 Palmon의 특성을 부모 Palmon에게 물려주는 교배 시스템을 활용하여 전투 및 생산 효율을 극대화하는 방법을 설명한다.
+
+
+
+1.1. 교배 시스템의 기본 원리
+captureSource
+Palmon Survival의 교배 시스템은 원하는 Palmon의 특성을 부모 Palmon에게 물려주는 방식으로 작동한다. 
+
+이 시스템을 통해 Palmon의 전투 능력과 생산 효율을 높일 수 있다. 
+
+교배 시스템은 복잡하지 않으며, 운이 중요하게 작용한다. 
+
+
+
+1.2. 전투 Palmon의 특성 강화 예시
+captureSource
+Buffobi의 경우, Uncheakable과 Vigorous 특성을 통해 방어력과 체력을 각각 10%씩 증가시켰다. 
+
+이러한 특성들은 다른 Palmon에게서 얻어 저장해 두었다가 교배에 활용했다. 
+
+Ninjump을 Buffobi로 진화시키기 위해, 특성이 좋은 Palmon을 부모로 사용하여 원하는 특성을 물려주었다. 
+
+이러한 방식으로 대부분의 전투 Palmon의 능력을 강화했다. 
+
+
+
+1.3. 생산 Palmon의 효율 증대 예시
+captureSource
+Oxylium은 Dremmium 생산에 특화된 Palmon으로, Dremmium Hunter 특성을 3개 모두 보유하게 하여 생산 효율을 극대화했다. 
+
+이러한 특성은 적합한 부모 Palmon을 통해 얻어진 결과이다. 
+
+Vulcan은 제련 작업에 뛰어나며, 30% 제련 생산량 증가 특성을 부여하기 위해 교배를 진행했다. 
+
+이를 위해 Incinerator와 같은 다른 Palmon의 특성을 Vulcan에게 물려주는 방식으로 진행했다. 
+
+
+
+1.4. 교배 성공 및 특성 강화 과정
+captureSource
+교배를 통해 자식 Palmon에게 원하는 모든 특성(Double Golden, Caffeinated, Forge Fanatic)을 부여하는 것을 목표로 한다. 
+
+교배 결과는 운에 따라 달라지며, 때로는 원하는 모든 특성을 얻지 못할 수도 있다. 
+
+예시로, 첫 번째 교배에서는 Caffeinated, Forge Fanatic 특성을 포함하여 35%의 제련 생산량 증가 효과를 얻었다. 
+
+이후 더 높은 별 등급의 Palmon으로 교체하여 즉시 활용 가능한 상태로 만들었다. 
+
+두 번째 교배에서는 Forge Fanatic 특성을 얻지 못했지만, 이전 Palmon보다 향상된 성능을 보여 교체했다. 
+
+이러한 교배 과정을 통해 캠프 효율이 상승하고, Palmon들이 최적의 작업에 배치된다. 
+
+
+
+1.5. 교배 시도와 결과의 다양성
+captureSource
+세 번째 교배 시도에서는 Forge Fanatic 특성을 또다시 놓쳤지만, 이전보다 나은 성능을 가진 Palmon을 얻었다. 
+
+교배는 운에 따라 결과가 달라지므로 포기하지 않고 계속 시도하는 것이 중요하다. 
+
+일반적으로 최대 3번의 시도 안에 원하는 특성을 가진 Palmon을 얻을 수 있다. 
+
+
+
+1.6. 교배 시스템 활용 팁
+captureSource
+교배로 얻은 새로운 Palmon으로 기존 Palmon을 대체하고, 교체된 Palmon의 파편으로 기존 Palmon을 업그레이드할 수 있다. 
+
+교배 속도 업 아이템은 전설 등급이나 황금 등급의 Palmon 교배에 사용하는 것이 효율적이다. 
+
+일반 등급(SSR, SR) Palmon의 경우, 8시간 정도의 일반적인 교배 시간을 기다리는 것이 좋다. 
+
+UR 등급 Palmon 교배는 하루가 소요될 수 있으므로, 속도 업 아이템을 사용하는 것이 권장된다. 
+
+캠프 개발이나 길드 대 길드와 같은 이벤트에는 범용 속도 업 아이템을 사용하는 것이 더 효과적이다. 
+
+
+
+1.7. Palmon 포획 및 특성 강화 추가 팁
+captureSource
+VIP 10 등급이 되면 한 번의 집결 시도에 Palmon 포획기 5개를 동시에 사용할 수 있어 시간과 행동력을 절약할 수 있다. 
+
+이를 통해 약 80의 행동력을 절약할 수 있다. 
+
+Dremmium Hunter 특성을 가진 Palmon을 교배하여 Oxylium에게 부여함으로써 Dremmium 생산 효율을 높였다. 
+
+Wood for 30% Sewing Output 특성을 Herkhif에게 부여하여 목재 생산 효율을 증대시켰다. 
+
+Engineer 특성을 Maximito에게 부여하여 건설 시간 감소 효과를 얻었다. 
+
+이처럼 모든 Palmon에게 직무와 관련된 최적의 특성을 부여하여 효율을 극대화하고 있다. 
+
+
+
+1.8. 교배 시스템 요약
+captureSource
+Palmon Survival의 교배 시스템은 Hatchery에서 알을 부화시키고, 운을 통해 원하는 특성을 가진 Palmon을 얻은 후, 이를 교배에 활용하는 방식으로 이루어진다. 
+
+이 과정을 통해 Palmon의 효율을 높여 게임을 유리하게 진행할 수 있다. 
+
