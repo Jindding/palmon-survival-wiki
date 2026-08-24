@@ -125,7 +125,7 @@ export function TraitsCodexView() {
 
       {/* 전투 특성 */}
       {filteredCombat.length > 0 && (
-        <section className="space-y-4">
+        <section id="combat" className="space-y-4 scroll-mt-32">
           <SectionHeader
             emoji="⚔️"
             title="전투 특성"
@@ -141,7 +141,7 @@ export function TraitsCodexView() {
 
       {/* 작업 특성 */}
       {filteredWork.length > 0 && (
-        <section className="space-y-4">
+        <section id="work" className="space-y-4 scroll-mt-32">
           <SectionHeader
             emoji="🛠️"
             title="작업 특성"
@@ -157,7 +157,7 @@ export function TraitsCodexView() {
 
       {/* 작업 보조 특성 */}
       {filteredSub.length > 0 && (
-        <section className="space-y-4">
+        <section id="sub" className="space-y-4 scroll-mt-32">
           <SectionHeader
             emoji="🌟"
             title="작업 보조 특성"

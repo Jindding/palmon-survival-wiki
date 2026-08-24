@@ -9,17 +9,18 @@ import {
   cleanDescription,
   type PalmonSkill,
 } from "@/lib/data/palmons";
+import { PalmonHeroTree } from "./PalmonHeroTree";
 
 interface Props {
-  params: { objectId: string };
+  params: { id: string };
 }
 
 export function generateStaticParams() {
-  return palmons.map((p) => ({ objectId: p.objectId }));
+  return palmons.map((p) => ({ id: p.id }));
 }
 
 export function generateMetadata({ params }: Props): Metadata {
-  const p = getPalmon(params.objectId);
+  const p = getPalmon(params.id);
   if (!p) return { title: "팰몬 정보 없음" };
   return {
     title: `${p.name} · 팰몬 도감`,
@@ -28,11 +29,12 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 export default function PalmonDetailPage({ params }: Props) {
-  const p = getPalmon(params.objectId);
+  const p = getPalmon(params.id);
   if (!p) notFound();
 
-  const activeSkills = p.skills.filter((s) => s.type !== "통용 스킬");
-  const passiveSkills = p.skills.filter((s) => s.type === "통용 스킬");
+  const activeSkills = p.skills?.filter((s) => s.type !== "통용 스킬") ?? [];
+  const passiveSkills = p.skills?.filter((s) => s.type === "통용 스킬") ?? [];
+  const hasSkills = (p.skills?.length ?? 0) > 0;
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -44,33 +46,7 @@ export default function PalmonDetailPage({ params }: Props) {
         도감으로
       </Link>
 
-      {/* 헤로 */}
-      <div className="rounded-3xl overflow-hidden border border-app shadow-soft bg-gradient-palmon relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.2),_transparent_60%)]" />
-        <div className="relative flex flex-col md:flex-row items-center gap-4 p-6 md:p-8">
-          <div className="w-40 h-40 md:w-56 md:h-56 flex-shrink-0 flex items-center justify-center bg-white/15 backdrop-blur rounded-2xl border border-white/20">
-            <Image
-              src={p.imageUrl}
-              alt={p.name}
-              width={224}
-              height={224}
-              className="object-contain w-full h-full"
-              unoptimized
-              priority
-            />
-          </div>
-          <div className="flex-1 text-white text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl mb-3">{p.name}</h1>
-            {p.skills.length > 0 && (
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                <span className="text-xs px-2.5 py-1 rounded-full bg-white/20 backdrop-blur">
-                  스킬 {p.skills.length}개
-                </span>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+      <PalmonHeroTree palmon={p} />
 
       {p.basicInfos && p.basicInfos.length > 0 && (
         <section className="space-y-3">
@@ -91,12 +67,13 @@ export default function PalmonDetailPage({ params }: Props) {
         </section>
       )}
 
-      {p.skills.length === 0 ? (
+      {!hasSkills ? (
         <div className="bg-card rounded-2xl p-8 border border-app shadow-soft text-center">
           <div className="text-4xl mb-2">🚧</div>
-          <div className="text-lg mb-1">상세 정보 준비 중</div>
+          <div className="text-lg mb-1">스킬 정보 없음</div>
           <div className="text-sm text-fg-muted">
-            수집 스크립트로 스킬 정보를 채워넣을 예정입니다.
+            현재 스킬 데이터가 매핑되어 있지 않아요. 이미지와 함께 정리되는 대로
+            반영할게요.
           </div>
         </div>
       ) : (
@@ -126,7 +103,8 @@ export default function PalmonDetailPage({ params }: Props) {
       )}
 
       <div className="rounded-xl bg-muted p-3 text-[11px] text-fg-subtle">
-        출처: 네이버 게임 라운지 · 팰몬 서바이벌 DB. 저작권은 Lilith Games.
+        이미지 출처: 게임사 공식 자료. 저작권은 Lilith Games. 스킬 데이터는
+        네이버 게임 라운지 · 팰몬 서바이벌 DB 기반이며 팬 참고용입니다.
       </div>
     </div>
   );

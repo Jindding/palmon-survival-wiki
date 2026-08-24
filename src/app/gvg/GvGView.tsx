@@ -7,11 +7,15 @@ import { getGoldenSlots, MVM_CATEGORIES } from "@/lib/data/mvm";
 
 const num = new Intl.NumberFormat("ko-KR");
 
-function getKstDayIndex(): number {
-  const kstString = new Date().toLocaleString("en-US", {
-    timeZone: "Asia/Seoul",
-  });
-  return new Date(kstString).getDay();
+// 게임 요일 인덱스 (0=일 ~ 6=토).
+// 서버 하루 전환 시점은 KST 11:00 이므로, KST 00:00~10:59 는 아직 전날 게임 요일.
+function getGameDayIndex(now: Date): number {
+  const kstStr = now.toLocaleString("en-US", { timeZone: "Asia/Seoul" });
+  const kst = new Date(kstStr);
+  const kstDay = kst.getDay();
+  const kstHour = kst.getHours();
+  if (kstHour < 11) return (kstDay + 6) % 7;
+  return kstDay;
 }
 
 export function GvGView() {
@@ -19,10 +23,23 @@ export function GvGView() {
   const [selected, setSelected] = useState<string | null>(null);
 
   useEffect(() => {
-    const idx = getKstDayIndex();
-    setToday(idx);
-    const found = gvgSchedule.find((d) => d.dayIndex === idx);
+    const initial = new Date();
+    const initialIdx = getGameDayIndex(initial);
+    setToday(initialIdx);
+    const found = gvgSchedule.find((d) => d.dayIndex === initialIdx);
     setSelected(found ? found.key : gvgSchedule[0].key);
+
+    // KST 11:00 게임 하루 전환 감지
+    let currentIdx = initialIdx;
+    const interval = setInterval(() => {
+      const t = new Date();
+      const newIdx = getGameDayIndex(t);
+      if (newIdx !== currentIdx) {
+        currentIdx = newIdx;
+        setToday(newIdx);
+      }
+    }, 60_000);
+    return () => clearInterval(interval);
   }, []);
 
   return (

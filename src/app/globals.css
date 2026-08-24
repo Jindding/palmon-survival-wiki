@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -34,8 +34,22 @@
   body {
     background-color: rgb(var(--bg));
     color: rgb(var(--fg));
-    font-family: "Jua", system-ui, sans-serif;
+    font-family:
+      "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+      "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic",
+      "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }
 

@@ -9,25 +9,34 @@ import {
   type MvMDaySlot,
 } from "@/lib/data/mvm";
 
-function getKstDayIndex(): number {
-  const kstString = new Date().toLocaleString("en-US", {
-    timeZone: "Asia/Seoul",
-  });
-  return new Date(kstString).getDay();
+// 게임 요일 인덱스 (0=일 ~ 6=토).
+// 서버 하루 전환 시점은 KST 11:00 이므로, KST 00:00~10:59 는 아직 전날 게임 요일.
+function getGameDayIndex(now: Date): number {
+  const kstStr = now.toLocaleString("en-US", { timeZone: "Asia/Seoul" });
+  const kst = new Date(kstStr);
+  const kstDay = kst.getDay();
+  const kstHour = kst.getHours();
+  if (kstHour < 11) return (kstDay + 6) % 7;
+  return kstDay;
 }
 
-// 오늘 MvM day 시작 시각(= KST 11:00) 의 UTC 밀리초
+// 현재 게임 하루가 시작된 시각(= 오늘 또는 어제의 KST 11:00) 의 UTC 밀리초.
+// KST 11:00 = UTC 02:00 (KST = UTC+9)
 function getMvmDayStartUtcMs(now: Date): number {
   const kstStr = now.toLocaleString("en-US", { timeZone: "Asia/Seoul" });
-  const kstDate = new Date(kstStr);
-  return Date.UTC(
-    kstDate.getFullYear(),
-    kstDate.getMonth(),
-    kstDate.getDate(),
-    2, // 02:00 UTC = 11:00 KST
-    0,
-    0,
-  );
+  const kst = new Date(kstStr);
+  const kstHour = kst.getHours();
+  let year = kst.getFullYear();
+  let month = kst.getMonth();
+  let date = kst.getDate();
+  if (kstHour < 11) {
+    // KST 00:00~10:59 이면 어제 KST 11:00 이 하루 시작
+    const prev = new Date(year, month, date - 1);
+    year = prev.getFullYear();
+    month = prev.getMonth();
+    date = prev.getDate();
+  }
+  return Date.UTC(year, month, date, 2, 0, 0);
 }
 
 const SLOT_OFFSET_HOURS: Record<string, number> = {
@@ -73,13 +82,30 @@ export function HomeTodayOverlap() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const idx = getKstDayIndex();
-    const d = gvgSchedule.find((x) => x.dayIndex === idx) ?? null;
-    setDay(d);
-    if (d) setSlots(getGoldenSlots(d.key, d.dayIndex, new Date()));
-    setNow(new Date());
+    const initial = new Date();
+    const initialIdx = getGameDayIndex(initial);
+    const initialD =
+      gvgSchedule.find((x) => x.dayIndex === initialIdx) ?? null;
+    setDay(initialD);
+    if (initialD)
+      setSlots(getGoldenSlots(initialD.key, initialD.dayIndex, initial));
+    setNow(initial);
     setReady(true);
-    const interval = setInterval(() => setNow(new Date()), 1000);
+
+    // KST 11:00 게임 하루 전환 감지를 위해 현재 요일 인덱스를 추적
+    let currentIdx = initialIdx;
+    const interval = setInterval(() => {
+      const t = new Date();
+      setNow(t);
+      const newIdx = getGameDayIndex(t);
+      if (newIdx !== currentIdx) {
+        currentIdx = newIdx;
+        const newD = gvgSchedule.find((x) => x.dayIndex === newIdx) ?? null;
+        setDay(newD);
+        if (newD) setSlots(getGoldenSlots(newD.key, newD.dayIndex, t));
+        else setSlots([]);
+      }
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -250,13 +276,12 @@ function ActiveCard({
             <span className="text-[10px]">KST</span>
           </div>
         </div>
-      </div>
-
-      <div className="mt-3 pt-3 border-t border-green-500/25 text-center">
-        <div className="text-3xl md:text-4xl font-bold tabular-nums text-green-700 dark:text-green-300 leading-none tracking-tight">
-          {formatDuration(timing.remainingMs)}
+        <div className="text-right flex-shrink-0 pl-2">
+          <div className="text-2xl md:text-3xl font-bold tabular-nums text-green-700 dark:text-green-300 leading-none tracking-tight">
+            {formatDuration(timing.remainingMs)}
+          </div>
+          <div className="text-[10px] text-fg-subtle mt-1">종료까지</div>
         </div>
-        <div className="text-[11px] text-fg-subtle mt-1.5">종료까지 남은 시간</div>
       </div>
     </div>
   );
