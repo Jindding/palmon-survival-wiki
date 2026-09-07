@@ -1728,7 +1728,7 @@
   },
   {
     "id": "610",
-    "name": "헥스킷",
+    "name": "헥스캣",
     "grade": "신화",
     "element": "불",
     "imagePath": "/palmons/0610_pal_UI_View.png",
@@ -1737,14 +1737,14 @@
       {
         "stage": "evolved",
         "id": "611",
-        "name": "신더퍼",
+        "name": "신더푸르",
         "imagePath": "/palmons/0611_pal_UI_View.png"
       }
     ]
   },
   {
     "id": "640",
-    "name": "플란더조",
+    "name": "플런더조",
     "grade": "신화",
     "element": "물",
     "imagePath": "/palmons/0640_pal_UI_ViewA.png",
@@ -1753,14 +1753,14 @@
       {
         "stage": "evolved",
         "id": "641",
-        "name": "캡틴 스쿼루스",
+        "name": "드레드모우",
         "imagePath": "/palmons/0641_pal_UI_View.png"
       }
     ]
   },
   {
     "id": "650",
-    "name": "루트 워든",
+    "name": "루트워든",
     "grade": "신화",
     "element": "바위",
     "imagePath": "/palmons/0650_pal_UI_ViewA.png",
@@ -1769,7 +1769,7 @@
       {
         "stage": "evolved",
         "id": "651",
-        "name": "가시 파수꾼",
+        "name": "쏜키퍼",
         "imagePath": "/palmons/0651_pal_UI_ViewB.png"
       }
     ]
