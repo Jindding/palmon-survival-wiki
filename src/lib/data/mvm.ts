@@ -34,7 +34,7 @@ export const MVM_CATEGORIES: Record<MvMCategoryKey, MvMCategoryMeta> = {
     short: "팰몬",
     emoji: "🐣",
     color: "from-pink-500 to-rose-500",
-    actions: ["팰몬 경험치 소모", "스킬열매 · 증표 사용"],
+    actions: ["팰몬 경험치 소모", "알 부화"],
     tips: "부화·강화용 재료를 모아 두었다가 이 시간대에 한번에 쏟아부으면 점수 효율이 좋습니다.",
   },
   building: {

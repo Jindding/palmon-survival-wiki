@@ -24,6 +24,11 @@ import {
   Megaphone,
   Egg,
   Rabbit,
+  Calculator,
+  Puzzle,
+  Zap,
+  TrendingUp,
+  Cherry,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -72,6 +77,36 @@ export const menu: MenuSection[] = [
   {
     section: "실전 조합",
     items: [{ href: "/team-comps", label: "속성별 조합", icon: Swords }],
+  },
+  {
+    section: "계산기",
+    items: [
+      {
+        href: "/calculator/evolution-essence",
+        label: "진화 정수",
+        icon: Calculator,
+      },
+      {
+        href: "/calculator/palmon-shard",
+        label: "만능 팰몬조각",
+        icon: Puzzle,
+      },
+      {
+        href: "/calculator/energy-bead",
+        label: "에너지 구슬",
+        icon: Zap,
+      },
+      {
+        href: "/calculator/palmon-exp",
+        label: "경험치",
+        icon: TrendingUp,
+      },
+      {
+        href: "/calculator/skill-fruit",
+        label: "스킬열매",
+        icon: Cherry,
+      },
+    ],
   },
   {
     section: "길드전 · 경쟁",

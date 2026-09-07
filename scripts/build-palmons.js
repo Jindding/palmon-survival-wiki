@@ -31,19 +31,32 @@ const legacy = JSON.parse(fs.readFileSync(legacyPath, "utf-8"));
 const legacyByName = {};
 for (const p of legacy) legacyByName[p.name] = p;
 
-// 4) 팰몬 조립 (진화는 UR 밑으로 그룹)
+// 4) 등급 파싱
+// 신화 팰몬은 출시 시즌에 따라 "신화(시즌1)" / "신화(시즌2)" 로 표기된다.
+// 그 진화형도 "진화(시즌1)" 처럼 시즌이 붙지만, 시즌은 본체에만 저장하고
+// 진화형은 본체를 따라가므로 등급만 떼어내면 된다.
+function parseGrade(raw) {
+  const m = raw.match(/^(.+?)\s*\(\s*시즌\s*(\d+)\s*\)\s*$/);
+  if (m) return { grade: m[1].trim(), season: parseInt(m[2], 10) };
+  return { grade: raw.trim(), season: null };
+}
+
+const ELEMENTS = ["물", "불", "바위", "전기"];
+
+// 5) 팰몬 조립 (진화는 직전 본체 밑으로 그룹)
 const palmons = [];
 let currentBase = null;
 let missingImg = [];
 
-for (const [grade, elementRaw, numStr, name] of rows) {
+for (const [gradeRaw, elementRaw, numStr, name] of rows) {
+  const { grade, season } = parseGrade(gradeRaw);
   const num = parseInt(numStr, 10);
   const imagePath = imgByNum[num] ?? null;
   if (!imagePath) missingImg.push({ num, name });
 
   if (grade === "진화" || grade === "슈퍼 진화") {
     if (!currentBase) {
-      console.warn(`[warn] ${grade} ${name} has no base UR — skipping`);
+      console.warn(`[warn] ${grade} ${name} has no base (UR·신화) — skipping`);
       continue;
     }
     if (!currentBase.evolutions) currentBase.evolutions = [];
@@ -56,7 +69,8 @@ for (const [grade, elementRaw, numStr, name] of rows) {
   } else {
     // 속성 정규화: 데이터 오타로 "SSR"이 들어간 경우 → 전기 (로토로터/불릿볼트)
     let element = elementRaw;
-    if (!["물", "불", "바위", "전기"].includes(element)) {
+    if (!ELEMENTS.includes(element)) {
+      console.warn(`[warn] 알 수 없는 속성 "${elementRaw}" (${num} ${name}) → 전기로 대체`);
       element = "전기";
     }
 
@@ -64,23 +78,35 @@ for (const [grade, elementRaw, numStr, name] of rows) {
     const palmon = {
       id: String(num),
       name,
-      grade, // "SR" | "SSR" | "UR" | "신화" (신화는 내일 추가 예정)
+      grade, // "SR" | "SSR" | "UR" | "신화"
       element,
       imagePath,
     };
+    if (season) palmon.season = season; // 신화 전용: 출시 시즌
     if (old?.skills?.length) palmon.skills = old.skills;
     if (old?.basicInfos?.length) palmon.basicInfos = old.basicInfos;
     palmons.push(palmon);
 
-    currentBase = grade === "UR" ? palmon : null;
+    // UR·신화만 진화형을 가진다 (SR·SSR 뒤에 오는 진화 행은 없음).
+    currentBase = grade === "UR" || grade === "신화" ? palmon : null;
   }
 }
 
-// 5) 결과 저장
+// 6) 결과 저장
 const outPath = path.join(ROOT, "src/lib/data/palmons.json");
 fs.writeFileSync(outPath, JSON.stringify(palmons, null, 2), "utf-8");
 
 console.log(`✅ 팰몬 ${palmons.length}종 생성 → ${outPath}`);
+const byGrade = {};
+for (const p of palmons) {
+  const key = p.season ? `${p.grade}(시즌${p.season})` : p.grade;
+  byGrade[key] = (byGrade[key] ?? 0) + 1;
+}
+console.log(
+  `   등급별: ${Object.entries(byGrade)
+    .map(([g, c]) => `${g} ${c}`)
+    .join(" · ")}`
+);
 console.log(
   `   진화형 포함 총 엔트리: ${palmons.reduce(
     (s, p) => s + 1 + (p.evolutions?.length ?? 0),

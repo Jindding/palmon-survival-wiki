@@ -7,6 +7,7 @@
 
 | 원본 자료 | 카테고리 | 서비스 경로 | 구현 파일 |
 |-----------|----------|-------------|-----------|
+| `palmon/palmon.txt` | 팰몬 육성 | `/palmon` | `scripts/build-palmons.js` → `src/lib/data/palmons.json` |
 | `build.txt` | 초보자 가이드 | `/buildings` | `src/app/buildings/page.tsx` · `src/lib/data/build.ts` |
 | `GvG.txt` | 길드전 | `/gvg` | `src/app/gvg/page.tsx` · `src/lib/data/gvg.ts` |
 | `season1.txt` | 시즌 가이드 | `/season1` | `src/app/season1/page.tsx` · `src/lib/data/season1.ts` |
@@ -21,6 +22,7 @@
 - 새로운 게임 정보 원본 자료가 생기면 이 폴더에 `.txt`로 저장하고 위 표에 한 줄 추가합니다.
 - 페이지가 생기기 전(자료만 있는 상태)에는 "미구현"으로 표시합니다.
 - 서버 시간이 언급된 자료는 UTC−2 기준이므로 페이지에서는 항상 **KST(서버 시간 +11h)** 를 병기합니다.
+- `palmon/palmon.txt`는 탭 구분 4열(`등급 / 속성 / 이미지 번호 / 이름`)입니다. 신화 팰몬은 출시 시즌을 `신화(시즌1)` 형태로 적고, 진화형은 본체 바로 다음 줄에 둡니다. 이미지는 `docs/sources/palmon/images/`와 `public/palmons/` 양쪽에 같은 파일명으로 넣은 뒤 `node scripts/build-palmons.js`를 실행합니다.
 
 ## 출처 계열
 

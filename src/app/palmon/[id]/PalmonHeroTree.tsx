@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import type { Palmon, PalmonEvolution } from "@/lib/data/palmons";
-import { gradeStyles, elementStyles } from "@/lib/data/palmons";
+import { gradeStyles, elementStyles, seasonStyles } from "@/lib/data/palmons";
 
 type Stage = "base" | "evolved" | "superEvolved";
 
@@ -79,6 +79,7 @@ export function PalmonHeroTree({ palmon }: { palmon: Palmon }) {
   const theme = STAGE_THEME[current.stage];
   const gs = gradeStyles[palmon.grade];
   const es = elementStyles[palmon.element];
+  const ss = palmon.season ? seasonStyles[palmon.season] : null;
   const hasEvolutions = palmon.evolutions && palmon.evolutions.length > 0;
 
   const showBase = () =>
@@ -140,6 +141,13 @@ export function PalmonHeroTree({ palmon }: { palmon: Palmon }) {
                   >
                     {es.emoji} {es.label}
                   </span>
+                  {ss && (
+                    <span
+                      className={`text-xs px-2 py-0.5 rounded-full border font-bold ${ss.badge}`}
+                    >
+                      {ss.emoji} {ss.label}
+                    </span>
+                  )}
                 </>
               ) : (
                 <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-white/25 backdrop-blur font-bold text-white">

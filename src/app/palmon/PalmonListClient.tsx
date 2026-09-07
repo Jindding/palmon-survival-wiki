@@ -7,34 +7,47 @@ import { Search, X } from "lucide-react";
 import {
   elementStyles,
   gradeStyles,
+  seasonStyles,
   type Palmon,
   type PalmonElement,
   type PalmonGrade,
+  type PalmonSeason,
 } from "@/lib/data/palmons";
 
 type GradeFilter = "전체" | PalmonGrade;
 type ElementFilter = "전체" | PalmonElement;
+type SeasonFilter = "전체" | PalmonSeason;
 
 const GRADE_OPTIONS: GradeFilter[] = ["전체", "SR", "SSR", "UR", "신화"];
 const ELEMENT_OPTIONS: ElementFilter[] = ["전체", "물", "불", "바위", "전기"];
+const SEASON_OPTIONS: SeasonFilter[] = ["전체", 1, 2];
 
 export function PalmonListClient({ items }: { items: Palmon[] }) {
   const [grade, setGrade] = useState<GradeFilter>("전체");
   const [element, setElement] = useState<ElementFilter>("전체");
+  const [season, setSeason] = useState<SeasonFilter>("전체");
   const [query, setQuery] = useState("");
+
+  // 시즌은 신화 전용 축이라, 등급 필터가 신화일 때만 노출한다.
+  // 다른 등급으로 옮기면 남아 있던 시즌 조건 때문에 결과가 0이 되므로 함께 초기화.
+  const changeGrade = (next: GradeFilter) => {
+    setGrade(next);
+    if (next !== "신화") setSeason("전체");
+  };
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return items.filter((p) => {
       if (grade !== "전체" && p.grade !== grade) return false;
       if (element !== "전체" && p.element !== element) return false;
+      if (season !== "전체" && p.season !== season) return false;
       if (!q) return true;
       // 이름 검색 (본체 + 진화형 모두)
       if (p.name.toLowerCase().includes(q)) return true;
       if (p.evolutions?.some((e) => e.name.toLowerCase().includes(q))) return true;
       return false;
     });
-  }, [items, grade, element, query]);
+  }, [items, grade, element, season, query]);
 
   return (
     <div className="space-y-4">
@@ -68,13 +81,27 @@ export function PalmonListClient({ items }: { items: Palmon[] }) {
           label="등급"
           options={GRADE_OPTIONS}
           value={grade}
-          onChange={setGrade}
+          onChange={changeGrade}
           renderChip={(opt) => {
             if (opt === "전체") return { text: "전체", cls: "" };
             const s = gradeStyles[opt];
             return { text: s.label, cls: s.badge };
           }}
         />
+
+        {grade === "신화" && (
+          <FilterRow
+            label="시즌"
+            options={SEASON_OPTIONS}
+            value={season}
+            onChange={setSeason}
+            renderChip={(opt) => {
+              if (opt === "전체") return { text: "전체", cls: "" };
+              const s = seasonStyles[opt];
+              return { text: `${s.emoji} ${s.label}`, cls: s.badge };
+            }}
+          />
+        )}
 
         <FilterRow
           label="속성"
@@ -109,7 +136,7 @@ export function PalmonListClient({ items }: { items: Palmon[] }) {
   );
 }
 
-function FilterRow<T extends string>({
+function FilterRow<T extends string | number>({
   label,
   options,
   value,
@@ -131,7 +158,7 @@ function FilterRow<T extends string>({
           const active = value === opt;
           return (
             <button
-              key={opt}
+              key={String(opt)}
               onClick={() => onChange(opt)}
               className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
                 active
@@ -151,6 +178,7 @@ function FilterRow<T extends string>({
 function PalmonCard({ p }: { p: Palmon }) {
   const gs = gradeStyles[p.grade];
   const es = elementStyles[p.element];
+  const ss = p.season ? seasonStyles[p.season] : null;
   const evolutions = p.evolutions ?? [];
 
   return (
@@ -168,11 +196,21 @@ function PalmonCard({ p }: { p: Palmon }) {
           ) : (
             <div className="text-4xl opacity-30">🚧</div>
           )}
-          <span
-            className={`absolute top-2 left-2 text-[10px] px-1.5 py-0.5 rounded-full border font-bold backdrop-blur ${gs.badge}`}
-          >
-            {gs.label}
-          </span>
+          <div className="absolute top-2 left-2 flex flex-col items-start gap-1">
+            <span
+              className={`text-[10px] px-1.5 py-0.5 rounded-full border font-bold backdrop-blur ${gs.badge}`}
+            >
+              {gs.label}
+            </span>
+            {ss && (
+              <span
+                className={`text-[9px] px-1.5 py-0.5 rounded-full border font-bold backdrop-blur ${ss.badge}`}
+                title={`${ss.label} 신화 팰몬`}
+              >
+                {ss.emoji} {ss.short}
+              </span>
+            )}
+          </div>
           <span
             className={`absolute top-2 right-2 text-[10px] px-1.5 py-0.5 rounded-full border backdrop-blur ${es.badge}`}
           >

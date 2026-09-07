@@ -1630,5 +1630,148 @@
         "imagePath": "/palmons/0531_pal_UI_ViewA.png"
       }
     ]
+  },
+  {
+    "id": "540",
+    "name": "자판티스",
+    "grade": "신화",
+    "element": "전기",
+    "imagePath": "/palmons/0540_pal_UI_View.png",
+    "season": 2,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "541",
+        "name": "쇼크맨티스",
+        "imagePath": "/palmons/0541_pal_UI_View.png"
+      }
+    ]
+  },
+  {
+    "id": "550",
+    "name": "글레이스윙",
+    "grade": "신화",
+    "element": "물",
+    "imagePath": "/palmons/0550_pal_UI_ViewA.png",
+    "season": 1,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "551",
+        "name": "크라이오번",
+        "imagePath": "/palmons/0551_pal_UI_ViewA.png"
+      }
+    ]
+  },
+  {
+    "id": "560",
+    "name": "마몰리스",
+    "grade": "신화",
+    "element": "바위",
+    "imagePath": "/palmons/0560_pal_UI_ViewF.png",
+    "season": 1,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "561",
+        "name": "프리즈몰리스",
+        "imagePath": "/palmons/0561_pal_UI_ViewD.png"
+      }
+    ]
+  },
+  {
+    "id": "570",
+    "name": "썬더투스",
+    "grade": "신화",
+    "element": "전기",
+    "imagePath": "/palmons/0570_pal_UI_ViewA.png",
+    "season": 1,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "571",
+        "name": "썬더메인",
+        "imagePath": "/palmons/0571_pal_UI_ViewA.png"
+      }
+    ]
+  },
+  {
+    "id": "580",
+    "name": "엠버 가이스트",
+    "grade": "신화",
+    "element": "불",
+    "imagePath": "/palmons/0580_pal_UI_ViewA.png",
+    "season": 1,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "581",
+        "name": "파이로 가이스트",
+        "imagePath": "/palmons/0581_pal_UI_ViewB.png"
+      }
+    ]
+  },
+  {
+    "id": "600",
+    "name": "쿵바오",
+    "grade": "UR",
+    "element": "물",
+    "imagePath": "/palmons/0600_pal_UI_View.png",
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "601",
+        "name": "마스터바오",
+        "imagePath": "/palmons/0601_pal_UI_View.png"
+      }
+    ]
+  },
+  {
+    "id": "610",
+    "name": "헥스킷",
+    "grade": "신화",
+    "element": "불",
+    "imagePath": "/palmons/0610_pal_UI_View.png",
+    "season": 2,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "611",
+        "name": "신더퍼",
+        "imagePath": "/palmons/0611_pal_UI_View.png"
+      }
+    ]
+  },
+  {
+    "id": "640",
+    "name": "플란더조",
+    "grade": "신화",
+    "element": "물",
+    "imagePath": "/palmons/0640_pal_UI_ViewA.png",
+    "season": 2,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "641",
+        "name": "캡틴 스쿼루스",
+        "imagePath": "/palmons/0641_pal_UI_View.png"
+      }
+    ]
+  },
+  {
+    "id": "650",
+    "name": "루트 워든",
+    "grade": "신화",
+    "element": "바위",
+    "imagePath": "/palmons/0650_pal_UI_ViewA.png",
+    "season": 2,
+    "evolutions": [
+      {
+        "stage": "evolved",
+        "id": "651",
+        "name": "가시 파수꾼",
+        "imagePath": "/palmons/0651_pal_UI_ViewB.png"
+      }
+    ]
   }
 ]

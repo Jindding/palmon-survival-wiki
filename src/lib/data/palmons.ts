@@ -3,6 +3,9 @@ import raw from "./palmons.json";
 export type PalmonGrade = "SR" | "SSR" | "UR" | "신화";
 export type PalmonElement = "물" | "불" | "바위" | "전기";
 export type EvolutionStage = "evolved" | "superEvolved";
+// 신화 팰몬은 출시 시즌이 나뉜다 (시즌1 얼음 시대 / 시즌2 정복의 시대).
+// 신화 외 등급에는 season이 없다.
+export type PalmonSeason = 1 | 2;
 
 export interface PalmonSkill {
   objectId: string;
@@ -29,6 +32,7 @@ export interface Palmon {
   name: string;
   grade: PalmonGrade;
   element: PalmonElement;
+  season?: PalmonSeason; // 신화 전용
   imagePath: string | null;
   evolutions?: PalmonEvolution[];
   basicInfos?: PalmonBasicInfo[];
@@ -79,6 +83,25 @@ export const gradeStyles: Record<
   },
 };
 
+// 시즌 배지. 사이드바 아이콘(시즌1 눈송이 · 시즌2 불꽃)과 색 계열을 맞춘다.
+export const seasonStyles: Record<
+  PalmonSeason,
+  { label: string; short: string; emoji: string; badge: string }
+> = {
+  1: {
+    label: "시즌 1",
+    short: "S1",
+    emoji: "❄️",
+    badge: "bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 border-cyan-500/40",
+  },
+  2: {
+    label: "시즌 2",
+    short: "S2",
+    emoji: "🔥",
+    badge: "bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-500/40",
+  },
+};
+
 export const elementStyles: Record<
   PalmonElement,
   { label: string; badge: string; emoji: string }
@@ -117,5 +140,5 @@ export const palmonsMeta = {
   ),
   withSkills: palmons.filter((p) => p.skills?.length).length,
   source: "게임사 공식 자료 (Lilith Games)",
-  updatedAt: "2026-08-24",
+  updatedAt: "2026-09-07",
 };
