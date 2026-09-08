@@ -32,12 +32,12 @@ export interface SpecialNote {
 
 export const specialNotes: SpecialNote[] = [
   {
-    title: "불바위덱 특이사항",
+    title: "불바위 조합 특이사항",
     body: "불과 바위를 둘 다 쓰므로 우선순위 루트에서 소우주를 먼저 마스터하고, 이후 다른 것들과 함께 지표면사이클론도 같이 올려 마스터해야 합니다.",
   },
 ];
 
 export const achievementsMeta = {
-  updatedAt: "2026-06-11",
+  updatedAt: "2026-09-08",
   updatedBy: "TechBoy #69",
 };

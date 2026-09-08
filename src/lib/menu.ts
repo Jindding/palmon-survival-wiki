@@ -97,6 +97,11 @@ export const menu: MenuSection[] = [
         icon: Zap,
       },
       {
+        href: "/calculator/masterwork-bead",
+        label: "걸작구슬",
+        icon: Gem,
+      },
+      {
         href: "/calculator/palmon-exp",
         label: "경험치",
         icon: TrendingUp,
