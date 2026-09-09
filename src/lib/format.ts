@@ -35,6 +35,35 @@ export function formatKrCompact(n: number): string {
   return `${trimDecimals(n / 100_000_000, 2)}억`;
 }
 
+// ───────── 언어별 숫자 표기 ─────────
+// 계산기는 한국어/영어를 함께 지원한다. 한국어는 만·억, 영어는 K·M·B로 줄인다.
+
+export type NumLang = "ko" | "en";
+
+/** 영어용 축약. 1,234,567 → 1.23M */
+export function formatEnCompact(n: number): string {
+  if (!Number.isFinite(n)) return "—";
+  if (n < 1_000) return n.toLocaleString("en-US");
+  if (n < 1_000_000) return `${trimDecimals(n / 1_000, 1)}K`;
+  if (n < 1_000_000_000) return `${trimDecimals(n / 1_000_000, 2)}M`;
+  return `${trimDecimals(n / 1_000_000_000, 2)}B`;
+}
+
+/** 딱 떨어질 때만 줄이는 표기. 영어는 줄이지 않고 자릿수를 그대로 쓴다. */
+export function formatNum(n: number, lang: NumLang): string {
+  return lang === "ko" ? formatKrNum(n) : n.toLocaleString("en-US");
+}
+
+/** 항상 줄이는 표기. 표에서 긴 숫자를 훑어볼 때 쓴다. */
+export function formatCompact(n: number, lang: NumLang): string {
+  return lang === "ko" ? formatKrCompact(n) : formatEnCompact(n);
+}
+
+/** 자릿수를 그대로 보여주는 표기. 게임 화면과 대조할 값에 쓴다. */
+export function formatExact(n: number, lang: NumLang): string {
+  return n.toLocaleString(lang === "ko" ? "ko-KR" : "en-US");
+}
+
 export function formatDuration(seconds: number | null): string {
   if (seconds === null) return "미확인";
   if (seconds < 60) return `${seconds}초`;

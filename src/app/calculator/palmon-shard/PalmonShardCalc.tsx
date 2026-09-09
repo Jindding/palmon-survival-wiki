@@ -3,6 +3,9 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { StarRankBadge } from "@/components/StarRankBadge";
+import { ResultRow } from "@/components/calculator/ResultRow";
+import { useCalcLang } from "@/components/calculator/CalcLangProvider";
+import { calcDict } from "@/lib/i18n/calculator";
 import {
   PALMON_SHARD_IMAGE,
   STAR_RANKS,
@@ -10,7 +13,7 @@ import {
   calcPalmonShard,
   type StarRank,
 } from "@/lib/data/calculators/palmon-shard";
-import { formatKrNum } from "@/lib/format";
+import { formatNum } from "@/lib/format";
 
 // 입력은 문자열로 들고 있다가 계산 직전에 숫자로 바꾼다.
 // 그래야 사용자가 값을 지웠을 때 0이 강제로 남지 않는다.
@@ -20,6 +23,11 @@ function toNum(v: string): number {
 }
 
 export function PalmonShardCalc() {
+  const { lang } = useCalcLang();
+  const t = calcDict[lang];
+  const tx = t.palmonShard;
+  const n = (v: number) => formatNum(v, lang);
+
   const [owned, setOwned] = useState("");
   const [target, setTarget] = useState<StarRank>(5);
 
@@ -45,7 +53,7 @@ export function PalmonShardCalc() {
               aria-hidden
               className="w-5 h-5 object-contain rounded"
             />
-            보유 UR 만능 팰몬조각
+            {tx.ownedLabel}
           </span>
           <input
             type="number"
@@ -53,14 +61,14 @@ export function PalmonShardCalc() {
             min={0}
             value={owned}
             onChange={(e) => setOwned(e.target.value)}
-            placeholder="지금 가진 개수"
+            placeholder={t.ui.ownedPlaceholder}
             className="mt-1.5 w-full px-3 py-2.5 rounded-xl border border-app bg-app text-base tabular-nums focus:outline-none focus:border-palmon-primary"
           />
         </label>
 
         {/* 목표 성급 */}
         <div>
-          <span className="text-sm font-bold">🎯 목표 성급</span>
+          <span className="text-sm font-bold">{tx.targetRank}</span>
           <div className="mt-1.5 grid grid-cols-2 sm:grid-cols-5 gap-2">
             {STAR_RANKS.map((r) => {
               const info = STAR_RANK_INFO[r];
@@ -77,11 +85,11 @@ export function PalmonShardCalc() {
                   }`}
                 >
                   <StarRankBadge rank={r} size={11} />
-                  <div className="text-sm font-bold">{r}성</div>
+                  <div className="text-sm font-bold">{tx.rankLabel(r)}</div>
                   <div
                     className={`text-[11px] tabular-nums ${active ? "text-white/80" : "text-fg-subtle"}`}
                   >
-                    {formatKrNum(info.cumulativeCost)}개
+                    {n(info.cumulativeCost)}
                   </div>
                 </button>
               );
@@ -102,7 +110,7 @@ export function PalmonShardCalc() {
       >
         {!hasInput ? (
           <p className="text-sm text-fg-muted py-4 text-center">
-            보유 개수를 입력하면 결과가 바로 나와요.
+            {t.ui.emptyHint}
           </p>
         ) : (
           <>
@@ -118,55 +126,63 @@ export function PalmonShardCalc() {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1.5 text-xs text-fg-muted mb-0.5">
                   <StarRankBadge rank={target} size={11} />
-                  {target}성 기준
+                  {t.ui.targetBasis(tx.rankLabel(target))}
                 </div>
                 {isShort ? (
                   <div className="text-3xl md:text-4xl font-bold text-red-600 dark:text-red-400 tabular-nums">
-                    {formatKrNum(result.shortage)}개 부족
+                    {t.ui.shortBig(n(result.shortage))}
                   </div>
                 ) : (
                   <div className="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
-                    {formatKrNum(result.count)}
-                    <span className="text-xl md:text-2xl ml-1">마리</span>
+                    {n(result.count)}
+                    {tx.countUnit && (
+                      <span className="text-xl md:text-2xl ml-1">
+                        {tx.countUnit}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>
             </div>
 
             <div className="mt-4 rounded-xl bg-card/70 border border-app divide-y divide-app text-sm">
-              <Row label="보유" value={formatKrNum(result.owned)} />
-              <Row
-                label={`${target}성 1마리 필요`}
-                value={formatKrNum(result.perOne)}
+              <ResultRow label={t.ui.owned} value={n(result.owned)} />
+              <ResultRow
+                label={tx.needPerOne(target)}
+                value={n(result.perOne)}
               />
               {isShort ? (
-                <Row
-                  label="모자란 양"
-                  value={formatKrNum(result.shortage)}
+                <ResultRow
+                  label={t.ui.shortLabel}
+                  value={n(result.shortage)}
                   tone="danger"
                   bold
                 />
               ) : (
-                <Row
-                  label="승급 후 남는 양"
-                  value={formatKrNum(result.remain)}
+                <ResultRow
+                  label={tx.promoted}
+                  value={n(result.remain)}
                   tone="accent"
                 />
               )}
-              <Row
-                label="다음 1마리까지"
-                value={`${formatKrNum(result.toNext)}개 더`}
+              <ResultRow
+                label={t.ui.toNext}
+                value={t.ui.toNextValue(n(result.toNext))}
               />
             </div>
 
             {/* 남은 조각 활용 */}
             {result.alternatives.length > 0 && (
               <div className="mt-3 rounded-xl bg-muted p-3 text-xs text-fg-muted leading-relaxed">
-                💡 남은 <b>{formatKrNum(result.remain)}</b>개로 추가 완성 가능 —{" "}
+                💡 {t.ui.leftoverHint(n(result.remain))} —{" "}
                 {result.alternatives.map((a, i) => (
                   <span key={a.rank}>
                     {i > 0 && " / "}
-                    {a.rank}성 <b className="text-fg">{formatKrNum(a.count)}마리</b>
+                    {tx.rankLabel(a.rank)}{" "}
+                    <b className="text-fg">
+                      {n(a.count)}
+                      {tx.countUnit}
+                    </b>
                   </span>
                 ))}
               </div>
@@ -174,33 +190,6 @@ export function PalmonShardCalc() {
           </>
         )}
       </div>
-    </div>
-  );
-}
-
-function Row({
-  label,
-  value,
-  tone,
-  bold,
-}: {
-  label: string;
-  value: string;
-  tone?: "accent" | "danger";
-  bold?: boolean;
-}) {
-  const toneCls =
-    tone === "accent"
-      ? "text-palmon-primary"
-      : tone === "danger"
-        ? "text-red-600 dark:text-red-400"
-        : "text-fg";
-  return (
-    <div className="flex items-center justify-between gap-3 px-3 py-2">
-      <span className="text-fg-muted text-[13px]">{label}</span>
-      <span className={`tabular-nums ${toneCls} ${bold ? "font-bold" : ""}`}>
-        {value}
-      </span>
     </div>
   );
 }

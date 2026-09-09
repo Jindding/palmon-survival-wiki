@@ -37,8 +37,7 @@ Evolution Energy = 에너지 구슬
 Aurora Orb = 오로라 구슬
 Titan Seal = 타이탄인장
 Titan Seals =
-Omni Token = 만능 증표
-UR Omni Token = 팰몬 만능 UR 증표
+UR Palmon Omni Token = 팰몬 만능 UR 증표, 만능 증표, 만능 팰몬조각
 Mastery Sigils =
 Prismatic Vials =
 Palmite =
@@ -49,6 +48,7 @@ Mithril =
 미스릴 =
 Rubies =
 Opus Pearl = 걸작구슬
+SkillFruit = 스킬열매
 Temperite = 장비결정
 
 
@@ -63,6 +63,7 @@ Aurora Summons =
 Prismatic Palmon =
 Prismatic Wheel =
 Prismatic =
+Palmon XP = 팰몬 경험치
 Mythic =
 Master Rank =
 Mastery =

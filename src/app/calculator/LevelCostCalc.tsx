@@ -3,8 +3,11 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { ResultRow } from "@/components/calculator/ResultRow";
+import { useCalcLang } from "@/components/calculator/CalcLangProvider";
+import { calcDict } from "@/lib/i18n/calculator";
 import { calcLevelCost } from "@/lib/data/calculators/level-cost";
-import { formatKrCompact, formatKrExact } from "@/lib/format";
+import { formatCompact, formatExact } from "@/lib/format";
 
 // 경험치 계산기와 스킬열매 계산기는 "레벨 구간 비용"이라는 같은 구조라 UI를 공유한다.
 // 다른 건 비용 배열 · 최대 레벨 · 아이템 이미지 · 이름뿐이라 prop으로 받는다.
@@ -25,6 +28,12 @@ export function LevelCostCalc({
   itemName: string;
   defaultTarget: number;
 }) {
+  const { lang } = useCalcLang();
+  const t = calcDict[lang];
+  const tx = t.levelCost;
+  const compact = (v: number) => formatCompact(v, lang);
+  const exact = (v: number) => formatExact(v, lang);
+
   const [current, setCurrent] = useState("1");
   const [target, setTarget] = useState(String(defaultTarget));
   const [owned, setOwned] = useState("");
@@ -52,7 +61,8 @@ export function LevelCostCalc({
         <div className="flex items-end gap-2 sm:gap-3">
           <LevelInput
             id="level-current"
-            label="현재 레벨"
+            label={tx.currentLevel}
+            rangeHint={tx.range(maxLevel)}
             value={current}
             onChange={setCurrent}
             maxLevel={maxLevel}
@@ -64,7 +74,8 @@ export function LevelCostCalc({
           />
           <LevelInput
             id="level-target"
-            label="목표 레벨"
+            label={tx.targetLevel}
+            rangeHint={tx.range(maxLevel)}
             value={target}
             onChange={setTarget}
             maxLevel={maxLevel}
@@ -81,7 +92,7 @@ export function LevelCostCalc({
               aria-hidden
               className="w-5 h-5 object-contain rounded"
             />
-            보유 {itemName}
+            {tx.ownedLabel(itemName)}
           </span>
           <input
             type="number"
@@ -89,7 +100,7 @@ export function LevelCostCalc({
             min={0}
             value={owned}
             onChange={(e) => setOwned(e.target.value)}
-            placeholder="비워두면 필요량만 계산해요"
+            placeholder={tx.ownedPlaceholder}
             className="mt-1.5 w-full px-3 py-2.5 rounded-xl border border-app bg-app text-base tabular-nums focus:outline-none focus:border-palmon-primary"
           />
         </label>
@@ -107,7 +118,7 @@ export function LevelCostCalc({
       >
         {result.alreadyDone ? (
           <p className="text-sm text-fg-muted py-4 text-center">
-            목표 레벨이 현재 레벨보다 같거나 낮아요. 목표를 더 높게 잡아 보세요.
+            {tx.alreadyDone}
           </p>
         ) : (
           <>
@@ -126,40 +137,40 @@ export function LevelCostCalc({
                 </div>
                 {isShort ? (
                   <div className="text-3xl md:text-4xl font-bold text-red-600 dark:text-red-400 tabular-nums">
-                    {formatKrCompact(result.shortage)} 부족
+                    {t.ui.shortBig(compact(result.shortage))}
                   </div>
                 ) : (
                   <div className="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
-                    {formatKrCompact(result.needed)}
+                    {compact(result.needed)}
                   </div>
                 )}
               </div>
             </div>
 
             <div className="mt-4 rounded-xl bg-card/70 border border-app divide-y divide-app text-sm">
-              <Row label="필요량" value={formatKrExact(result.needed)} bold />
+              <ResultRow label={tx.needed} value={exact(result.needed)} bold />
               {hasOwned && (
                 <>
-                  <Row label="보유" value={formatKrExact(result.owned)} />
+                  <ResultRow label={t.ui.owned} value={exact(result.owned)} />
                   {isShort ? (
-                    <Row
-                      label="모자란 양"
-                      value={formatKrExact(result.shortage)}
+                    <ResultRow
+                      label={t.ui.shortLabel}
+                      value={exact(result.shortage)}
                       tone="danger"
                       bold
                     />
                   ) : (
-                    <Row
-                      label="남는 양"
-                      value={formatKrExact(result.surplus)}
+                    <ResultRow
+                      label={t.ui.leftOver}
+                      value={exact(result.surplus)}
                       tone="accent"
                     />
                   )}
                 </>
               )}
-              <Row
-                label={`Lv 1 → Lv ${targetLv} 전체 누적`}
-                value={formatKrExact(result.totalToTarget)}
+              <ResultRow
+                label={tx.cumulativeToTarget(targetLv)}
+                value={exact(result.totalToTarget)}
               />
             </div>
           </>
@@ -179,12 +190,14 @@ function clampLevel(raw: string, maxLevel: number): number {
 function LevelInput({
   id,
   label,
+  rangeHint,
   value,
   onChange,
   maxLevel,
 }: {
   id: string;
   label: string;
+  rangeHint: string;
   value: string;
   onChange: (v: string) => void;
   maxLevel: number;
@@ -202,34 +215,7 @@ function LevelInput({
         onChange={(e) => onChange(e.target.value)}
         className="mt-1.5 w-full px-3 py-2.5 rounded-xl border border-app bg-app text-base tabular-nums focus:outline-none focus:border-palmon-primary"
       />
-      <span className="text-[11px] text-fg-subtle mt-1 block">1 ~ {maxLevel}</span>
+      <span className="text-[11px] text-fg-subtle mt-1 block">{rangeHint}</span>
     </label>
-  );
-}
-
-function Row({
-  label,
-  value,
-  tone,
-  bold,
-}: {
-  label: string;
-  value: string;
-  tone?: "accent" | "danger";
-  bold?: boolean;
-}) {
-  const toneCls =
-    tone === "accent"
-      ? "text-palmon-primary"
-      : tone === "danger"
-        ? "text-red-600 dark:text-red-400"
-        : "text-fg";
-  return (
-    <div className="flex items-center justify-between gap-3 px-3 py-2">
-      <span className="text-fg-muted text-[13px]">{label}</span>
-      <span className={`tabular-nums ${toneCls} ${bold ? "font-bold" : ""}`}>
-        {value}
-      </span>
-    </div>
   );
 }

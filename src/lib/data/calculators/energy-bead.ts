@@ -159,14 +159,25 @@ export const ENERGY_TOTAL = ENERGY_EVO_TOTAL + ENERGY_MEGA_TOTAL;
  * 그룹 머리글이 따로 붙으므로 라벨에서 단계명을 떼어 "1번"만 남긴다
  * (스킬해금처럼 뗄 게 없으면 원래 라벨을 그대로 쓴다).
  */
-export const ENERGY_STEP_OPTIONS = ENERGY_STEPS.map((step, index) => ({
-  index,
-  id: step.id,
-  cost: step.cost,
-  groupLabel: ENERGY_GROUP_LABELS[step.group],
-  shortLabel:
-    step.label.replace(ENERGY_GROUP_LABELS[step.group], "").trim() || step.label,
-}));
+export const ENERGY_STEP_OPTIONS = (() => {
+  // 같은 단계 안에서 몇 번째 소단계인지 세어 둔다. 영문 라벨("Step 3")을 만들 때 쓴다.
+  const seen = new Map<EnergyGroupKey, number>();
+  return ENERGY_STEPS.map((step, index) => {
+    const stepNo = (seen.get(step.group) ?? 0) + 1;
+    seen.set(step.group, stepNo);
+    return {
+      index,
+      id: step.id,
+      group: step.group,
+      stepNo,
+      cost: step.cost,
+      groupLabel: ENERGY_GROUP_LABELS[step.group],
+      shortLabel:
+        step.label.replace(ENERGY_GROUP_LABELS[step.group], "").trim() ||
+        step.label,
+    };
+  });
+})();
 
 /** 강화 1회에 들어가는 양 = 소단계 표시값 ÷ 이 값 */
 export const ENERGY_UPGRADES_PER_STEP = 10;

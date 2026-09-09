@@ -3,6 +3,9 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { Dropdown, type DropdownOption } from "@/components/Dropdown";
+import { ResultRow } from "@/components/calculator/ResultRow";
+import { useCalcLang } from "@/components/calculator/CalcLangProvider";
+import { calcDict } from "@/lib/i18n/calculator";
 import {
   ENERGY_BEAD_IMAGE,
   ENERGY_STEPS,
@@ -10,24 +13,7 @@ import {
   ENERGY_START_INDEX,
   calcEnergyBeads,
 } from "@/lib/data/calculators/energy-bead";
-import { formatKrNum } from "@/lib/format";
-
-// "현재"는 완료 지점을 고르는 것이라 "처음 시작"이 앞에 하나 더 붙는다.
-const CURRENT_OPTIONS: DropdownOption<number>[] = [
-  { value: ENERGY_START_INDEX, label: "처음 시작", group: "시작 전" },
-  ...ENERGY_STEP_OPTIONS.map((o) => ({
-    value: o.index,
-    label: `${o.shortLabel} 완료`,
-    group: o.groupLabel,
-  })),
-];
-
-const TARGET_OPTIONS: DropdownOption<number>[] = ENERGY_STEP_OPTIONS.map((o) => ({
-  value: o.index,
-  label: o.shortLabel,
-  hint: formatKrNum(o.cost),
-  group: o.groupLabel,
-}));
+import { formatNum } from "@/lib/format";
 
 // 입력은 문자열로 들고 있다가 계산 직전에 숫자로 바꾼다.
 // 그래야 사용자가 값을 지웠을 때 0이 강제로 남지 않는다.
@@ -39,9 +25,41 @@ function toNum(v: string): number {
 const LAST_INDEX = ENERGY_STEPS.length - 1;
 
 export function EnergyBeadCalc() {
+  const { lang } = useCalcLang();
+  const t = calcDict[lang];
+  const tx = t.energyBead;
+  const n = (v: number) => formatNum(v, lang);
+
   const [currentIndex, setCurrentIndex] = useState(ENERGY_START_INDEX);
   const [targetIndex, setTargetIndex] = useState(LAST_INDEX);
   const [owned, setOwned] = useState("");
+
+  // 드롭다운 라벨은 언어를 따라간다.
+  // "현재"는 완료 지점을 고르는 것이라 "처음 시작"이 앞에 하나 더 붙는다.
+  const { currentOptions, targetOptions } = useMemo(() => {
+    const steps: DropdownOption<number>[] = ENERGY_STEP_OPTIONS.map((o) => ({
+      value: o.index,
+      label: tx.stepLabel(o.stepNo),
+      hint: n(o.cost),
+      group: tx.groupLabels[o.groupLabel] ?? o.groupLabel,
+    }));
+    return {
+      currentOptions: [
+        {
+          value: ENERGY_START_INDEX,
+          label: tx.startFromScratch,
+          group: tx.beforeStartGroup,
+        },
+        ...steps.map((o) => ({
+          ...o,
+          label: tx.completedSuffix(o.label),
+          hint: undefined,
+        })),
+      ] as DropdownOption<number>[],
+      targetOptions: steps,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lang]);
 
   const result = useMemo(
     () => calcEnergyBeads({ currentIndex, targetIndex, owned: toNum(owned) }),
@@ -49,10 +67,17 @@ export function EnergyBeadCalc() {
   );
 
   const enough = result.owned >= result.needed;
+
+  const stepFullLabel = (index: number) => {
+    const o = ENERGY_STEP_OPTIONS[index];
+    const group = tx.groupLabels[o.groupLabel] ?? o.groupLabel;
+    return `${group} ${tx.stepLabel(o.stepNo)}`;
+  };
+
   const currentLabel =
     currentIndex === ENERGY_START_INDEX
-      ? "처음 시작"
-      : `${ENERGY_STEPS[currentIndex].label} 완료`;
+      ? tx.startFromScratch
+      : tx.completedSuffix(stepFullLabel(currentIndex));
 
   return (
     <div className="space-y-4">
@@ -64,12 +89,12 @@ export function EnergyBeadCalc() {
               htmlFor="energy-current"
               className="text-sm font-bold block mb-1.5"
             >
-              📍 현재 (완료한 곳까지)
+              {tx.currentLabel}
             </label>
             <Dropdown
               id="energy-current"
               value={currentIndex}
-              options={CURRENT_OPTIONS}
+              options={currentOptions}
               onChange={setCurrentIndex}
             />
           </div>
@@ -79,12 +104,12 @@ export function EnergyBeadCalc() {
               htmlFor="energy-target"
               className="text-sm font-bold block mb-1.5"
             >
-              🎯 목표
+              {tx.targetLabel}
             </label>
             <Dropdown
               id="energy-target"
               value={targetIndex}
-              options={TARGET_OPTIONS}
+              options={targetOptions}
               onChange={setTargetIndex}
             />
           </div>
@@ -100,7 +125,7 @@ export function EnergyBeadCalc() {
               aria-hidden
               className="w-5 h-5 object-contain rounded"
             />
-            보유 에너지 구슬
+            {tx.ownedLabel}
           </span>
           <input
             type="number"
@@ -108,7 +133,7 @@ export function EnergyBeadCalc() {
             min={0}
             value={owned}
             onChange={(e) => setOwned(e.target.value)}
-            placeholder="지금 가진 개수 (비워두면 필요량만 계산)"
+            placeholder={tx.ownedPlaceholder}
             className="mt-1.5 w-full px-3 py-2.5 rounded-xl border border-app bg-app text-base tabular-nums focus:outline-none focus:border-palmon-primary"
           />
         </label>
@@ -124,7 +149,7 @@ export function EnergyBeadCalc() {
       >
         {result.alreadyDone ? (
           <p className="text-sm text-fg-muted py-4 text-center">
-            목표가 현재 진행도보다 앞이에요. 추가로 필요한 에너지 구슬이 없습니다.
+            {tx.alreadyDone}
           </p>
         ) : (
           <>
@@ -139,36 +164,35 @@ export function EnergyBeadCalc() {
               />
               <div className="text-center">
                 <div className="text-xs text-fg-muted mb-0.5">
-                  {currentLabel} → {ENERGY_STEPS[targetIndex].label}
+                  {currentLabel} → {stepFullLabel(targetIndex)}
                 </div>
                 {result.owned > 0 && !enough ? (
                   <div className="text-3xl md:text-4xl font-bold text-red-600 dark:text-red-400 tabular-nums">
-                    {formatKrNum(result.shortage)}개 부족
+                    {t.ui.shortBig(n(result.shortage))}
                   </div>
                 ) : (
                   <div className="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
-                    {formatKrNum(result.needed)}
-                    <span className="text-xl md:text-2xl ml-1">개</span>
+                    {n(result.needed)}
                   </div>
                 )}
               </div>
             </div>
 
             <div className="mt-4 rounded-xl bg-card/70 border border-app divide-y divide-app text-sm">
-              <Row label="필요 합계" value={formatKrNum(result.needed)} bold />
+              <ResultRow label={tx.totalNeed} value={n(result.needed)} bold />
               {result.owned > 0 && (
                 <>
-                  <Row label="보유" value={formatKrNum(result.owned)} />
+                  <ResultRow label={t.ui.owned} value={n(result.owned)} />
                   {enough ? (
-                    <Row
-                      label="남는 양"
-                      value={formatKrNum(result.surplus)}
+                    <ResultRow
+                      label={t.ui.leftOver}
+                      value={n(result.surplus)}
                       tone="accent"
                     />
                   ) : (
-                    <Row
-                      label="모자란 양"
-                      value={formatKrNum(result.shortage)}
+                    <ResultRow
+                      label={t.ui.shortLabel}
+                      value={n(result.shortage)}
                       tone="danger"
                       bold
                     />
@@ -180,12 +204,12 @@ export function EnergyBeadCalc() {
             {/* 단계별 내역 */}
             {result.byGroup.length > 1 && (
               <div className="mt-3 rounded-xl bg-muted p-3 text-xs text-fg-muted leading-relaxed">
-                📊 단계별 내역 —{" "}
+                📊 {tx.breakdown} —{" "}
                 {result.byGroup.map((g, i) => (
                   <span key={g.key}>
                     {i > 0 && " / "}
-                    {g.label}{" "}
-                    <b className="text-fg">{formatKrNum(g.need)}</b>
+                    {tx.groupLabels[g.label] ?? g.label}{" "}
+                    <b className="text-fg">{n(g.need)}</b>
                   </span>
                 ))}
               </div>
@@ -193,33 +217,6 @@ export function EnergyBeadCalc() {
           </>
         )}
       </div>
-    </div>
-  );
-}
-
-function Row({
-  label,
-  value,
-  tone,
-  bold,
-}: {
-  label: string;
-  value: string;
-  tone?: "accent" | "danger";
-  bold?: boolean;
-}) {
-  const toneCls =
-    tone === "accent"
-      ? "text-palmon-primary"
-      : tone === "danger"
-        ? "text-red-600 dark:text-red-400"
-        : "text-fg";
-  return (
-    <div className="flex items-center justify-between gap-3 px-3 py-2">
-      <span className="text-fg-muted text-[13px]">{label}</span>
-      <span className={`tabular-nums ${toneCls} ${bold ? "font-bold" : ""}`}>
-        {value}
-      </span>
     </div>
   );
 }

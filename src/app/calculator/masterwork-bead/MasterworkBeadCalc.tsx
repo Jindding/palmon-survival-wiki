@@ -4,6 +4,9 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { RotateCcw } from "lucide-react";
 import { StarRankBadge } from "@/components/StarRankBadge";
+import { ResultRow } from "@/components/calculator/ResultRow";
+import { useCalcLang } from "@/components/calculator/CalcLangProvider";
+import { calcDict } from "@/lib/i18n/calculator";
 import {
   MASTERWORK_BEAD_IMAGE,
   BEAD_MAX_RANK,
@@ -11,7 +14,7 @@ import {
   BEAD_RANK_INFO,
   calcMasterworkBead,
 } from "@/lib/data/calculators/masterwork-bead";
-import { formatKrNum } from "@/lib/format";
+import { formatNum } from "@/lib/format";
 
 // 입력은 문자열로 들고 있다가 계산 직전에 숫자로 바꾼다.
 // 그래야 사용자가 값을 지웠을 때 0이 강제로 남지 않는다.
@@ -27,6 +30,11 @@ function toNum(v: string): number {
 }
 
 export function MasterworkBeadCalc() {
+  const { lang } = useCalcLang();
+  const t = calcDict[lang];
+  const tx = t.masterworkBead;
+  const n = (v: number) => formatNum(v, lang);
+
   const [owned, setOwned] = useState("");
   const [target, setTarget] = useState(5);
   const [resets, setResets] = useState<RankInputs>(EMPTY_INPUTS);
@@ -60,7 +68,7 @@ export function MasterworkBeadCalc() {
               aria-hidden
               className="w-5 h-5 object-contain rounded"
             />
-            보유 걸작구슬
+            {tx.ownedLabel}
           </span>
           <input
             type="number"
@@ -68,14 +76,14 @@ export function MasterworkBeadCalc() {
             min={0}
             value={owned}
             onChange={(e) => setOwned(e.target.value)}
-            placeholder="지금 가진 개수"
+            placeholder={t.ui.ownedPlaceholder}
             className="mt-1.5 w-full px-3 py-2.5 rounded-xl border border-app bg-app text-base tabular-nums focus:outline-none focus:border-palmon-primary"
           />
         </label>
 
         {/* 목표 성급 */}
         <div>
-          <span className="text-sm font-bold">🎯 목표 성급</span>
+          <span className="text-sm font-bold">{tx.targetRank}</span>
           <div className="mt-1.5 grid grid-cols-3 sm:grid-cols-5 gap-2">
             {BEAD_RANKS.map((r) => {
               const info = BEAD_RANK_INFO[r];
@@ -92,11 +100,11 @@ export function MasterworkBeadCalc() {
                   }`}
                 >
                   <StarRankBadge rank={r} max={BEAD_MAX_RANK} size={9} />
-                  <div className="text-sm font-bold">{r}성</div>
+                  <div className="text-sm font-bold">{tx.rankLabel(r)}</div>
                   <div
                     className={`text-[11px] tabular-nums ${active ? "text-white/80" : "text-fg-subtle"}`}
                   >
-                    {formatKrNum(info.cumulativeCost)}
+                    {n(info.cumulativeCost)}
                   </div>
                 </button>
               );
@@ -107,25 +115,24 @@ export function MasterworkBeadCalc() {
         {/* 초기화 환급 */}
         <div>
           <div className="flex items-center justify-between gap-3">
-            <span className="text-sm font-bold">↻ 초기화할 무기 (선택)</span>
+            <span className="text-sm font-bold">{tx.resetSectionLabel}</span>
             <button
               type="button"
               onClick={reset}
               className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg border border-app text-fg-muted hover:bg-muted transition-colors"
             >
               <RotateCcw size={13} />
-              전체 초기화
+              {t.ui.resetAll}
             </button>
           </div>
           <p className="text-xs text-fg-muted mt-1 leading-relaxed">
-            이미 올린 무기를 초기화하면 들어간 구슬을 전부 돌려받아요. 성급별
-            개수를 넣으면 환급량이 보유량에 더해집니다.
+            {tx.resetHint}
           </p>
           <div className="mt-2 grid grid-cols-3 sm:grid-cols-5 gap-2">
             {BEAD_RANKS.map((r) => (
               <label key={r} className="block">
                 <span className="text-[11px] text-fg-subtle">
-                  {r}성 · +{formatKrNum(BEAD_RANK_INFO[r].cumulativeCost)}
+                  {tx.resetPerUnit(r, n(BEAD_RANK_INFO[r].cumulativeCost))}
                 </span>
                 <input
                   type="number"
@@ -156,7 +163,7 @@ export function MasterworkBeadCalc() {
       >
         {!hasInput ? (
           <p className="text-sm text-fg-muted py-4 text-center">
-            보유 개수를 입력하면 결과가 바로 나와요.
+            {t.ui.emptyHint}
           </p>
         ) : (
           <>
@@ -172,64 +179,81 @@ export function MasterworkBeadCalc() {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1.5 text-xs text-fg-muted mb-0.5">
                   <StarRankBadge rank={target} max={BEAD_MAX_RANK} size={12} />
-                  {target}성 기준
+                  {t.ui.targetBasis(tx.rankLabel(target))}
                 </div>
                 {isShort ? (
                   <div className="text-3xl md:text-4xl font-bold text-red-600 dark:text-red-400 tabular-nums">
-                    {formatKrNum(result.shortage)}개 부족
+                    {t.ui.shortBig(n(result.shortage))}
                   </div>
                 ) : (
                   <div className="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
-                    {formatKrNum(result.count)}
-                    <span className="text-xl md:text-2xl ml-1">개</span>
+                    {n(result.count)}
+                    {tx.countUnit && (
+                      <span className="text-xl md:text-2xl ml-1">
+                        {tx.countUnit}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>
             </div>
 
             <div className="mt-4 rounded-xl bg-card/70 border border-app divide-y divide-app text-sm">
-              <Row label="보유" value={formatKrNum(toNum(owned))} />
+              <ResultRow label={t.ui.owned} value={n(toNum(owned))} />
               {result.refundRows.map((r) => (
-                <Row
+                <ResultRow
                   key={r.rank}
-                  label={`↻ ${r.rank}성 초기화`}
-                  value={`${formatKrNum(r.count)}개 × ${formatKrNum(r.unitRefund)} = +${formatKrNum(r.subtotal)}`}
+                  label={t.ui.refundRow(tx.rankLabel(r.rank))}
+                  value={t.ui.refundCalc(
+                    n(r.count),
+                    tx.countUnit,
+                    n(r.unitRefund),
+                    n(r.subtotal)
+                  )}
                   tone="accent"
                 />
               ))}
-              <Row label="사용 가능 총합" value={formatKrNum(result.total)} bold />
-              <Row
-                label={`${target}성 무기 1개 필요`}
-                value={formatKrNum(result.perOne)}
+              <ResultRow
+                label={t.ui.usableTotal}
+                value={n(result.total)}
+                bold
+              />
+              <ResultRow
+                label={tx.needPerOne(target)}
+                value={n(result.perOne)}
               />
               {isShort ? (
-                <Row
-                  label="모자란 양"
-                  value={formatKrNum(result.shortage)}
+                <ResultRow
+                  label={t.ui.shortLabel}
+                  value={n(result.shortage)}
                   tone="danger"
                   bold
                 />
               ) : (
-                <Row
-                  label="완성 후 남는 양"
-                  value={formatKrNum(result.remain)}
+                <ResultRow
+                  label={t.ui.leftOver}
+                  value={n(result.remain)}
                   tone="accent"
                 />
               )}
-              <Row
-                label="다음 1개까지"
-                value={`${formatKrNum(result.toNext)}개 더`}
+              <ResultRow
+                label={t.ui.toNext}
+                value={t.ui.toNextValue(n(result.toNext))}
               />
             </div>
 
             {/* 남은 구슬 활용 */}
             {result.alternatives.length > 0 && (
               <div className="mt-3 rounded-xl bg-muted p-3 text-xs text-fg-muted leading-relaxed">
-                💡 남은 <b>{formatKrNum(result.remain)}</b>개로 추가 완성 가능 —{" "}
+                💡 {t.ui.leftoverHint(n(result.remain))} —{" "}
                 {result.alternatives.map((a, i) => (
                   <span key={a.rank}>
                     {i > 0 && " / "}
-                    {a.rank}성 <b className="text-fg">{formatKrNum(a.count)}개</b>
+                    {tx.rankLabel(a.rank)}{" "}
+                    <b className="text-fg">
+                      {n(a.count)}
+                      {tx.countUnit}
+                    </b>
                   </span>
                 ))}
               </div>
@@ -237,33 +261,6 @@ export function MasterworkBeadCalc() {
           </>
         )}
       </div>
-    </div>
-  );
-}
-
-function Row({
-  label,
-  value,
-  tone,
-  bold,
-}: {
-  label: string;
-  value: string;
-  tone?: "accent" | "danger";
-  bold?: boolean;
-}) {
-  const toneCls =
-    tone === "accent"
-      ? "text-palmon-primary"
-      : tone === "danger"
-        ? "text-red-600 dark:text-red-400"
-        : "text-fg";
-  return (
-    <div className="flex items-center justify-between gap-3 px-3 py-2">
-      <span className="text-fg-muted text-[13px]">{label}</span>
-      <span className={`tabular-nums ${toneCls} ${bold ? "font-bold" : ""}`}>
-        {value}
-      </span>
     </div>
   );
 }

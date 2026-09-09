@@ -11,7 +11,10 @@ import {
   type EvoStage,
 } from "@/lib/data/calculators/evolution-essence";
 import { EvolutionStageBadge } from "@/components/EvolutionStageBadge";
-import { formatKrNum } from "@/lib/format";
+import { ResultRow } from "@/components/calculator/ResultRow";
+import { useCalcLang } from "@/components/calculator/CalcLangProvider";
+import { calcDict } from "@/lib/i18n/calculator";
+import { formatNum } from "@/lib/format";
 
 // 입력은 문자열로 들고 있다가 계산 직전에 숫자로 바꾼다.
 // 그래야 사용자가 값을 지웠을 때 0이 강제로 남지 않는다.
@@ -25,6 +28,11 @@ function toNum(v: string): number {
 }
 
 export function EvolutionEssenceCalc() {
+  const { lang } = useCalcLang();
+  const t = calcDict[lang];
+  const tx = t.evolutionEssence;
+  const n = (v: number) => formatNum(v, lang);
+
   const [owned, setOwned] = useState("");
   const [target, setTarget] = useState<EvoStage>(4);
   const [resets, setResets] = useState<StageInputs>(EMPTY_INPUTS);
@@ -57,7 +65,6 @@ export function EvolutionEssenceCalc() {
     <div className="space-y-4">
       {/* ── 입력 ── */}
       <div className="bg-card rounded-2xl border border-app shadow-soft p-5 md:p-6 space-y-5">
-        {/* 보유 진화 정수 */}
         <label className="block">
           <span className="flex items-center gap-1.5 text-sm font-bold">
             <Image
@@ -68,7 +75,7 @@ export function EvolutionEssenceCalc() {
               aria-hidden
               className="w-5 h-5 object-contain rounded"
             />
-            보유 진화 정수
+            {tx.ownedLabel}
           </span>
           <input
             type="number"
@@ -76,14 +83,14 @@ export function EvolutionEssenceCalc() {
             min={0}
             value={owned}
             onChange={(e) => setOwned(e.target.value)}
-            placeholder="지금 가진 개수"
+            placeholder={t.ui.ownedPlaceholder}
             className="mt-1.5 w-full px-3 py-2.5 rounded-xl border border-app bg-app text-base tabular-nums focus:outline-none focus:border-palmon-primary"
           />
         </label>
 
         {/* 목표 단계 */}
         <div>
-          <span className="text-sm font-bold">🎯 목표 단계</span>
+          <span className="text-sm font-bold">{tx.targetStage}</span>
           <div className="mt-1.5 grid grid-cols-2 sm:grid-cols-4 gap-2">
             {EVO_STAGES.map((s) => {
               const info = EVO_STAGE_INFO[s];
@@ -104,11 +111,11 @@ export function EvolutionEssenceCalc() {
                     size={36}
                     className={active ? "" : "opacity-80"}
                   />
-                  <div className="text-sm font-bold">{s}단계</div>
+                  <div className="text-sm font-bold">{tx.stageLabel(s)}</div>
                   <div
                     className={`text-[11px] tabular-nums ${active ? "text-white/80" : "text-fg-subtle"}`}
                   >
-                    {formatKrNum(info.cumulativeCost)}개
+                    {n(info.cumulativeCost)}
                   </div>
                 </button>
               );
@@ -119,14 +126,14 @@ export function EvolutionEssenceCalc() {
         {/* 초기화 환급 */}
         <div>
           <div className="flex items-center justify-between gap-3">
-            <span className="text-sm font-bold">↻ 초기화할 팰몬 (선택)</span>
+            <span className="text-sm font-bold">{tx.resetSectionLabel}</span>
             <button
               type="button"
               onClick={reset}
               className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg border border-app text-fg-muted hover:bg-muted transition-colors"
             >
               <RotateCcw size={13} />
-              전체 초기화
+              {t.ui.resetAll}
             </button>
           </div>
           <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -135,7 +142,7 @@ export function EvolutionEssenceCalc() {
               return (
                 <label key={s} className="block">
                   <span className="text-[11px] text-fg-subtle">
-                    {s}단계 · 1마리 +{formatKrNum(info.cumulativeCost)}
+                    {tx.resetPerUnit(s, n(info.cumulativeCost))}
                   </span>
                   <input
                     type="number"
@@ -167,11 +174,10 @@ export function EvolutionEssenceCalc() {
       >
         {!hasInput ? (
           <p className="text-sm text-fg-muted py-4 text-center">
-            보유 개수를 입력하면 결과가 바로 나와요.
+            {t.ui.emptyHint}
           </p>
         ) : (
           <>
-            {/* 큰 숫자 */}
             <div className="flex items-center justify-center gap-3 py-2">
               <Image
                 src={EVO_ESSENCE_IMAGE}
@@ -184,62 +190,76 @@ export function EvolutionEssenceCalc() {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1 text-xs text-fg-muted mb-0.5">
                   <EvolutionStageBadge stage={target} size={18} />
-                  {EVO_STAGE_INFO[target].label} 기준
+                  {t.ui.targetBasis(tx.stageLabel(target))}
                 </div>
                 {isShort ? (
                   <div className="text-3xl md:text-4xl font-bold text-red-600 dark:text-red-400 tabular-nums">
-                    {formatKrNum(result.shortage)}개 부족
+                    {t.ui.shortBig(n(result.shortage))}
                   </div>
                 ) : (
                   <div className="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 tabular-nums">
-                    {formatKrNum(result.count)}
-                    <span className="text-xl md:text-2xl ml-1">마리</span>
+                    {n(result.count)}
+                    {tx.countUnit && (
+                      <span className="text-xl md:text-2xl ml-1">
+                        {tx.countUnit}
+                      </span>
+                    )}
                   </div>
                 )}
               </div>
             </div>
 
-            {/* 계산 내역 */}
             <div className="mt-4 rounded-xl bg-card/70 border border-app divide-y divide-app text-sm">
-              <Row label="보유" value={formatKrNum(toNum(owned))} />
+              <ResultRow label={t.ui.owned} value={n(toNum(owned))} />
               {result.refundRows.map((r) => (
-                <Row
+                <ResultRow
                   key={r.stage}
-                  label={`↻ ${EVO_STAGE_INFO[r.stage].label} 초기화`}
-                  value={`${formatKrNum(r.count)}마리 × ${formatKrNum(r.unitRefund)} = +${formatKrNum(r.subtotal)}`}
+                  label={t.ui.refundRow(tx.stageLabel(r.stage))}
+                  value={t.ui.refundCalc(
+                    n(r.count),
+                    tx.countUnit,
+                    n(r.unitRefund),
+                    n(r.subtotal)
+                  )}
                   tone="accent"
                 />
               ))}
-              <Row label="사용 가능 총합" value={formatKrNum(result.total)} bold />
-              <Row
-                label={`${EVO_STAGE_INFO[target].label} 1마리 필요`}
-                value={formatKrNum(result.perOne)}
+              <ResultRow
+                label={t.ui.usableTotal}
+                value={n(result.total)}
+                bold
+              />
+              <ResultRow
+                label={tx.needPerOne(target)}
+                value={n(result.perOne)}
               />
               {isShort ? (
-                <Row
-                  label="모자란 양"
-                  value={formatKrNum(result.shortage)}
+                <ResultRow
+                  label={t.ui.shortLabel}
+                  value={n(result.shortage)}
                   tone="danger"
                   bold
                 />
               ) : (
-                <Row
-                  label="완성 후 남는 양"
-                  value={formatKrNum(result.remain)}
+                <ResultRow
+                  label={t.ui.leftOver}
+                  value={n(result.remain)}
                   tone="accent"
                 />
               )}
             </div>
 
-            {/* 남은 정수 활용 */}
             {result.alternatives.length > 0 && (
               <div className="mt-3 rounded-xl bg-muted p-3 text-xs text-fg-muted leading-relaxed">
-                💡 남은 <b>{formatKrNum(result.remain)}</b>개로 추가 완성 가능 —{" "}
+                💡 {t.ui.leftoverHint(n(result.remain))} —{" "}
                 {result.alternatives.map((a, i) => (
                   <span key={a.stage}>
                     {i > 0 && " / "}
-                    {EVO_STAGE_INFO[a.stage].label}{" "}
-                    <b className="text-fg">{formatKrNum(a.count)}마리</b>
+                    {tx.stageLabel(a.stage)}{" "}
+                    <b className="text-fg">
+                      {n(a.count)}
+                      {tx.countUnit}
+                    </b>
                   </span>
                 ))}
               </div>
@@ -247,33 +267,6 @@ export function EvolutionEssenceCalc() {
           </>
         )}
       </div>
-    </div>
-  );
-}
-
-function Row({
-  label,
-  value,
-  tone,
-  bold,
-}: {
-  label: string;
-  value: string;
-  tone?: "accent" | "danger";
-  bold?: boolean;
-}) {
-  const toneCls =
-    tone === "accent"
-      ? "text-palmon-primary"
-      : tone === "danger"
-        ? "text-red-600 dark:text-red-400"
-        : "text-fg";
-  return (
-    <div className="flex items-center justify-between gap-3 px-3 py-2">
-      <span className="text-fg-muted text-[13px]">{label}</span>
-      <span className={`tabular-nums ${toneCls} ${bold ? "font-bold" : ""}`}>
-        {value}
-      </span>
     </div>
   );
 }
