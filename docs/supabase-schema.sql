@@ -164,3 +164,31 @@ create trigger trg_comments_updated_at
 alter publication supabase_realtime add table public.posts;
 alter publication supabase_realtime add table public.comments;
 alter publication supabase_realtime add table public.reactions;
+
+
+-- ========== 6) 오로라 소환 랭킹 ==========
+-- 시뮬레이터에서 신화 팰몬을 몇 번째 소환에 뽑았는지 기록한다.
+-- 클라이언트에서 굴린 결과를 그대로 받으므로 검증할 수 없다(랜덤이라 서버 재현 불가).
+-- 화면에도 "검증되지 않은 기록"이라고 밝히고, 대신 CHECK 제약으로 말이 안 되는 값만 막는다.
+create table if not exists public.summon_records (
+  id         uuid primary key default gen_random_uuid(),
+  pulls      integer not null check (pulls between 1 and 1200),
+  got_by     text    not null check (got_by in ('direct', 'ceiling')),
+  palmon_id  text    not null check (char_length(palmon_id) between 1 and 10),
+  nickname   text    not null check (char_length(nickname) between 1 and 20),
+  server     text    not null check (server ~ '^[0-9]{1,6}$'),
+  created_at timestamptz not null default now()
+);
+
+-- 랭킹 정렬용. 적게 뽑은 순, 같으면 먼저 등록한 순.
+create index if not exists idx_summon_records_rank
+  on public.summon_records (pulls asc, created_at asc);
+
+alter table public.summon_records enable row level security;
+
+drop policy if exists summon_records_read on public.summon_records;
+create policy summon_records_read on public.summon_records for select using (true);
+
+-- 등록은 누구나 가능하다. 값의 유효성은 위 CHECK 제약이 담당한다.
+drop policy if exists summon_records_insert on public.summon_records;
+create policy summon_records_insert on public.summon_records for insert with check (true);

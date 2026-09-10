@@ -29,6 +29,7 @@ import {
   Zap,
   TrendingUp,
   Cherry,
+  Dices,
 } from "lucide-react";
 
 export interface MenuItem {
@@ -110,6 +111,16 @@ export const menu: MenuSection[] = [
         href: "/calculator/skill-fruit",
         label: "스킬열매",
         icon: Cherry,
+      },
+    ],
+  },
+  {
+    section: "시뮬레이터",
+    items: [
+      {
+        href: "/simulator/aurora-summon",
+        label: "오로라 소환",
+        icon: Dices,
       },
     ],
   },

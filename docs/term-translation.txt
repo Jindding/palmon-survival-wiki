@@ -38,6 +38,9 @@ Aurora Orb = 오로라 구슬
 Titan Seal = 타이탄인장
 Titan Seals =
 UR Palmon Omni Token = 팰몬 만능 UR 증표, 만능 증표, 만능 팰몬조각
+# 위 만능 증표와 별개로, 신화 팰몬 조각은 팰몬마다 이름이 다릅니다.
+#   예) Mammolith Token / Glacewing Token — 오로라 소환 보상으로 나오는 그 조각
+<팰몬 영문명> Token = <팰몬 이름> 증표     # 예) Mammolith Token = 마몰리스 증표
 Mastery Sigils =
 Prismatic Vials =
 Palmite =
@@ -93,6 +96,7 @@ Ruins =
 Palmite Mine =
 Steel Mill =
 Lumberyard =
+Lumber Treasure Chest = 목판 보물상자
 Farmland =
 Desert Wonderland =
 Desert Sovereignty =
@@ -141,8 +145,12 @@ Monthly Pass =
 # ═══════════════════════════════════════════════════════════
 # 도감에 있는 팰몬은 한국어 이름을 미리 채워 두었습니다.
 # Rapheni · Scorphelia 는 도감에서 대응하는 팰몬을 찾지 못했습니다.
+# 시즌 1 신화 4종(Glacewing · Mammolith · Thundertooth · Embergeist)은 확인 완료.
 
-Glacewing = 글레이스윙                 # (제안)
+Glacewing = 글레이스윙
+Mammolith = 마몰리스
+Thundertooth = 썬더투스
+Embergeist = 엠버 가이스트
 Rootwarden = 루트워든                  # (제안)
 Ninjump = 닌점프                       # (제안)
 Barkplug = 바크플러그                  # (제안)
@@ -178,4 +186,10 @@ Legendary Love Wreath = UR 팰몬 화환
 # ═══════════════════════════════════════════════════════════
 # 9. 기타 — 위 분류에 없는 단어를 여기에 추가해주세요
 # ═══════════════════════════════════════════════════════════
+
+# 속성 (바위가 Rock이 아니라 Earth인 점 주의)
+Water = 물
+Fire = 불
+Earth = 바위
+Electric = 전기
 
