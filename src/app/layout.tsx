@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Sidebar } from "@/components/Sidebar";
@@ -35,6 +36,9 @@ export default function RootLayout({
             </div>
           </div>
         </ThemeProvider>
+        {/* Vercel Web Analytics — 쿠키를 쓰지 않는 페이지뷰 집계.
+            Hobby 플랜은 월 5만 이벤트까지 무료이며 초과해도 과금되지 않고 수집만 잠시 멈춘다. */}
+        <Analytics />
       </body>
     </html>
   );
