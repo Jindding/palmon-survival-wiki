@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { createPost } from "@/lib/supabase/board";
+import { ImageAttach } from "@/components/ImageAttach";
+import { uploadImage } from "@/lib/supabase/uploads";
 import {
   getSavedNickname,
   saveNickname,
@@ -13,6 +15,7 @@ export function PostComposer({ onCreated }: { onCreated: (id: string) => void })
   const [password, setPassword] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [image, setImage] = useState<File | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -45,16 +48,29 @@ export function PostComposer({ onCreated }: { onCreated: (id: string) => void })
     }
     setSubmitting(true);
     try {
+      // 이미지는 글을 실제로 등록하는 이 시점에만 올린다. 쓰다 만 글의 파일이 쌓이지 않게.
+      let imagePath: string | null = null;
+      if (image) {
+        const uploaded = await uploadImage("posts", image);
+        if (!uploaded.ok) {
+          setError(uploaded.message);
+          setSubmitting(false);
+          return;
+        }
+        imagePath = uploaded.path;
+      }
       const post = await createPost({
         nickname: nick,
         password: pwd,
         title: t,
         content: c,
+        image_path: imagePath,
       });
       saveNickname(nick);
       setTitle("");
       setContent("");
       setPassword("");
+      setImage(null);
       onCreated(post.id);
     } catch (e) {
       console.error("[board] createPost failed:", e);
@@ -118,6 +134,13 @@ export function PostComposer({ onCreated }: { onCreated: (id: string) => void })
         placeholder="본문 (@닉네임 으로 멘션 가능)"
         className="w-full px-3 py-2 rounded-xl bg-muted border border-app text-sm resize-y focus:outline-none focus:ring-2 focus:ring-palmon-primary/40"
       />
+      <ImageAttach
+        file={image}
+        onChange={setImage}
+        disabled={submitting}
+        busy={submitting && image !== null}
+      />
+
       {error && <div className="text-xs text-red-500">{error}</div>}
       <div className="flex items-center justify-between">
         <div className="text-[11px] text-fg-subtle">{content.length} / 5000</div>

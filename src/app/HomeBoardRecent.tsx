@@ -27,7 +27,7 @@ export function HomeBoardRecent() {
   }, []);
 
   return (
-    <div className="p-5 rounded-2xl bg-card border border-app shadow-soft">
+    <div className="min-w-0 p-5 rounded-2xl bg-card border border-app shadow-soft">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-base font-bold flex items-center gap-2">
           <MessagesSquare
@@ -63,7 +63,7 @@ export function HomeBoardRecent() {
                   {p.title}
                 </div>
                 <div className="text-[11px] text-fg-subtle mt-0.5 flex items-center gap-1.5 flex-wrap">
-                  <span className="text-fg-muted font-medium">
+                  <span className="text-fg-muted font-medium truncate max-w-[10rem]">
                     {p.nickname}
                   </span>
                   <span>·</span>

@@ -28,10 +28,12 @@ export default function TipsPage() {
         className="p-4 rounded-xl text-xs text-fg-muted"
         style={{ backgroundColor: "rgb(var(--muted))" }}
       >
-        <div className="mb-1">📮 팁 제보 안내</div>
+        <div className="mb-1">✍️ 팁 작성 안내</div>
         <p>
-          상단 [팁 제보] 버튼으로 서버·닉네임·내용을 남겨주시면 운영자에게 바로
-          전달됩니다. 검토 후 순차적으로 이 페이지에 반영해요.
+          상단 [팁 작성하기] 버튼으로 누구나 팁을 남길 수 있어요. 작성하면 검토
+          없이 바로 이 페이지에 올라갑니다. 서버·닉네임을 적으면 작성자로
+          표시되고, [익명으로 작성]을 체크하면 익명으로 올라가요. 지우고 싶은
+          글은 문의하기로 알려주세요.
         </p>
       </div>
     </div>

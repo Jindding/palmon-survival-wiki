@@ -71,6 +71,19 @@ export default function GvGPage() {
 - 카드 기본형: `bg-card rounded-2xl p-5 md:p-6 border border-app shadow-soft`
 - 반응형은 모바일 우선, `md:` 브레이크포인트 중심
 
+## 3-1. 모바일 — 가로 스크롤은 버그다
+
+**페이지 전체가 좌우로 밀리면 무조건 고친다.** 모바일에서 가장 흔한 깨짐이고, 한 군데만 넘쳐도 페이지 전체가 밀린다. 새 페이지·새 컴포넌트를 만들 때마다 아래를 점검한다.
+
+- **`flex`/`grid` 자식에는 `min-w-0`을 붙인다.** 기본값이 `min-width: auto`라서 자식이 내용보다 작아지지 못한다. `truncate`·`whitespace-nowrap`·긴 단어가 안에 있으면 그 폭만큼 컨테이너가 늘어나 페이지가 밀린다. `truncate`는 **부모에 `min-w-0`이 있어야** 동작한다.
+- **사용자가 입력한 텍스트**(게시글 제목·본문, 댓글, 닉네임, 팁)에는 `break-words`를 붙인다. `globals.css`의 `body { overflow-wrap: break-word }`가 1차 방어선이지만, `truncate`가 걸린 자리에는 듣지 않는다.
+- **표는 `overflow-x-auto` 컨테이너로 감싼다.** 표 자체가 넘치는 건 정상이고, 그 스크롤이 페이지로 새어 나가는 게 문제다. 이때 `<thead>`에 `sticky`를 걸어도 동작하지 않는다 (`overflow-x: auto`가 스크롤 컨테이너를 만들기 때문). 둘 중 하나만 택한다.
+- **표의 행 높이는 일정하게.** 한 칸의 태그·텍스트가 줄바꿈되면 그 행만 두 줄이 되어 표가 울퉁불퉁해진다. 태그 묶음은 `whitespace-nowrap`으로 한 줄에 고정하고 가로 스크롤로 넘긴다.
+- **고정 픽셀 폭 금지.** `w-[720px]` 대신 `max-w-*` + `w-full`.
+- **긴 숫자·영문은 `tabular-nums whitespace-nowrap`** 으로 묶어 중간에 끊기지 않게 한다.
+
+검증은 브라우저 개발자도구에서 폭 375px(iPhone SE 기준)로 줄여 **가로 스크롤바가 생기지 않는지** 확인한다.
+
 ## 4. 데이터 파일
 
 `src/lib/data/<topic>.ts`는 다음을 갖춘다.

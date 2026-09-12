@@ -40,6 +40,8 @@
       "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* 사용자가 올린 글에 공백 없는 긴 문자열이 섞여도 가로 스크롤이 생기지 않게 한다. */
+    overflow-wrap: break-word;
     text-rendering: optimizeLegibility;
     letter-spacing: -0.01em;
   }

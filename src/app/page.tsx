@@ -100,7 +100,7 @@ export default function HomePage() {
         <HomeBoardRecent />
 
         {/* Updates */}
-        <div className="p-5 rounded-2xl bg-card border border-app shadow-soft">
+        <div className="min-w-0 p-5 rounded-2xl bg-card border border-app shadow-soft">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-bold flex items-center gap-2">
               <Megaphone
@@ -134,7 +134,7 @@ export default function HomePage() {
                       </span>
                       <span className="text-[11px] text-fg-subtle">{u.date}</span>
                     </div>
-                    <div className="leading-snug">{u.title}</div>
+                    <div className="leading-snug break-words">{u.title}</div>
                   </li>
                 );
               })}
@@ -143,7 +143,7 @@ export default function HomePage() {
         </div>
 
         {/* Tips */}
-        <div className="p-5 rounded-2xl bg-card border border-app shadow-soft">
+        <div className="min-w-0 p-5 rounded-2xl bg-card border border-app shadow-soft">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-base font-bold flex items-center gap-2">
               <Lightbulb
@@ -167,7 +167,7 @@ export default function HomePage() {
             <ul className="space-y-3">
               {recentTips.map((t, i) => (
                 <li key={i} className="text-sm">
-                  <p className="leading-snug line-clamp-2">{t.content}</p>
+                  <p className="leading-snug line-clamp-2 break-words">{t.content}</p>
                   {t.by && (
                     <div className="mt-1 text-xs text-fg-subtle">
                       <SourceBadge name={t.by} />

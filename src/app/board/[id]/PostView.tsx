@@ -21,6 +21,8 @@ import { MentionText } from "@/components/board/MentionText";
 import { PasswordPrompt } from "@/components/board/PasswordPrompt";
 import { ReactionBar } from "@/components/board/ReactionBar";
 import { CommentThread } from "@/components/board/CommentThread";
+import { AttachedImage } from "@/components/AttachedImage";
+import { ReportButton } from "@/components/ReportButton";
 
 export function PostView({ id }: { id: string }) {
   const router = useRouter();
@@ -130,12 +132,21 @@ export function PostView({ id }: { id: string }) {
           <MentionText text={post.content} />
         </div>
 
-        <ReactionBar
-          targetType="post"
-          targetId={post.id}
-          reactions={reactions}
-          onChange={reload}
-        />
+        {post.image_path && <AttachedImage path={post.image_path} />}
+
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <ReactionBar
+            targetType="post"
+            targetId={post.id}
+            reactions={reactions}
+            onChange={reload}
+          />
+          <ReportButton
+            targetType="post"
+            targetId={post.id}
+            excerpt={post.title}
+          />
+        </div>
       </article>
 
       <CommentThread

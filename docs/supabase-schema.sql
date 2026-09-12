@@ -192,3 +192,84 @@ create policy summon_records_read on public.summon_records for select using (tru
 -- 등록은 누구나 가능하다. 값의 유효성은 위 CHECK 제약이 담당한다.
 drop policy if exists summon_records_insert on public.summon_records;
 create policy summon_records_insert on public.summon_records for insert with check (true);
+
+
+-- ========== 7) 유저 한줄팁 ==========
+-- 예전에는 제보 메일을 받아 운영자가 수동으로 반영했는데, 화면에 바로 뜨지 않으니
+-- 아무도 제보하지 않았다. 그래서 사용자가 직접 올리고 즉시 게시되도록 바꿨다.
+--
+-- 익명 제보를 허용한다. 익명이면 nickname/server가 비고, 아니면 둘 다 있어야 한다.
+-- 게시판과 같은 정책 — 누구나 읽고 누구나 쓴다. 값 검증은 CHECK 제약과 API 라우트가 맡는다.
+create table if not exists public.user_tips (
+  id           uuid primary key default gen_random_uuid(),
+  content      text not null check (char_length(content) between 2 and 300),
+  nickname     text check (nickname is null or char_length(nickname) between 1 and 30),
+  server       text check (server is null or server ~ '^[0-9]{1,6}$'),
+  is_anonymous boolean not null default false,
+  created_at   timestamptz not null default now(),
+  -- 실명 제보라면 서버와 닉네임이 반드시 함께 있어야 한다.
+  constraint user_tips_author_present check (
+    is_anonymous or (nickname is not null and server is not null)
+  )
+);
+
+-- 최신순 목록 조회용.
+create index if not exists idx_user_tips_created
+  on public.user_tips (created_at desc);
+
+alter table public.user_tips enable row level security;
+
+drop policy if exists user_tips_read on public.user_tips;
+create policy user_tips_read on public.user_tips for select using (true);
+
+drop policy if exists user_tips_insert on public.user_tips;
+create policy user_tips_insert on public.user_tips for insert with check (true);
+
+
+-- ========== 8) 이미지 첨부 ==========
+-- 게시글과 한줄팁에 이미지를 한 장씩 붙일 수 있다.
+-- 파일은 Storage에 두고 테이블에는 경로만 저장한다.
+alter table public.posts     add column if not exists image_path text;
+alter table public.user_tips add column if not exists image_path text;
+
+-- 업로드 버킷.
+-- 브라우저에서 1280px · WebP로 줄여서 올리지만, 클라이언트 검증은 우회될 수 있으므로
+-- 버킷 자체에 용량 상한과 MIME 화이트리스트를 걸어 서버에서 한 번 더 막는다.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values (
+  'uploads',
+  'uploads',
+  true,
+  2097152,  -- 2MB
+  array['image/jpeg', 'image/png', 'image/webp', 'image/gif']
+)
+on conflict (id) do update set
+  public             = excluded.public,
+  file_size_limit    = excluded.file_size_limit,
+  allowed_mime_types = excluded.allowed_mime_types;
+
+-- 공개 버킷이라 읽기는 공개 URL로 나가지만, 정책도 함께 열어 둔다.
+drop policy if exists uploads_read on storage.objects;
+create policy uploads_read on storage.objects
+  for select using (bucket_id = 'uploads');
+
+-- 업로드는 누구나 가능하다. 게시판·팁과 같은 정책이다.
+drop policy if exists uploads_insert on storage.objects;
+create policy uploads_insert on storage.objects
+  for insert with check (bucket_id = 'uploads');
+
+-- 삭제는 관리자 도구(service_role 키)만 한다. anon 키로는 지울 수 없다.
+
+-- posts에 image_path를 추가했으므로 목록 뷰를 다시 만든다.
+-- p.* 로 컬럼을 펼치는 뷰라서, 컬럼이 늘면 뷰를 새로 만들어야 반영된다.
+-- (CREATE OR REPLACE VIEW는 컬럼 순서가 바뀌면 실패하므로 drop 후 재생성한다)
+drop view if exists public.posts_with_stats;
+create view public.posts_with_stats as
+select
+  p.*,
+  coalesce((select count(*) from public.comments c
+            where c.post_id = p.id and c.deleted_at is null), 0) as comment_count,
+  coalesce((select count(*) from public.reactions r
+            where r.target_type = 'post' and r.target_id = p.id), 0) as reaction_count
+from public.posts p
+where p.deleted_at is null;

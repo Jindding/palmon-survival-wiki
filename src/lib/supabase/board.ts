@@ -19,6 +19,8 @@ export interface Post {
   password_hash: string;
   title: string;
   content: string;
+  /** Storage 경로. 첨부하지 않았으면 null. */
+  image_path: string | null;
   view_count: number;
   created_at: string;
   updated_at: string;
@@ -100,6 +102,7 @@ export async function createPost(input: {
   password: string;
   title: string;
   content: string;
+  image_path?: string | null;
 }): Promise<Post> {
   const password_hash = await hashPassword(input.password);
   const { data, error } = await getSupabase()
@@ -109,6 +112,7 @@ export async function createPost(input: {
       password_hash,
       title: input.title,
       content: input.content,
+      image_path: input.image_path ?? null,
     })
     .select()
     .single();

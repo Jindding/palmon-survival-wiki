@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useCallback,
   useEffect,
   useMemo,
   useState,
@@ -14,24 +15,90 @@ import {
   Search,
   Send,
   Sparkles,
+  UserRound,
   X,
 } from "lucide-react";
 import type { Tip } from "@/lib/data/tips";
 import { SourceBadge } from "@/components/SourceBadge";
+import { ImageAttach } from "@/components/ImageAttach";
+import { AttachedImage } from "@/components/AttachedImage";
+import { ReportButton } from "@/components/ReportButton";
+import { uploadImage } from "@/lib/supabase/uploads";
+import { formatWhen } from "@/components/board/format";
+import {
+  listUserTips,
+  submitTip,
+  TIP_CONTENT_MAX,
+  TIP_NICKNAME_MAX,
+  type UserTip,
+} from "@/lib/supabase/user-tips";
+
+// 팁은 두 갈래에서 온다.
+//  - curated: docs/sources 에 정리해 둔 기존 팁 (데이터 파일)
+//  - user   : 유저가 이 페이지에서 직접 올린 팁 (Supabase)
+// 방금 올린 글이 바로 보여야 쓰는 맛이 나므로 유저 팁을 위에 놓는다.
+interface TipItem {
+  key: string;
+  content: string;
+  /** "닉네임 #서버" 형식. 익명이거나 출처가 없으면 null. */
+  by: string | null;
+  anonymous: boolean;
+  createdAt: string | null;
+  imagePath: string | null;
+  /** 유저가 올린 팁만 신고할 수 있다. 정리해 둔 기존 팁은 대상이 아니다. */
+  reportId: string | null;
+}
+
+function toItem(t: UserTip): TipItem {
+  return {
+    key: t.id,
+    content: t.content,
+    by: t.is_anonymous ? null : `${t.nickname} #${t.server}`,
+    anonymous: t.is_anonymous,
+    createdAt: t.created_at,
+    imagePath: t.image_path,
+    reportId: t.id,
+  };
+}
 
 export function TipsBrowser({ tips }: { tips: Tip[] }) {
   const [query, setQuery] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+  const [userTips, setUserTips] = useState<UserTip[]>([]);
+
+  const refresh = useCallback(() => {
+    listUserTips().then(setUserTips);
+  }, []);
+
+  useEffect(() => {
+    refresh();
+  }, [refresh]);
+
+  const items = useMemo<TipItem[]>(
+    () => [
+      ...userTips.map(toItem),
+      ...tips.map((t, i) => ({
+        key: `curated-${i}`,
+        content: t.content,
+        by: t.by || null,
+        anonymous: false,
+        createdAt: null,
+        imagePath: null,
+        reportId: null,
+      })),
+    ],
+    [userTips, tips]
+  );
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return tips;
-    return tips.filter(
+    if (!q) return items;
+    return items.filter(
       (t) =>
         t.content.toLowerCase().includes(q) ||
-        t.by.toLowerCase().includes(q)
+        (t.by ?? "").toLowerCase().includes(q)
     );
-  }, [tips, query]);
+  }, [items, query]);
 
   return (
     <div className="space-y-4">
@@ -61,13 +128,13 @@ export function TipsBrowser({ tips }: { tips: Tip[] }) {
             />
           </div>
           <div className="text-xs md:text-sm text-fg-muted mt-0.5">
-            제보해주시면 검토 후 이 페이지에 반영해드려요. 익명 제보도 가능해요!
+            작성하시면 이 페이지에 바로 올라가요. 익명으로도 쓸 수 있어요!
           </div>
         </div>
         <div className="inline-flex items-center gap-1.5 px-3 md:px-4 py-2 md:py-2.5 rounded-xl text-xs md:text-sm font-bold bg-gradient-palmon text-white shadow-soft flex-shrink-0">
           <MessageSquarePlus size={16} />
-          <span className="hidden sm:inline">팁 제보하기</span>
-          <span className="sm:hidden">제보</span>
+          <span className="hidden sm:inline">팁 작성하기</span>
+          <span className="sm:hidden">작성</span>
         </div>
       </button>
 
@@ -80,7 +147,7 @@ export function TipsBrowser({ tips }: { tips: Tip[] }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="팁 · 제보자 · 서버로 검색"
+          placeholder="팁 · 작성자 · 서버로 검색"
           className="w-full pl-9 pr-3 py-2 rounded-xl border border-app bg-card text-sm focus:outline-none focus:border-palmon-primary"
         />
       </div>
@@ -97,9 +164,9 @@ export function TipsBrowser({ tips }: { tips: Tip[] }) {
         </div>
       ) : (
         <ul className="space-y-3">
-          {filtered.map((tip, i) => (
+          {filtered.map((tip) => (
             <li
-              key={i}
+              key={tip.key}
               className="relative bg-card rounded-2xl p-5 md:p-6 border border-app shadow-soft"
             >
               <div className="flex items-start gap-3">
@@ -114,14 +181,34 @@ export function TipsBrowser({ tips }: { tips: Tip[] }) {
                   💡
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-base md:text-lg leading-relaxed">
+                  <p className="text-base md:text-lg leading-relaxed whitespace-pre-wrap break-words">
                     {tip.content}
                   </p>
-                  {tip.by && (
-                    <div className="mt-3 text-xs text-fg-subtle">
-                      <SourceBadge name={tip.by} />
+                  {tip.imagePath && (
+                    <div className="mt-3">
+                      <AttachedImage path={tip.imagePath} alt="팁 첨부 이미지" />
                     </div>
                   )}
+                  <div className="mt-3 text-xs text-fg-subtle flex items-center gap-2 flex-wrap">
+                    {tip.anonymous ? (
+                      <span className="inline-flex items-center gap-1 align-middle">
+                        <UserRound size={12} className="opacity-70" aria-hidden />
+                        익명
+                      </span>
+                    ) : (
+                      tip.by && <SourceBadge name={tip.by} />
+                    )}
+                    {tip.createdAt && <span>{formatWhen(tip.createdAt)}</span>}
+                    {tip.reportId && (
+                      <span className="ml-auto">
+                        <ReportButton
+                          targetType="tip"
+                          targetId={tip.reportId}
+                          excerpt={tip.content}
+                        />
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </li>
@@ -129,7 +216,12 @@ export function TipsBrowser({ tips }: { tips: Tip[] }) {
         </ul>
       )}
 
-      {modalOpen && <TipReportModal onClose={() => setModalOpen(false)} />}
+      {modalOpen && (
+        <TipComposerModal
+          onClose={() => setModalOpen(false)}
+          onSubmitted={refresh}
+        />
+      )}
     </div>
   );
 }
@@ -140,11 +232,18 @@ type Status =
   | { kind: "success" }
   | { kind: "error"; message: string };
 
-function TipReportModal({ onClose }: { onClose: () => void }) {
+function TipComposerModal({
+  onClose,
+  onSubmitted,
+}: {
+  onClose: () => void;
+  onSubmitted: () => void;
+}) {
   const [anonymous, setAnonymous] = useState(false);
   const [server, setServer] = useState("");
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
+  const [image, setImage] = useState<File | null>(null);
   const [hp, setHp] = useState("");
   const [status, setStatus] = useState<Status>({ kind: "idle" });
 
@@ -166,42 +265,42 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
     if (status.kind === "sending") return;
 
     setStatus({ kind: "sending" });
-    try {
-      const title = anonymous
-        ? "[팁 제보] 익명"
-        : `[팁 제보] ${server.trim()}서버 ${nickname.trim()}`.slice(0, 100);
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, body: content.trim(), hp }),
-      });
-      const data = (await res.json().catch(() => ({}))) as {
-        ok?: boolean;
-        error?: string;
-      };
-      if (!res.ok || !data.ok) {
-        setStatus({
-          kind: "error",
-          message: data.error ?? "발송에 실패했습니다.",
-        });
+
+    // 이미지는 등록을 확정하는 이 시점에만 올린다. 쓰다 만 글의 파일이 쌓이지 않게.
+    let imagePath: string | null = null;
+    if (image) {
+      const uploaded = await uploadImage("tips", image);
+      if (!uploaded.ok) {
+        setStatus({ kind: "error", message: uploaded.message });
         return;
       }
-      setStatus({ kind: "success" });
-      setServer("");
-      setNickname("");
-      setContent("");
-    } catch {
-      setStatus({
-        kind: "error",
-        message: "네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.",
-      });
+      imagePath = uploaded.path;
     }
+
+    const result = await submitTip({
+      content: content.trim(),
+      imagePath,
+      anonymous,
+      nickname: anonymous ? undefined : nickname.trim(),
+      server: anonymous ? undefined : server.trim(),
+      hp,
+    });
+
+    if (!result.ok) {
+      setStatus({ kind: "error", message: result.message });
+      return;
+    }
+
+    setStatus({ kind: "success" });
+    setContent("");
+    setImage(null);
+    // 목록을 다시 불러와 방금 쓴 팁이 바로 보이게 한다.
+    onSubmitted();
   };
 
   const canSubmit =
     content.trim().length > 0 &&
-    (anonymous ||
-      (server.trim().length > 0 && nickname.trim().length > 0)) &&
+    (anonymous || (server.trim().length > 0 && nickname.trim().length > 0)) &&
     status.kind !== "sending";
 
   return (
@@ -218,7 +317,7 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
       <div className="relative bg-card rounded-2xl border border-app shadow-lg w-full max-w-md max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-4 border-b border-app">
           <h2 id="tip-modal-title" className="text-base font-bold">
-            💡 팁 제보
+            💡 팁 작성
           </h2>
           <button
             type="button"
@@ -251,15 +350,15 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
               className="w-4 h-4 accent-current"
               style={{ accentColor: "rgb(var(--primary))" }}
             />
-            <span className="text-sm font-semibold">익명으로 제보</span>
+            <span className="text-sm font-semibold">익명으로 작성</span>
             <span className="text-xs text-fg-subtle">
-              (서버·닉네임 없이 제보)
+              (서버·닉네임 없이 작성)
             </span>
           </label>
 
           {!anonymous && (
             <div className="grid grid-cols-3 gap-2">
-              <div className="space-y-1">
+              <div className="min-w-0 space-y-1">
                 <label htmlFor="tip-server" className="text-xs font-semibold">
                   서버
                 </label>
@@ -270,13 +369,13 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
                   value={server}
                   onChange={(e) => setServer(e.target.value)}
                   placeholder="예) 201"
-                  maxLength={10}
+                  maxLength={6}
                   required
                   disabled={status.kind === "sending"}
                   className="w-full px-3 py-2 rounded-xl border border-app bg-card text-sm focus:outline-none focus:border-palmon-primary disabled:opacity-60"
                 />
               </div>
-              <div className="col-span-2 space-y-1">
+              <div className="col-span-2 min-w-0 space-y-1">
                 <label htmlFor="tip-nick" className="text-xs font-semibold">
                   닉네임
                 </label>
@@ -286,7 +385,7 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
                   value={nickname}
                   onChange={(e) => setNickname(e.target.value)}
                   placeholder="예) Aiden Reed"
-                  maxLength={30}
+                  maxLength={TIP_NICKNAME_MAX}
                   required
                   disabled={status.kind === "sending"}
                   className="w-full px-3 py-2 rounded-xl border border-app bg-card text-sm focus:outline-none focus:border-palmon-primary disabled:opacity-60"
@@ -303,17 +402,24 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
               id="tip-content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              placeholder="공유하고 싶은 팁을 자세히 적어주세요."
-              rows={6}
-              maxLength={2000}
+              placeholder="한 줄이면 충분해요. 알고 계신 꿀팁을 적어주세요."
+              rows={5}
+              maxLength={TIP_CONTENT_MAX}
               required
               disabled={status.kind === "sending"}
               className="w-full px-3 py-2 rounded-xl border border-app bg-card text-sm focus:outline-none focus:border-palmon-primary resize-y disabled:opacity-60"
             />
             <div className="text-[11px] text-fg-subtle text-right">
-              {content.length} / 2000
+              {content.length} / {TIP_CONTENT_MAX}
             </div>
           </div>
+
+          <ImageAttach
+            file={image}
+            onChange={setImage}
+            disabled={status.kind === "sending"}
+            busy={status.kind === "sending" && image !== null}
+          />
 
           <div
             aria-hidden="true"
@@ -337,13 +443,18 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
             </label>
           </div>
 
+          <p className="text-[11px] text-fg-subtle leading-relaxed">
+            작성한 팁은 바로 공개돼요. 게임 화면 위주로 올려주시고, 타인의 사진이나
+            외부 이미지는 올리지 말아주세요. 지우고 싶으시면 문의하기로 알려주세요.
+          </p>
+
           {status.kind === "success" && (
             <div
               role="status"
               className="flex items-start gap-2 p-3 rounded-xl text-sm border border-green-500/30 bg-green-500/10 text-green-700 dark:text-green-300"
             >
               <CheckCircle2 size={18} className="shrink-0 mt-0.5" />
-              <div>제보해주셔서 감사합니다! 검토 후 반영할게요.</div>
+              <div>등록되었어요! 목록 맨 위에서 확인하실 수 있어요.</div>
             </div>
           )}
 
@@ -374,11 +485,11 @@ function TipReportModal({ onClose }: { onClose: () => void }) {
               >
                 {status.kind === "sending" ? (
                   <>
-                    <Loader2 size={16} className="animate-spin" /> 발송 중...
+                    <Loader2 size={16} className="animate-spin" /> 등록 중...
                   </>
                 ) : (
                   <>
-                    <Send size={16} /> 제보하기
+                    <Send size={16} /> 등록하기
                   </>
                 )}
               </button>

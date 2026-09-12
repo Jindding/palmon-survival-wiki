@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
-import { MessageCircle, Eye, Smile, Sparkles } from "lucide-react";
+import {
+  MessageCircle,
+  Eye,
+  Smile,
+  Sparkles,
+  Image as ImageIcon,
+} from "lucide-react";
 import {
   listPosts,
   subscribeToPostChanges,
@@ -100,7 +106,16 @@ export function BoardView() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-base font-bold truncate">{p.title}</h3>
+                    <h3 className="text-base font-bold truncate">
+                      {p.title}
+                      {p.image_path && (
+                        <ImageIcon
+                          size={13}
+                          className="inline-block ml-1.5 align-middle text-fg-subtle"
+                          aria-label="이미지 첨부됨"
+                        />
+                      )}
+                    </h3>
                     <div className="text-xs text-fg-muted mt-1 flex items-center gap-2 flex-wrap">
                       <span className="font-semibold text-fg">
                         {p.nickname}
